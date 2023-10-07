@@ -7,5 +7,6 @@ class Seguro(models.Model):
     precio = fields.Float(string="Precio", size=30, required=True)
     cobertura = fields.Char(string="Cobertura", required=True, size=100, help="Cobertura del seguro")
     categoria = fields.Char(string="Cateogria", required=False, size=20, help="Categoria del seguro")
-    
+    duracion = fields.Integer(string="Duración (en meses)", required=True, help="Duración de la cobertura en meses")
+
     id_especia = fields.many2many("upopet.especie","id_seguro", "Seguro tiene la especie")
