@@ -10,5 +10,5 @@ Class Empresa(models.Model):
     nombreEmpresa = fields.Char(string="Nombre", required=False, size=20, help="Nombre de la empresa")
     
 
-    id_evento = fields.many2One("upopet.evento","id_evento", "Evento")
-    id_seguro= fields.many2One("upopet.seguro","id_seguro", "Seguro")
+    id_evento = fields.many2one("upopet.evento", "Evento")
+    ids_seguro= fields.one2many("upopet.seguro","id_empresa", "Seguro")
