@@ -8,5 +8,5 @@ class Seguro(models.Model):
     categoria = fields.Char(string="Cateogria", required=False, size=20, help="Categoria del seguro")
     duracion = fields.Integer(string="Duracion", size=9, required=True, help="Duración del seguro")
     
-    id_especie = fields.many2one("upopet.especie","id_espeice", "Seguro tiene la especie")
-    id_empresa= fields.many2one("upopet.empresa","id_empresa", "Empresa del seguro")
+    id_especie = fields.many2one("upopet.especie", "Seguro tiene la especie")
+    id_empresa= fields.many2one("upopet.empresa", "Empresa del seguro")
