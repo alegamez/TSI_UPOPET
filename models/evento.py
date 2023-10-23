@@ -13,6 +13,6 @@ class Evento(models.Model):
     url = fields.Char(string="URL", required=True, size=50, help="Enlace al evento")
     
     id_tipo_evento = fields.many2one("upopet.tipoEvento", string="Evento del tipo", required=True)
-    id_especie = fields.one2many("upopet.especie","id_evento","Especie")
+    id_especies = fields.many2many("upopet.especie","Especie")
     id_empresa = fields.many2one("upopet.empresa",string="id_evento", required=True)
 
