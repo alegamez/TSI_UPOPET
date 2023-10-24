@@ -2,7 +2,7 @@
 
 from odoo import models, fields, api
 
-Class Empresa(models.Model):
+class Empresa(models.Model):
     _name = "upopet.evento"
     _descripcion = 'Modelo para los distintos tipos de empresas'
     

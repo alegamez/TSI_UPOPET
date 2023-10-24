@@ -1,0 +1,42 @@
+<record id="upopet_empresa_form_view" model="ir.ui.view">
+    <field name="name">upopet.empresa.form</field>
+    <field name="model">upopet.empresa</field>
+    <field name="arch" type="xml">
+        <form string="Empresa">
+            <sheet>
+                <group>
+                    <field name="name" />
+                    <field name="nombreEmpresa" />
+                </group>
+                <notebook>
+                    <page name="eventos" string="Eventos">
+                        <field name="id_evento" />
+                    </page>
+                    <page name="seguros" string="Seguros">
+                        <field name="ids_seguro" widget="one2many" />
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="upopet_empresa_tree_view" model="ir.ui.view">
+    <field name="name">upopet.empresa.tree</field>
+    <field name="model">upopet.empresa</field>
+    <field name="arch" type="xml">
+        <tree string="Empresas">
+            <field name="name" />
+            <field name="nombreEmpresa" />
+        </tree>
+    </field>
+</record>
+
+<record id="upopet_empresa_list_action" model="ir.actions.act_window">
+    <field name="name">Empresas</field>
+    <field name="res_model">upopet.empresa</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">No se encontraron empresas.</p>
+    </field>
+</record>

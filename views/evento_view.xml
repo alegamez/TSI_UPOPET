@@ -1,0 +1,47 @@
+<record id="upopet_evento_form_view" model="ir.ui.view">
+    <field name="name">upopet.evento.form</field>
+    <field name="model">upopet.evento</field>
+    <field name="arch" type="xml">
+        <form string="Evento">
+            <sheet layout="auto">
+                <group>
+                    <field name="id_evento" />
+                    <field name="nombre" />
+                    <field name="descripcion" />
+                    <field name="id_tipo_evento" />
+                </group>
+                <group>
+                    <field name="fecha" />
+                    <field name="url" />
+                </group>
+                <group>
+                    <field name="id_especies" widget="many2many_tags" options="{'no_create': True}" />
+                    <field name="id_empresa" />
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="upopet_evento_tree_view" model="ir.ui.view">
+    <field name="name">upopet.evento.tree</field>
+    <field name="model">upopet.evento</field>
+    <field name="arch" type="xml">
+        <tree string="Eventos">
+            <field name="id_evento" />
+            <field name="nombre" />
+            <field name="id_tipo_evento" />
+            <field name="fecha" />
+            <field name="url" />
+        </tree>
+    </field>
+</record>
+
+<record id="upopet_evento_list_action" model="ir.actions.act_window">
+    <field name="name">Eventos</field>
+    <field name="res_model">upopet.evento</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">No se encontraron eventos.</p>
+    </field>
+</record>
