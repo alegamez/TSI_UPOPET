@@ -16,6 +16,18 @@
               </tree>
             </field>
           </group>
+          <notebook>
+                    <page string="Alimentación">
+                    </page>
+                    <page string="Habitat">
+                    </page>
+                    <page string="Adopción">
+                    </page>
+                    <page string="Deporte">
+                    </page>
+                    <page string="Cuidados">
+                    </page>
+          </notebook>
         </sheet>
       </form>
     </field>
@@ -31,20 +43,6 @@
             <field name="descripcion" />
             <field name="ids_pregunta">
       </tree>
-    </field>
-  </record>
-
-  <record id="TSI_UPOPET_class_search_view" model="ir.ui.view">
-    <field name="name">TSI_UPOPET.categoriaPregunta.search</field>
-    <field name="model">TSI_UPOPET.categoriaPregunta</field>
-    <field name="arch" type="xml">
-      <search>
-        <filter name="search_categoriaPregunta" string="CategoriaPregunta = *****" domain="[('capacity','>',10)]" />
-        <separator orientation="vertical" />
-        <group expand="0" string="Agrupar por...">
-          <filter name="group_by_categoriaPregunta" string="CategoriaPregunta" context="{'group_by':'id_categoriaPregunta'}" />
-        </group>
-      </search>
     </field>
   </record>
 
