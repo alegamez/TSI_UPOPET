@@ -2,9 +2,7 @@
 {
     'name': "modulo_upopet",
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+    'summary': """Gestion del modulo UPOPET""",
 
     'description': """
         Long description of module's purpose
@@ -27,6 +25,11 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'views/respuesta_view.xml',
+        'views/pregunta_view.xml',
+        'views/categoriaPregunta_view.xml',
+        'views/tipoEvento_view.xml',
+        'views/menu.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
