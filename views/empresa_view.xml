@@ -4,16 +4,16 @@
     <field name="arch" type="xml">
         <form string="Empresa">
             <sheet>
-                <group>
-                    <field name="name" />
+                <group> 
+                    <field name="name"/> 
                     <field name="nombreEmpresa" />
                 </group>
                 <notebook>
                     <page name="eventos" string="Eventos">
-                        <field name="id_evento" />
+                        <field name="id_evento widget="many2many" options="{'no_create': True}" />
                     </page>
                     <page name="seguros" string="Seguros">
-                        <field name="ids_seguro" widget="one2many" />
+                        <field name="ids_seguro" widget="many2many" options="{'no_create': True}/>
                     </page>
                 </notebook>
             </sheet>
