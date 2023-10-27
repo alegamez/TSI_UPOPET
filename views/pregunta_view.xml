@@ -49,10 +49,11 @@
           <filter name="group_by_pregunta" string="Pregunta" context="{'group_by':'id_categoriaPregunta'}" />
         </group>
       </search>
+      <search>
+            <field name="id_categoriaPregunta" string="Categoría" filter_domain="[]" domain="[('id_categoriaPregunta', '!=', False)]"/>
+      </search>
     </field>
   </record>
-
-
 
 
   <record id="pregunta_pivot_view" model="ir.ui.view">
