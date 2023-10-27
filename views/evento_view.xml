@@ -33,9 +33,16 @@
             <field name="id_tipo_evento" />
             <field name="fecha" />
             <field name="url" />
+            <!-- Otros campos generales -->
         </tree>
+        <!--Permito al usuario filtrar los eventos por tipo-->
+        <filter string="Curso" domain="[('id_tipo_evento', '=', 'curso')]" name="filter_curso" />
+        <filter string="Recurso Educativo" domain="[('id_tipo_evento', '=', 'recurso educativo')]" name="filter_recurso_educativo" />
+        <filter string="Encuentro" domain="[('id_tipo_evento', '=', 'encuentro')]" name="filter_encuentro" />
     </field>
 </record>
+
+
 
 <record id="upopet_evento_list_action" model="ir.actions.act_window">
     <field name="name">Eventos</field>
