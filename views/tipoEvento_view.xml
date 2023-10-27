@@ -3,7 +3,7 @@
     <field name="name">TSI_UPOPET.tipoEvento.form</field>
     <field name="model">TSI_UPOPET.tipoEvento</field>
     <field name="arch" type="xml">
-      <form string="tipoEvento">
+      <form string="Tipo de Evento">
         <sheet layout="auto">
           <group>
             <field name="name" />
@@ -15,10 +15,19 @@
               </tree>
             </field>
           </group>
+          <notebook>
+                    <page string="Cursos">
+                    </page>
+                    <page string="Encuentros">
+                    </page>
+                    <page string="Recursos Educativos">
+                    </page>
+          </notebook>
         </sheet>
       </form>
     </field>
   </record>
+
 
   <record id="TSI_UPOPET_tree_view" model="ir.ui.view">
     <field name="name">TSI_UPOPET.tipoEvento.tree</field>
@@ -37,7 +46,6 @@
     <field name="model">TSI_UPOPET.tipoEvento</field>
     <field name="arch" type="xml">
       <search>
-        <filter name="search_tipoEvento" string="tipoEvento = *****" domain="[('capacity','>',10)]" />
         <separator orientation="vertical" />
         <group expand="0" string="Agrupar por...">
           <filter name="group_by_tipoEvento" string="tipoEvento" context="{'group_by':'id_tipoEvento'}" />

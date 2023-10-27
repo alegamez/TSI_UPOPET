@@ -37,18 +37,24 @@
       </tree>
     </field>
   </record>
-<!--
-  <record id="TSI_UPOPET_calendar_view" model="ir.ui.view">
-    <field name="name">TSI_UPOPET.pregunta.calendar</field>
+
+  <record id="TSI_UPOPET_class_search_view" model="ir.ui.view">
+    <field name="name">TSI_UPOPET.pregunta.search</field>
     <field name="model">TSI_UPOPET.pregunta</field>
     <field name="arch" type="xml">
-      <calendar string="Pregunta" color="activityType" date_start="start" date_stop="end" mode="month">
-        <field name="name" />
-        <field name="contenido" />
-      </calendar>
+      <search>
+        <filter name="search_pregunta" string="Respuestas a la pregunta" domain="[('id_categoriaPregunta', '=', 'Alimentación'), '|', ('ids_respuestas', '>', 1), ('ids_respuestas', '<', 5)]" />
+        <separator orientation="vertical" />
+        <group expand="0" string="Agrupar por...">
+          <filter name="group_by_pregunta" string="Pregunta" context="{'group_by':'id_categoriaPregunta'}" />
+        </group>
+      </search>
     </field>
   </record>
--->
+
+
+
+
   <record id="pregunta_pivot_view" model="ir.ui.view">
    <field name="name">TSI_UPOPET.pregunta.pivot</field>
    <field name="model">TSI_UPOPET.pregunta</field>
