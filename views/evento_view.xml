@@ -40,8 +40,33 @@
 <record id="upopet_evento_list_action" model="ir.actions.act_window">
     <field name="name">Eventos</field>
     <field name="res_model">upopet.evento</field>
-    <field name="view_mode">tree,form</field>
+    <field name="view_mode">tree,form,calendar</field>
+    <field name="search_view_id" ref="upopet.evento.filter" />
     <field name="help" type="html">
         <p class="o_view_nocontent_smiling_face">No se encontraron eventos.</p>
     </field>
 </record>
+
+<!--Calendario de eventos-->
+<record id="upopet_evento_calendar_view" model="ir.ui.view">
+    <field name="name">upopet.evento.calendar</field>
+    <field name="model">upopet.evento</field>
+    <field name="arch" type="xml">
+        <calendar string="Calendario de Eventos">
+            <date name="fecha" string="Fecha del Evento"/>
+        </calendar>
+    </field>
+</record>
+
+<!--Filtro para los eventos que ocurran despues de una fecha dada-->
+<record id="upopet_evento_filter_view" model="ir.ui.view">
+    <field name="name">upopet.evento.filter</field>
+    <field name="model">upopet.evento</field>
+    <field name="arch" type="xml">
+        <search string="Filtrar Eventos">
+            <field name="fecha" string="Fecha de inicio" filter_domain="[('fecha', '>=', self)]" />
+        </search>
+    </field>
+</record>
+
+
