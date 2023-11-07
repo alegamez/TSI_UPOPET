@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "modulo_upopet",
+    'name': "tsi_upopet",
 
     'summary': """Gestion del modulo UPOPET""",
 
@@ -22,17 +22,23 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
-        'views/respuesta_view.xml',
+        'security/security.xml',
+        'security/ir.model.access.csv',
+        #'views/views.xml',
+        #'views/templates.xml',
         'views/pregunta_view.xml',
-        'views/categoriaPregunta_view.xml',
-        'views/tipoEvento_view.xml',
+        'views/respuesta_view.xml',
+        'views/categoriapregunta_view.xml',
+        'views/tipoevento_view.xml',
+        'views/empresa_view.xml',
+        'views/evento_view.xml',
+        'views/seguro_view.xml',
         'views/menu.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
+        #'demo/demo.xml',
+        'demo/upopet.evento.csv',
     ],
+    'application': True,
 }
