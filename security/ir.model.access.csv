@@ -1,2 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_modulo_upopet_modulo_upopet,modulo_upopet.modulo_upopet,model_modulo_upopet_modulo_upopet,base.group_user,1,1,1,1
+pregunta_manager,pregunta_manager,model_upopet_pregunta,group_upopet_manager,1,1,1,1
+respuesta_manager,respuesta_manager,model_upopet_respuesta,group_upopet_manager,1,1,1,1
+categoriapregunta_manager,categoriapregunta_manager,model_upopet_categoriapregunta,group_upopet_manager,1,1,1,1
+tipoevento_manager,tipoevento_manager,model_upopet_tipoevento,group_upopet_manager,1,1,1,1
+evento_manager,evento_manager,model_upopet_evento,group_upopet_manager,1,1,1,1
+empresa_manager,empresa_manager,model_upopet_empresa,group_upopet_manager,1,1,1,1
+seguro_manager,seguro_manager,model_upopet_seguro,group_upopet_manager,1,1,1,1
