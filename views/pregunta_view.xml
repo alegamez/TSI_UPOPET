@@ -1,79 +1,74 @@
 <odoo>
-  <record id="TSI_UPOPET_pregunta_form_view" model="ir.ui.view">
-    <field name="name">TSI_UPOPET.pregunta.form</field>
-    <field name="model">TSI_UPOPET.pregunta</field>
+  <record id="upopet_pregunta_form_view" model="ir.ui.view">
+    <field name="name">upopet.pregunta.form</field>
+    <field name="model">upopet.pregunta</field>
     <field name="arch" type="xml">
       <form string="Pregunta">
         <sheet layout="auto">
           <group>
-            <field name="name" />
-            <field name="contenido" />
-            <field name="fechaPublicacion" />
-            <field name="id_usuario" widget="many2one"/>
-            <field name="id_categoriaPregunta" widget="many2one"/>
-            <field name="ids_respuesta">
-              <tree>
-                <field name="contenido" />
-                <field name="fechaPublicacion" />
-              </tree>
-            </field>
+              <field name="name" />
+              <field name="contenido" />
+              <field name="fechaPublicacion" />
+              <!--
+              <field name="id_usuario" widget="many2one"/>-->
+              <field name="categoriapregunta_id" widget="many2one"/>
           </group>
-        </sheet>
+        </sheet>     
       </form>
     </field>
   </record>
 
-  <record id="TSI_UPOPET_tree_view" model="ir.ui.view">
-    <field name="name">TSI_UPOPET.pregunta.tree</field>
-    <field name="model">TSI_UPOPET.pregunta</field>
+  <record id="upopet_pregunta_filter_view" model="ir.ui.view">
+    <field name="name">upopet.pregunta.tree</field>
+    <field name="model">upopet.pregunta</field>
     <field name="arch" type="xml">
       <tree string="tree_string">
         <field name="name" />
-            <field name="contenido" />
-            <field name="fechaPublicacion" />
-            <field name="id_usuario" widget="many2one"/>
-            <field name="id_categoriaPregunta" widget="many2one"/>
-            <field name="ids_respuesta">
+        <field name="contenido" />
+        <field name="fechaPublicacion" />
+        <!--
+        <field name="id_usuario" widget="many2one"/>
+        -->
+        <field name="categoriapregunta_id" widget="many2one"/>
+        <field name="respuesta_ids" widget="one2many"/>
+            
       </tree>
     </field>
   </record>
 
-  <record id="TSI_UPOPET_class_search_view" model="ir.ui.view">
-    <field name="name">TSI_UPOPET.pregunta.search</field>
-    <field name="model">TSI_UPOPET.pregunta</field>
+  <record id="upopet_pregunta_search_view" model="ir.ui.view">
+    <field name="name">upopet.pregunta.search</field>
+    <field name="model">upopet.pregunta</field>
     <field name="arch" type="xml">
       <search>
-        <filter name="search_pregunta" string="Respuestas a la pregunta" domain="[('id_categoriaPregunta', '=', 'Alimentación'), '|', ('ids_respuestas', '>', 1), ('ids_respuestas', '<', 5)]" />
-        <separator orientation="vertical" />
+       <!--<field name="contenido"/>-->
         <group expand="0" string="Agrupar por...">
-          <filter name="group_by_pregunta" string="Pregunta" context="{'group_by':'id_categoriaPregunta'}" />
+          <filter name="group_by_categoria" string="Pregunta por categoria" context="{'group_by':'categoriapregunta_id'}" />
         </group>
-      </search>
-      <search>
-            <field name="id_categoriaPregunta" string="Categoría" filter_domain="[]" domain="[('id_categoriaPregunta', '!=', False)]"/>
+        
       </search>
     </field>
   </record>
 
-
-  <record id="pregunta_pivot_view" model="ir.ui.view">
-   <field name="name">TSI_UPOPET.pregunta.pivot</field>
-   <field name="model">TSI_UPOPET.pregunta</field>
-   <field name="arch" type="xml">
-       <pivot string="Pregunta">
-           <field name="contenido" type="row"/>
-           <field name="ids_respuesta" type="row"/>
-       </pivot>
-   </field>
-</record>
+  <record id="pregunta_graph_view" model="ir.ui.view">
+    <field name="name">upopet.pregunta.graph</field>
+    <field name="model">upopet.pregunta</field>
+    <field name="arch" type="xml">
+        <graph string="Pregunta" type="bar">
+            <field name="categoriapregunta_id" widget="many2one"/>
+            <field name="name" type="measure" string="Numero de respuestas" operator="count"/>
+        </graph>
+    </field>
+  </record>
 
   <record id="pregunta_list_action" model="ir.actions.act_window">
     <field name="name">Pregunta</field>
-    <field name="res_model">TSI_UPOPET.pregunta</field>   
-    <field name="search_view_id" ref="TSI_UPOPET_class_search_view"/> 
-    <field name="view_mode">tree,form,pivot</field>    
+    <field name="res_model">upopet.pregunta</field>   
+    <field name="search_view_id" ref="upopet_pregunta_search_view"/>
+    <field name="view_mode">tree,form,graph</field>    
     <field name="help" type="html">
       <p class="o_view_nocontent_smiling_face">Crea la primera pregunta</p>
     </field>    
   </record>
+  
 </odoo>
