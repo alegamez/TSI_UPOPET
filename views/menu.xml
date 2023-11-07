@@ -6,10 +6,10 @@
   <menuitem name="TSI_UPOPET" id="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" parent="main_TSI_UPOPET_menu"/>
 
   <!-- actions -->
-  <menuitem name="pregunta" id="pregunta_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="pregunta_list_action"/>
-  <menuitem name="respuesta" id="respuesta_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="respuesta_list_action"/>
-  <menuitem name="categoriaPregunta" id="categoriaPregunta_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="categoriaPregunta_list_action"/>
-  <menuitem name="tipoEvento" id="tipoEvento_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="tipoEvento_list_action"/>
+ <menuitem name="Pregunta" id="pregunta_menu" parent="upopet_menu" groups="group_upopet_manager" action="pregunta_list_action"/> 
+  <menuitem name="Respuesta" id="respuesta_menu" parent="upopet_menu" groups="group_upopet_manager" action="respuesta_list_action"/>
+  <menuitem name="Categoria Pregunta" id="categoriapregunta_menu" parent="upopet_menu" groups="group_upopet_manager" action="categoriapregunta_list_action"/>
+  <menuitem name="Tipo Evento" id="tipoevento_menu" parent="upopet_menu" groups="group_upopet_manager" action="tipoevento_list_action"/>
   <menuitem name="especie" id="especie_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="especie_list_action"/>
   <menuitem name="evento" id="evento_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="evento_list_action"/>
   <menuitem name="seguro" id="seguro_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="seguro_list_action"/>
@@ -18,6 +18,6 @@
   <menuitem name="matricula" id="matricula_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="matricula_list_action"/>
   <menuitem name="tipo" id="tipo_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="tipo_list_action"/>
   <menuitem name="pago" id="pago_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="pago_list_action"/>
-  <menuitem name="metodo_pago" id="metodo_pago_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="metodo_pago_list_action"/>
+  <menuitem name="metodopago" id="metodopago_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="metodopago_list_action"/>
   <menuitem name="empresa" id="empresa_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="empresa_list_action"/>
 </odoo>
