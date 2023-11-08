@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
-
-from . import evento
-from . import noticia
-from . import seguro
-from . import respuesta
 from . import pregunta
-from . import categoriaPregunta
-from . import valoracion 
-from . import tipoEvento
+from . import respuesta
+from . import categoriapregunta
+from . import tipoevento
+from . import evento
+from . import empresa
+from . import seguro
