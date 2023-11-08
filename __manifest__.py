@@ -25,8 +25,16 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'security/security.xml',
+        'security/ir.model.access.csv',
+        'views/pregunta_view.xml',
+        'views/respuesta_view.xml',
+        'views/categoriapregunta_view.xml',
+        'views/tipoevento_view.xml',
+        'views/empresa_view.xml',
+        'views/evento_view.xml',
+        'views/seguro_view.xml',
+        'views/menu.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
