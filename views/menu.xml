@@ -1,0 +1,18 @@
+<odoo>
+
+ <!--    Top menu item --> 
+  <menuitem name="upopet" id="main_upopet_menu" groups="group_upopet_manager"/>
+
+ <!--   menu categories --> 
+  <menuitem name="upopet" id="upopet_menu" groups="group_upopet_manager" parent="main_upopet_menu"/>
+
+<!-- actions --> 
+  <menuitem name="Pregunta" id="pregunta_menu" parent="upopet_menu" groups="group_upopet_manager" action="pregunta_list_action"/> 
+  <menuitem name="Respuesta" id="respuesta_menu" parent="upopet_menu" groups="group_upopet_manager" action="respuesta_list_action"/>
+  <menuitem name="Categoria Pregunta" id="categoriapregunta_menu" parent="upopet_menu" groups="group_upopet_manager" action="categoriapregunta_list_action"/>
+  <menuitem name="Tipo Evento" id="tipoevento_menu" parent="upopet_menu" groups="group_upopet_manager" action="tipoevento_list_action"/>
+  <menuitem name="Evento" id="evento_menu" parent="upopet_menu" groups="group_upopet_manager" action="evento_list_action"/>
+  <menuitem name="Seguro" id="seguro_menu" parent="upopet_menu" groups="group_upopet_manager" action="seguro_list_action"/>
+  <menuitem name="Empresa" id="empresa_menu" parent="upopet_menu" groups="group_upopet_manager" action="empresa_list_action"/>
+ 
+</odoo>
