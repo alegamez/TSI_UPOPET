@@ -1,4 +1,4 @@
-class Seguro(models.Model):
+class seguro(models.Model):
     _name = "upopet.seguro"
     _descripcion = 'Modelo para los distintos tipos de seguros'
     
@@ -8,5 +8,5 @@ class Seguro(models.Model):
     categoria = fields.Char(string="Cateogria", required=False, size=20, help="Categoria del seguro")
     duracion = fields.Integer(string="Duracion", size=9, required=True, help="Duración del seguro")
     
-    id_especie = fields.many2one("upopet.especie", "Seguro tiene la especie")
-    id_empresa= fields.many2one("upopet.empresa", "Empresa del seguro")
+    especie_id = fields.many2one("upopet.especie", "Seguro tiene la especie")
+    empresa_id= fields.Many2one("upopet.empresa", "Empresa del seguro")

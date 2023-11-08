@@ -1,59 +1,64 @@
-<record id="upopet_seguro_form_view" model="ir.ui.view">
-    <field name="name">upopet.seguro.form</field>
-    <field name="model">upopet.seguro</field>
-    <field name="arch" type="xml">
-        <form string="Seguro">
-            <sheet>
-                <group>
-                    <field name="name" />
-                    <field name="precio" />
-                    <field name="cobertura" />
-                    <field name="categoria" />
-                    <field name="duracion" />
-                </group>
-                <group>
-                    <field name="id_especie" />
-                    <field name="id_empresa" />
-                </group>
-            </sheet>
-        </form>
-    </field>
-</record>
+<odoo>
+    <record id="upopet_seguro_form_view" model="ir.ui.view">
+        <field name="name">upopet.seguro.form</field>
+        <field name="model">upopet.seguro</field>
+        <field name="arch" type="xml">
+            <form string="Seguro">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="precio" />
+                        <field name="cobertura" />
+                        <field name="categoria" />
+                        <field name="duracion" />
+                    </group>
+                    
+                    <group>
+                        <field name="especie_id" />
+                        <field name="empresa_id" />
+                    </group>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-<record id="upopet_seguro_tree_view" model="ir.ui.view">
-    <field name="name">upopet.seguro.tree</field>
-    <field name="model">upopet.seguro</field>
-    <field name="arch" type="xml">
-        <tree string="Seguros">
-            <field name="name" />
-            <field name="precio" />
-            <field name="cobertura" />
-            <field name="categoria" />
-            <field name="duracion" />
-            <field name="id_especie" />
-            <field name="id_empresa" />
-        </tree>
-    </field>
-</record>
+    <record id="upopet_seguro_tree_view" model="ir.ui.view">
+        <field name="name">upopet.seguro.tree</field>
+        <field name="model">upopet.seguro</field>
+        <field name="arch" type="xml">
+            <tree string="Seguros">
+                <field name="name" />
+                <field name="precio" />
+                <field name="cobertura" />
+                <field name="categoria" />
+                <field name="duracion" />
+                <field name="especie_id" />
+                <field name="empresa_id" />
+                
+            </tree>
+        </field>
+    </record>
 
-<record id="upopet_seguro_list_action" model="ir.actions.act_window">
-    <field name="name">Seguros</field>
-    <field name="res_model">upopet.seguro</field>
-    <field name="view_mode">tree,form</field>
-    <field name="search_view_id" ref="upopet.seguro.filter" />
-    <field name="help" type="html">
-        <p class="o_view_nocontent_smiling_face">No se encontraron seguros.</p>
-    </field>
-</record>
+    <!--Filtrar por categoria-->
+    <record id="upopet_seguro_filter_view" model="ir.ui.view">
+        <field name="name">upopet.seguro.filter</field>
+        <field name="model">upopet.seguro</field>
+        <field name="arch" type="xml">
+            <search string="Filtrar Seguros">
+                <field name="categoria" string="Categoría" filter_domain="[('categoria', '=', self)]" />
+            </search>
+        </field>
+    </record>
 
-<!--Filtrar por categoria-->
-<record id="upopet_seguro_filter_view" model="ir.ui.view">
-    <field name="name">upopet.seguro.filter</field>
-    <field name="model">upopet.seguro</field>
-    <field name="arch" type="xml">
-        <search string="Filtrar Seguros">
-            <field name="categoria" string="Categoría" filter_domain="[('categoria', '=', self)]" />
-        </search>
-    </field>
-</record>
+    <record id="seguro_list_action" model="ir.actions.act_window">
+        <field name="name">Seguros</field>
+        <field name="res_model">upopet.seguro</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="upopet_seguro_filter_view" />
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No se encontraron seguros.</p>
+        </field>
+    </record>
+</odoo>
 

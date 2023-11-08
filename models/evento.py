@@ -2,7 +2,7 @@
 
 from odoo import models, fields, api
 
-class Evento(models.Model):
+class evento(models.Model):
     _name = 'upopet.evento'
     _descripcion = 'Modelo para los distintos tipos de eventos'
     
@@ -12,7 +12,7 @@ class Evento(models.Model):
     descripcion = fields.Char(string="Descripcion", required=True, size=50, help="Descripción del evento")
     url = fields.Char(string="URL", required=True, size=50, help="Enlace al evento")
     
-    id_tipo_evento = fields.many2one("upopet.tipoEvento", string="Evento del tipo", required=True)
-    id_especies = fields.many2many("upopet.especie","Especie")
-    id_empresa = fields.many2one("upopet.empresa",string="id_evento", required=True)
+    tipoevento_id = fields.Many2one("upopet.tipoevento", string="Evento del tipo", required=True)
+    especie_ids = fields.many2many("upopet.especie","Especie")
+    empresa_id = fields.Many2one("upopet.empresa",string="Evento")
 

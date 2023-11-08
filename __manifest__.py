@@ -22,10 +22,7 @@
 
     # always loaded
     'data': [
-        'security/security.xml',
-        'security/ir.model.access.csv',
-        #'views/views.xml',
-        #'views/templates.xml',
+
         'views/pregunta_view.xml',
         'views/respuesta_view.xml',
         'views/categoriapregunta_view.xml',
