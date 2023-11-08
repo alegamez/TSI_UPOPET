@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "modulo_upopet",
+    'name': "tsi_upopet",
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+    'summary': """Gestion del modulo UPOPET""",
 
     'description': """
         Long description of module's purpose
@@ -24,9 +22,7 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'security/security.xml',
-        'security/ir.model.access.csv',
+
         'views/pregunta_view.xml',
         'views/respuesta_view.xml',
         'views/categoriapregunta_view.xml',
@@ -38,6 +34,8 @@
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
+        #'demo/demo.xml',
+        'demo/upopet.evento.csv',
     ],
+    'application': True,
 }

@@ -1,0 +1,53 @@
+<odoo>
+  <record id="upopet_categoriapregunta_form_view" model="ir.ui.view">
+    <field name="name">upopet.categoriapregunta.form</field>
+    <field name="model">upopet.categoriapregunta</field>
+    <field name="arch" type="xml">
+      <form string="categoriapregunta">
+        <sheet layout="auto">
+          <group>
+            <field name="name" />
+            <!--<field name="nombre" />-->
+            <field name="descripcion" />
+            <field name="pregunta_ids" widget="one2many"/>
+          </group>
+          <notebook>
+            <page string="Alimentación">
+            </page>
+            <page name="habitat" string="Habitat">
+            </page>
+            <page name="adopcion" string="Adopcion">
+            </page>
+            <page name="deporte" string="Deporte">
+            </page>
+            <page name = "cuidado" string="Cuidados">
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upopet_categoriapregunta_filter_view" model="ir.ui.view">
+    <field name="name">upopet.categoriapregunta.tree</field>
+    <field name="model">upopet.categoriapregunta</field>
+    <field name="arch" type="xml">
+      <tree string="tree_string">
+        <field name="name" />
+        <!--<field name="nombre" />-->
+        <field name="descripcion" />
+        <field name="pregunta_ids"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="categoriapregunta_list_action" model="ir.actions.act_window">
+    <field name="name">Categoria Pregunta</field>
+    <field name="res_model">upopet.categoriapregunta</field>   
+    <!--<field name="search_view_id" ref="upopet_class_search_view"/> -->
+    <field name="view_mode">tree,form</field>    
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Crea la primera categoria</p>
+    </field>    
+  </record>
+</odoo>
