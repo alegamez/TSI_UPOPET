@@ -24,11 +24,11 @@
   </record>
 
 
-  <record id="upopet_tipoevento_filter_view" model="ir.ui.view">
+  <record id="upopet_tipoevento_tree_view" model="ir.ui.view">
     <field name="name">upopet.tipoevento.tree</field>
     <field name="model">upopet.tipoevento</field>
     <field name="arch" type="xml">
-      <tree string="tree_string">
+      <tree string="Tipo De Evento">
         <field name="name" />
             <field name="nombre" />
             <field name="evento_ids" />
@@ -36,7 +36,7 @@
     </field>
   </record>
 
-  <record id="upopet_class_search_view" model="ir.ui.view">
+  <record id="upopet_tipoevento_search_view" model="ir.ui.view">
     <field name="name">upopet.tipoevento.search</field>
     <field name="model">upopet.tipoevento</field>
     <field name="arch" type="xml">
@@ -50,9 +50,9 @@
   </record>
 
   <record id="tipoevento_list_action" model="ir.actions.act_window">
-    <field name="name">tipoevento</field>
+    <field name="name">Tipo Evento</field>
     <field name="res_model">upopet.tipoevento</field>   
-    <field name="search_view_id" ref="upopet_class_search_view"/> 
+    <field name="search_view_id" ref="upopet_tipoevento_search_view"/> 
     <field name="view_mode">tree,form</field>    
     <field name="help" type="html">
       <p class="o_view_nocontent_smiling_face">Crea el primer tipo de evento</p>
