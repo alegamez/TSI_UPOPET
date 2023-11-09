@@ -1,25 +1,23 @@
 <odoo>
 
-    <!-- Top menu item -->
-  <menuitem name="TSI_UPOPET" id="main_TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager"/>
+ <!--    Top menu item --> 
+  <menuitem name="upopet" id="main_upopet_menu" groups="group_upopet_manager"/>
 
-  <!-- menu categories -->
-  <menuitem name="TSI_UPOPET" id="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" parent="main_TSI_UPOPET_menu"/>
+ <!--   menu categories --> 
+  <menuitem name="upopet" id="upopet_menu" groups="group_upopet_manager" parent="main_upopet_menu"/>
 
-  <!-- actions -->
- <menuitem name="Pregunta" id="pregunta_menu" parent="upopet_menu" groups="group_upopet_manager" action="pregunta_list_action"/> 
+<!-- actions --> 
+  <menuitem name="Pregunta" id="pregunta_menu" parent="upopet_menu" groups="group_upopet_manager" action="pregunta_list_action"/> 
   <menuitem name="Respuesta" id="respuesta_menu" parent="upopet_menu" groups="group_upopet_manager" action="respuesta_list_action"/>
   <menuitem name="Categoria Pregunta" id="categoriapregunta_menu" parent="upopet_menu" groups="group_upopet_manager" action="categoriapregunta_list_action"/>
   <menuitem name="Tipo Evento" id="tipoevento_menu" parent="upopet_menu" groups="group_upopet_manager" action="tipoevento_list_action"/>
-  <menuitem name="especie" id="especie_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="especie_list_action"/>
-  <menuitem name="evento" id="evento_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="evento_list_action"/>
-  <menuitem name="seguro" id="seguro_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="seguro_list_action"/>
-  <menuitem name="usuario" id="usuario_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="usuario_list_action"/>
-  <menuitem name="valoracion" id="valoracion_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="valoracion_list_action"/>
-  <menuitem name="matricula" id="matricula_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="matricula_list_action"/>
-  <menuitem name="tipo" id="tipo_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="tipo_list_action"/>
-  <menuitem name="pago" id="pago_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="pago_list_action"/>
-  <menuitem name="metodopago" id="metodopago_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="metodopago_list_action"/>
-  <menuitem name="empresa" id="empresa_menu" parent="TSI_UPOPET_menu" groups="group_TSI_UPOPET_manager" action="empresa_list_action"/>
+  <menuitem name="Evento" id="evento_menu" parent="upopet_menu" groups="group_upopet_manager" action="evento_list_action"/> 
+  <menuitem name="Empresa" id="empresa_menu" parent="upopet_menu" groups="group_upopet_manager" action="empresa_list_action"/>
+  <menuitem name="Seguro" id="seguro_menu" parent="upopet_menu" groups="group_upopet_manager" action="seguro_list_action"/>
+  <menuitem name="Especie" id="especie_menu" parent="upopet_menu" groups="group_upopet_manager" action="especie_list_action"/>
+  <menuitem name="Metodo Pago" id="metodopago_menu" parent="upopet_menu" groups="group_upopet_manager" action="metodopago_list_action"/>
+  <menuitem name="Pago" id="pago_menu" parent="upopet_menu" groups="group_upopet_manager" action="pago_list_action"/>
+  <menuitem name="Tipo" id="tipo_menu" parent="upopet_menu" groups="group_upopet_manager" action="tipo_list_action"/>
+  
 
 </odoo>

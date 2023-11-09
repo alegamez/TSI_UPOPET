@@ -6,3 +6,7 @@ tipoevento_manager,tipoevento_manager,model_upopet_tipoevento,group_upopet_manag
 evento_manager,evento_manager,model_upopet_evento,group_upopet_manager,1,1,1,1
 empresa_manager,empresa_manager,model_upopet_empresa,group_upopet_manager,1,1,1,1
 seguro_manager,seguro_manager,model_upopet_seguro,group_upopet_manager,1,1,1,1
+especie_manager,especie_manager,model_upopet_especie,group_upopet_manager,1,1,1,1
+pago_manager,pago_manager,model_upopet_pago,group_upopet_manager,1,1,1,1
+metodopago_manager,metodopago_manager,model_upopet_metodopago,group_upopet_manager,1,1,1,1
+tipo_manager,tipo_manager,model_upopet_tipo,group_upopet_manager,1,1,1,1

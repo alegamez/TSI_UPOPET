@@ -2,9 +2,9 @@
   <data>
     <!-- explicit list view definition -->
 <!--
-    <record model="ir.ui.view" id="modulo_upopet.list">
-      <field name="name">modulo_upopet list</field>
-      <field name="model">modulo_upopet.modulo_upopet</field>
+    <record model="ir.ui.view" id="tsi_upopet.list">
+      <field name="name">tsi_upopet list</field>
+      <field name="model">tsi_upopet.tsi_upopet</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -17,18 +17,18 @@
 
     <!-- actions opening views on models -->
 <!--
-    <record model="ir.actions.act_window" id="modulo_upopet.action_window">
-      <field name="name">modulo_upopet window</field>
-      <field name="res_model">modulo_upopet.modulo_upopet</field>
+    <record model="ir.actions.act_window" id="tsi_upopet.action_window">
+      <field name="name">tsi_upopet window</field>
+      <field name="res_model">tsi_upopet.tsi_upopet</field>
       <field name="view_mode">tree,form</field>
     </record>
 -->
 
     <!-- server action to the one above -->
 <!--
-    <record model="ir.actions.server" id="modulo_upopet.action_server">
-      <field name="name">modulo_upopet server</field>
-      <field name="model_id" ref="model_modulo_upopet_modulo_upopet"/>
+    <record model="ir.actions.server" id="tsi_upopet.action_server">
+      <field name="name">tsi_upopet server</field>
+      <field name="model_id" ref="model_tsi_upopet_tsi_upopet"/>
       <field name="state">code</field>
       <field name="code">
         action = {
@@ -42,19 +42,19 @@
 
     <!-- Top menu item -->
 <!--
-    <menuitem name="modulo_upopet" id="modulo_upopet.menu_root"/>
+    <menuitem name="tsi_upopet" id="tsi_upopet.menu_root"/>
 -->
     <!-- menu categories -->
 <!--
-    <menuitem name="Menu 1" id="modulo_upopet.menu_1" parent="modulo_upopet.menu_root"/>
-    <menuitem name="Menu 2" id="modulo_upopet.menu_2" parent="modulo_upopet.menu_root"/>
+    <menuitem name="Menu 1" id="tsi_upopet.menu_1" parent="tsi_upopet.menu_root"/>
+    <menuitem name="Menu 2" id="tsi_upopet.menu_2" parent="tsi_upopet.menu_root"/>
 -->
     <!-- actions -->
 <!--
-    <menuitem name="List" id="modulo_upopet.menu_1_list" parent="modulo_upopet.menu_1"
-              action="modulo_upopet.action_window"/>
-    <menuitem name="Server to list" id="modulo_upopet" parent="modulo_upopet.menu_2"
-              action="modulo_upopet.action_server"/>
+    <menuitem name="List" id="tsi_upopet.menu_1_list" parent="tsi_upopet.menu_1"
+              action="tsi_upopet.action_window"/>
+    <menuitem name="Server to list" id="tsi_upopet" parent="tsi_upopet.menu_2"
+              action="tsi_upopet.action_server"/>
 -->
   </data>
 </odoo>
