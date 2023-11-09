@@ -21,9 +21,11 @@
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
+    
 
     # always loaded
     'data': [
+<<<<<<< Updated upstream
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
@@ -31,5 +33,29 @@
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
+=======
+        'security/security.xml',
+        'security/ir.model.access.csv',
+        #'views/views.xml',
+        #'views/templates.xml',
+        'views/pregunta_view.xml',
+        'views/respuesta_view.xml',
+        'views/categoriapregunta_view.xml',
+        'views/tipoevento_view.xml',
+        'views/empresa_view.xml',
+        'views/evento_view.xml',
+        'views/seguro_view.xml',
+        'views/especie_view.xml',
+        'views/pago_view.xml',
+        'views/metodopago_view.xml',
+        'views/tipo_view.xml',
+        'views/menu.xml',
+
+    ],
+    # only loaded in demonstration mode
+    'demo': [
+        #'demo/demo.xml',
+        'demo/upopet.empresa.xml',
+>>>>>>> Stashed changes
     ],
 }
