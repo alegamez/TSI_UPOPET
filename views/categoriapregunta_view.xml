@@ -7,12 +7,12 @@
         <sheet layout="auto">
           <group>
             <field name="name" />
-            <!--<field name="nombre" />-->
+            <field name="nombre" />
             <field name="descripcion" />
             <field name="pregunta_ids" widget="one2many"/>
           </group>
           <notebook>
-            <page string="Alimentación">
+            <page name="alimentacion" string="Alimentación">
             </page>
             <page name="habitat" string="Habitat">
             </page>
@@ -28,24 +28,34 @@
     </field>
   </record>
 
-  <record id="upopet_categoriapregunta_filter_view" model="ir.ui.view">
+  <record id="upopet_categoriapregunta_tree_view" model="ir.ui.view">
     <field name="name">upopet.categoriapregunta.tree</field>
     <field name="model">upopet.categoriapregunta</field>
     <field name="arch" type="xml">
       <tree string="tree_string">
         <field name="name" />
-        <!--<field name="nombre" />-->
+        <field name="nombre" />
         <field name="descripcion" />
         <field name="pregunta_ids"/>
       </tree>
     </field>
   </record>
 
+    <record id="categoriapregunta_graph_view" model="ir.ui.view">
+    <field name="name">upopet.categoriapregunta.graph</field>
+    <field name="model">upopet.categoriapregunta</field>
+    <field name="arch" type="xml">
+        <graph string="Preguntas en cada categoria" type="bar">
+            <field name="name" widget="many2one"/>
+            <field name="pregunta_ids" string="Numero de preguntas" operator="count"/>
+        </graph>
+    </field>
+  </record>
+
   <record id="categoriapregunta_list_action" model="ir.actions.act_window">
     <field name="name">Categoria Pregunta</field>
     <field name="res_model">upopet.categoriapregunta</field>   
-    <!--<field name="search_view_id" ref="upopet_class_search_view"/> -->
-    <field name="view_mode">tree,form</field>    
+    <field name="view_mode">tree,form,graph</field>    
     <field name="help" type="html">
       <p class="o_view_nocontent_smiling_face">Crea la primera categoria</p>
     </field>    
