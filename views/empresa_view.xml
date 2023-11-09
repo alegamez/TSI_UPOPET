@@ -34,7 +34,11 @@
     </record>
 
     <!-- Busquedas personalizadas -->
-
+    <!-- Busquedas por los distintos nombres de las empresas 
+    <search string="Buscar Empresas">
+        <field name="name" string="Nombre de la Empresa" />
+    </search>
+-->
     <!-- Busquedas por empresas segun su tipo: evento o seguro -->
     <record id="upopet_empresa_filter_view" model="ir.ui.view">
         <field name="name">upopet.empresa.filter</field>
@@ -58,4 +62,3 @@
     </record>
 
 </odoo>
-
