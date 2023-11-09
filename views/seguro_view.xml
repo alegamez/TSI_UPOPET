@@ -14,8 +14,8 @@
                     </group>
                     
                     <group>
-                        <field name="especie_id" />
-                        <field name="empresa_id" />
+                        <field name="especie_id" widget="many2one" options="{'no_create': True}" />
+                        <field name="empresa_id" widget="many2one" options="{'no_create': True}"/>
                     </group>
                     
                 </sheet>
@@ -61,4 +61,3 @@
         </field>
     </record>
 </odoo>
-
