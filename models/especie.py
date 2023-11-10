@@ -12,5 +12,6 @@ class Especie(models.Model):
     nombreCientifico = fields.Char(string="Nombre Científico", required=True, size=100, help="Nombre científico de la especie")
 
     tipoespecie_id = fields.Many2one("upopet.tipo", string="Tipo de animal")
+    banner_image = fields.Binary("Banner Image")
 
     
