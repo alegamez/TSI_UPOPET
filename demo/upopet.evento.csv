@@ -1,0 +1,5 @@
+id,name,nombre,fecha,descripcion,url,tipoevento_id/id,especie_ids/id,empresa_id/id
+evento1,1,Curso de Cuidado de Perros,2023-11-20 10:00:00,Aprende a cuidar y entrenar a tus perros de manera efectiva,https://www.ejemplo.com/curso-cuidado-perros,tipoevento1,especie1,empresa1
+evento2,2,Curso  de Nutrición para Gatos,2023-12-05 15:30:00,Descubre como alimentar a tus gatos de manera equilibrada y saludable, https://www.ejemplo.com/curso-nutricion-gatos,tipoevento1,especie2,empresa2
+evento3,3,Recurso Educativo de Cuidado de Aves,2024-01-12 16:00:00,Aprende a cuidar y entrenar a tus perros de manera efectiva,https://www.ejemplo.com/curso-cuidado-perros,tipoevento2,especie3,empresa3
+evento4,4,Encuentro  de Entretenimiento de Liebres,2023-12-31 19:30:00,Acude a un encuentro en el que se entrtendran liebres",https://www.ejemplo.com/curso-,tipoevento3,especie4,empresa3

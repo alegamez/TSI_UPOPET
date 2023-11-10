@@ -1,0 +1,5 @@
+id,name,nombre
+metodopago1,1,Tarjeta de crédito
+metodopago2,2,PayPal
+metodopago3,3,Transferencia bancaria
+metodopago4,4,Efectivo
