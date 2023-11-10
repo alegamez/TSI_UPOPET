@@ -1,53 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+<!--
+          <record id="object0" model="tsi_upopet.tsi_upopet">
+            <field name="name">Object 0</field>
+            <field name="value">0</field>
+          </record>
 
-        <!-- Registros de Tipo -->
-        <record id="tiporeptil" model="upopet.tipo">
-            <field name="name">1</field>
-            <field name="nombre">Reptil</field>
-        </record>
+          <record id="object1" model="tsi_upopet.tsi_upopet">
+            <field name="name">Object 1</field>
+            <field name="value">10</field>
+          </record>
 
-        <record id="tipomamifero" model="upopet.tipo">
-            <field name="name">2</field>
-            <field name="nombre">Mamífero</field>
-        </record>
+          <record id="object2" model="tsi_upopet.tsi_upopet">
+            <field name="name">Object 2</field>
+            <field name="value">20</field>
+          </record>
 
-        <record id="tipoave" model="upopet.tipo">
-            <field name="name">3</field>
-            <field name="nombre">Ave</field>
-        </record>
+          <record id="object3" model="tsi_upopet.tsi_upopet">
+            <field name="name">Object 3</field>
+            <field name="value">30</field>
+          </record>
 
-        <!-- Registros de Especie -->
-        <record id="especie3" model="upopet.especie">
-            <field name="name">1</field>
-            <field name="nombre">Iguana</field>
-            <field name="tamanyo">30</field>
-            <field name="peso">2</field>
-            <field name="estado">permitido</field>
-            <field name="nombreCientifico">Iguana vulgaris</field>
-            <field name="tipoespecie_id" ref="tiporeptil"></field>
-        </record>
-
-        <record id="especie2" model="upopet.especie">
-            <field name="name">2</field>
-            <field name="nombre">Elefante</field>
-            <field name="tamanyo">300</field>
-            <field name="peso">5000</field>
-            <field name="estado">permitido</field>
-            <field name="nombreCientifico">Loxodonta africana</field>
-            <field name="tipoespecie_id" ref="tipomamifero"></field>
-        </record>
-
-        <record id="especie3" model="upopet.especie">
-            <field name="name">3</field>
-            <field name="nombre">Águila</field>
-            <field name="tamanyo">70</field>
-            <field name="peso">5</field>
-            <field name="estado">permitido</field>
-            <field name="nombreCientifico">Aquila chrysaetos</field>
-            <field name="tipoespecie_id" ref="tipoave"></field>
-        </record>
-
+          <record id="object4" model="tsi_upopet.tsi_upopet">
+            <field name="name">Object 4</field>
+            <field name="value">40</field>
+          </record>
+-->
     </data>
 </odoo>

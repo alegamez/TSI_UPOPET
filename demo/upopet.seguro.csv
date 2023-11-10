@@ -1,0 +1,5 @@
+id,name,precio,cobertura,categoria,duracion,especie_id/id,empresa_id/id
+seguro1,1,100.000,Cobertura completa para perros,Perros,12,especie1,empresa1
+seguro2,2,200.000,Cobertura completa para gatos,Gatos,12,especie2,empresa2
+seguro3,3,150.000,Cobertura completa para reptiles peligrosos,Reptiles,12,especie3,empresa3
+seguro4,4,250.000,Cobertura completa para felinos,Felinos,6,especie4,empresa4
