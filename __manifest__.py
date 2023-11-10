@@ -44,8 +44,9 @@
     # only loaded in demonstration mode
     'demo': [
         #'demo/demo.xml',
-        'demo/upopet.empresa.xml',
+        'demo/upopet.tipo.csv',
+        'demo/upopet.especie.csv',
+        
     ],
     'application': True,
 }
-
