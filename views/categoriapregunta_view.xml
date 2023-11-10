@@ -7,12 +7,11 @@
         <sheet layout="auto">
           <group>
             <field name="name" />
-            <!--<field name="nombre" />-->
             <field name="descripcion" />
             <field name="pregunta_ids" widget="one2many"/>
           </group>
           <notebook>
-            <page string="Alimentación">
+            <page name="alimentacion" string="Alimentacion" >
             </page>
             <page name="habitat" string="Habitat">
             </page>
@@ -34,7 +33,6 @@
     <field name="arch" type="xml">
       <tree string="tree_string">
         <field name="name" />
-        <!--<field name="nombre" />-->
         <field name="descripcion" />
         <field name="pregunta_ids"/>
       </tree>

@@ -14,7 +14,9 @@
                     </group>
                     
                     <group>
+                    <!--
                         <field name="especie_id" />
+                        -->
                         <field name="empresa_id" />
                     </group>
                     
@@ -33,7 +35,9 @@
                 <field name="cobertura" />
                 <field name="categoria" />
                 <field name="duracion" />
+                <!--
                 <field name="especie_id" />
+                -->
                 <field name="empresa_id" />
                 
             </tree>
@@ -61,4 +65,3 @@
         </field>
     </record>
 </odoo>
-

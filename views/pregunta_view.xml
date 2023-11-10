@@ -10,7 +10,8 @@
               <field name="contenido" />
               <field name="fechaPublicacion" />
               <!--
-              <field name="id_usuario" widget="many2one"/>-->
+              <field name="usuario_id" widget="many2one"/>
+              -->
               <field name="categoriapregunta_id" widget="many2one"/>
           </group>
         </sheet>     
@@ -27,7 +28,7 @@
         <field name="contenido" />
         <field name="fechaPublicacion" />
         <!--
-        <field name="id_usuario" widget="many2one"/>
+        <field name="usuario_id" widget="many2one"/>
         -->
         <field name="categoriapregunta_id" widget="many2one"/>
         <field name="respuesta_ids" widget="one2many"/>
@@ -41,7 +42,6 @@
     <field name="model">upopet.pregunta</field>
     <field name="arch" type="xml">
       <search>
-       <!--<field name="contenido"/>-->
         <group expand="0" string="Agrupar por...">
           <filter name="group_by_categoria" string="Pregunta por categoria" context="{'group_by':'categoriapregunta_id'}" />
         </group>

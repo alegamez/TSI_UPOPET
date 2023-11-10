@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+    
+    <record id="upopet_usuario_view_form" model="ir.ui.view">
+        <field name="name">upopet.usuario.view.form</field>
+        <field name="model">upopet.usuario</field>
+        <field name="arch" type="xml">
+            <form string="Anadir usuario">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="nombre" />
+                        <field name="apellidos" />
+                        <field name="nombreUsuario" />
+                        <field name="contraseña" />
+                        <field name="correo" />                        
+                    </group>
+
+                    <group>
+                        <field name="matricula_ids" widget="one2many" options="{'no_create': True}"/>                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+        
+    <record id="upopet_usuario_view_tree" model="ir.ui.view">
+        <field name="name">upopet.usuario.view.tree</field>
+        <field name="model">upopet.usuario</field>
+        <field name="arch" type="xml">
+            <tree string="Usuarios">
+                <field name="name" />
+                <field name="nombre" />
+                <field name="apellidos" />
+                <field name="nombreUsuario" />
+                <field name="contraseña" />
+                <field name="correo" />
+                <field name="matricula_ids" widget="one2many" options="{'no_create': True}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="usuario_list_action" model="ir.actions.act_window">
+        <field name="name">Usuario</field>
+        <field name="res_model">upopet.usuario</field>   
+        <field name="view_mode">tree,form</field>    
+        <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Crea el primer Usuario</p>
+    </field>    
+  </record>
+    
+    </data>
+    
+
+</odoo>
