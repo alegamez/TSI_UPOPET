@@ -2,37 +2,46 @@
 <odoo>
 
     <data noupdate="1">
-    <record id="upopet.valoracion_view_tree" model="ir.ui.view">
+    <record id="upopet_valoracion_view_tree" model="ir.ui.view">
         <field name="name">upopet.valoracion.view.tree</field>
         <field name="model">upopet.valoracion</field>
         <field name="arch" type="xml">
             <tree string="Valoracion">
-                <field name="id_valoracion"/>
+                <field name="name"/>
                 <field name="calificacion"/> 
                 <field name="comentario" />
-                <field name="id_matricula" widget="one2one" options="{'no_create': True}"/>                
+               <!-- <field name="matricula_id" widget="one2one" options="{'no_create': True}"/>-->            
             </tree>
         </field>
     </record>
 
-    <record id="upopet.valoracion_view_form" model="ir.ui.view">
+    <record id="upopet_valoracion_view_form" model="ir.ui.view">
         <field name="name">upopet.valoracion.view.form</field>
         <field name="model">upopet.valoracion</field>
         <field name="arch" type="xml">
             <form string="">
                 <sheet>
                     <group>
-                        <field name="id_valoracion"/>
+                        <field name="name"/>
                         <field name="calificacion"/> 
                         <field name="comentario" />                        
                     </group>
                     <group>
-                       <field name="id_matricula" widget="one2one" options="{'no_create': True}"/> 
+                       <!-- <field name="matricula_id" widget="one2one" options="{'no_create': True}"/>--> 
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
+
+    <record id="valoracion_list_action" model="ir.actions.act_window">
+        <field name="name">Valoracion</field>
+        <field name="res_model">upopet.valoracion</field>   
+        <field name="view_mode">tree,form</field>    
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Crea la primera valoracion</p>
+        </field>    
+  </record>
     
         
     
@@ -40,3 +49,4 @@
     
 
 </odoo>
+

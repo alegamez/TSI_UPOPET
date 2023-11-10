@@ -9,16 +9,20 @@
                         <field name="name" />
                         <field name="nombre" />
                         <field name="descripcion" />
+                        <field name="tipoevento_id" />
                     </group>
                     <group>
                         <field name="fecha" />
-                        <field name="url"/>
+                        <field name="url" />
                     </group>
+                    
                     <group>
-                        <field name="tipoevento_id" widget="many2one" options="{'no_create': True}"/>
-                        <field name="especie_ids" widget="many2many_tags" options="{'no_create': True}" />
-                        <field name="empresa_id" widget="many2one" options="{'no_create': True}"/>
+                    <!--
+                        <field name="id_especies" widget="many2many_tags" options="{'no_create': True}" />
+                    -->
+                        <field name="empresa_id" />
                     </group>
+                    
                 </sheet>
             </form>
         </field>
@@ -31,12 +35,14 @@
             <tree string="tree_string">
                 <field name="name" />
                 <field name="nombre" />
-                <field name="fecha"/>
-                <field name="descripcion"/>
+                <field name="tipoevento_id" />
+                <field name="fecha" />
                 <field name="url" />
-                <field name="tipoevento_id" widget="many2one" options="{'no_create': True}"/>
-                <field name="empresa_id" widget="many2one" options="{'no_create': True}" />
-                <field name="especie_ids" widget="many2many_tags" options="{'no_create': True}" />
+                
+                <field name="empresa_id" />
+                <!--
+                <field name="id_especies" widget="many2many_tags" options="{'no_create': True}" />
+                -->
             </tree>
         </field>
     </record>

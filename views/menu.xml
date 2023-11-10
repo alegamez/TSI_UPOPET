@@ -1,10 +1,10 @@
 <odoo>
 
  <!--    Top menu item --> 
-  <menuitem name="upopet" id="main_upopet_menu" groups="group_upopet_manager"/>
+  <menuitem name="UPO Pet" id="main_upopet_menu" groups="group_upopet_manager"/>
 
  <!--   menu categories --> 
-  <menuitem name="upopet" id="upopet_menu" groups="group_upopet_manager" parent="main_upopet_menu"/>
+  <menuitem name="UPO Pet" id="upopet_menu" groups="group_upopet_manager" parent="main_upopet_menu"/>
 
 <!-- actions --> 
   <menuitem name="Pregunta" id="pregunta_menu" parent="upopet_menu" groups="group_upopet_manager" action="pregunta_list_action"/> 
@@ -17,7 +17,8 @@
   <menuitem name="Especie" id="especie_menu" parent="upopet_menu" groups="group_upopet_manager" action="especie_list_action"/>
   <menuitem name="Metodo Pago" id="metodopago_menu" parent="upopet_menu" groups="group_upopet_manager" action="metodopago_list_action"/>
   <menuitem name="Pago" id="pago_menu" parent="upopet_menu" groups="group_upopet_manager" action="pago_list_action"/>
-  <menuitem name="Tipo" id="tipo_menu" parent="upopet_menu" groups="group_upopet_manager" action="tipo_list_action"/>
-  
-
+  <menuitem name="Tipo Especie" id="tipo_menu" parent="upopet_menu" groups="group_upopet_manager" action="tipo_list_action"/>
+  <menuitem name="Usuario" id="usuario_menu" parent="upopet_menu" groups="group_upopet_manager" action="usuario_list_action"/>
+  <menuitem name="Valoracion" id="valoracion_menu" parent="upopet_menu" groups="group_upopet_manager" action="valoracion_list_action"/>
+  <menuitem name="Matricula" id="matricula_menu" parent="upopet_menu" groups="group_upopet_manager" action="matricula_list_action"/>
 </odoo>

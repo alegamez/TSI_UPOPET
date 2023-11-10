@@ -37,17 +37,6 @@
     </field>
   </record>
 
-  <record id="upopet_respuesta_search_view" model="ir.ui.view">
-    <field name="name">upopet.respuesta.search</field>
-    <field name="model">upopet.respuesta</field>
-    <field name="arch" type="xml">
-      <search>
-        <filter name="fechaPublicacion" string="Después de mi respuesta" domain="[('fechaPublicacion', '>=', context_today().strftime('%Y-%m-%d'))]" />  
-      </search>
-    </field>
-  </record>
-
-
   <record id="upopet_calendar_view" model="ir.ui.view">
     <field name="name">upopet.respuesta.calendar</field>
     <field name="model">upopet.respuesta</field>
@@ -62,7 +51,7 @@
   <record id="respuesta_list_action" model="ir.actions.act_window">
     <field name="name">Respuesta</field>
     <field name="res_model">upopet.respuesta</field>   
-    <field name="search_view_id" ref="upopet_respuesta_search_view"/> 
+   <!-- <field name="search_view_id" ref="upopet_class_search_view"/> -->
     <field name="view_mode">tree,form,calendar</field>    
     <field name="help" type="html">
       <p class="o_view_nocontent_smiling_face">Crea la primera respuesta</p>

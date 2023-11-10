@@ -14,8 +14,10 @@
                     </group>
                     
                     <group>
-                        <field name="especie_id" widget="many2one" options="{'no_create': True}" />
-                        <field name="empresa_id" widget="many2one" options="{'no_create': True}"/>
+                    <!--
+                        <field name="especie_id" />
+                        -->
+                        <field name="empresa_id" />
                     </group>
                     
                 </sheet>
@@ -33,7 +35,9 @@
                 <field name="cobertura" />
                 <field name="categoria" />
                 <field name="duracion" />
+                <!--
                 <field name="especie_id" />
+                -->
                 <field name="empresa_id" />
                 
             </tree>
