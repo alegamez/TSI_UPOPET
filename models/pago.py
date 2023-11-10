@@ -6,5 +6,4 @@ class pago(models.Model):
 
     name = fields.Integer(string="Pago ID", required=True, help="Identificador del pago")
     metodopago_id = fields.Many2one("upopet.metodopago", string="Método de Pago", required=True, help="Método de pago utilizado")
-    #id_matricula = fields.Many2one("upopet.matricula", string="Matrícula", required=True, help="Matrícula relacionada al pago")
-   
+    matricula_id = fields.Many2one("upopet.matricula", string="Matrícula", required=True, help="Matrícula relacionada al pago")

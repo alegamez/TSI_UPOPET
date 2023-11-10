@@ -8,6 +8,6 @@ class pregunta(models.Model):
     contenido = fields.Char(string="Contenido", required=True, size=50, help="Contenido de la pregunta")
     fechaPublicacion = fields.Datetime("Fecha Publicación", required=True)
 
-    #usuario_id = fields.Many2one("upopet.usuario", string= "Usuario que realiza la pregunta")
+    usuario_id = fields.Many2one("upopet.usuario", string= "Usuario que realiza la pregunta")
     categoriapregunta_id = fields.Many2one("upopet.categoriapregunta", string= "Categoria pregunta")
     respuesta_ids = fields.One2many("upopet.respuesta", 'pregunta_id', "respuesta")

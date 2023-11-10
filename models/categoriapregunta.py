@@ -8,7 +8,10 @@ class categoriapregunta(models.Model):
     #nombre = fields.Char(string="Nombre Categoria", required=True, size=30)
     name = fields.Selection([('alimentacion','Alimentacion'),
                                      ('habitat','Habitat'),
-                                     ('cuidados','Cuidados'),],
+                                     ('cuidados','Cuidados'),
+                                     ('deporte','Deporte'),
+                                     ('adopcion','Adopcion'),
+                                     ('cuestionario','Cuestionario'),],
                                      'Nombre de la categoria', required=True)
     descripcion = fields.Char(string="Descripción categoria", required=True, size=50)
 
