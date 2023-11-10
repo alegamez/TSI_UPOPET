@@ -23,4 +23,3 @@ class usuario(models.Model):
     respuesta_ids = fields.One2many("upopet.respuesta", "usuario_id", 'Usuario que realiza la respuesta')
     pregunta_ids = fields.One2many("upopet.pregunta", "usuario_id", 'Usuario que realiza la pregunta')
     
-     
