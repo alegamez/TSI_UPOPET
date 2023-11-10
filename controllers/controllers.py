@@ -2,20 +2,20 @@
 # from odoo import http
 
 
-# class ModuloUpopet(http.Controller):
-#     @http.route('/modulo_upopet/modulo_upopet', auth='public')
+# class TsiUpopet(http.Controller):
+#     @http.route('/tsi_upopet/tsi_upopet', auth='public')
 #     def index(self, **kw):
 #         return "Hello, world"
 
-#     @http.route('/modulo_upopet/modulo_upopet/objects', auth='public')
+#     @http.route('/tsi_upopet/tsi_upopet/objects', auth='public')
 #     def list(self, **kw):
-#         return http.request.render('modulo_upopet.listing', {
-#             'root': '/modulo_upopet/modulo_upopet',
-#             'objects': http.request.env['modulo_upopet.modulo_upopet'].search([]),
+#         return http.request.render('tsi_upopet.listing', {
+#             'root': '/tsi_upopet/tsi_upopet',
+#             'objects': http.request.env['tsi_upopet.tsi_upopet'].search([]),
 #         })
 
-#     @http.route('/modulo_upopet/modulo_upopet/objects/<model("modulo_upopet.modulo_upopet"):obj>', auth='public')
+#     @http.route('/tsi_upopet/tsi_upopet/objects/<model("tsi_upopet.tsi_upopet"):obj>', auth='public')
 #     def object(self, obj, **kw):
-#         return http.request.render('modulo_upopet.object', {
+#         return http.request.render('tsi_upopet.object', {
 #             'object': obj
 #         })
