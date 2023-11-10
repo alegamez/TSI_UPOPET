@@ -1,0 +1,7 @@
+id,name,nombre
+tiporeptil,1,Reptil
+tipomamifero,2,Mamífero
+tipoave,3,Ave
+tipoartropodo,4,Artropodo
+tipopez,5,Pez
+tipoanfibio,6,Anfibio
