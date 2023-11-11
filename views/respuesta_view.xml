@@ -9,9 +9,7 @@
               <field name="name"/>
               <field name="contenido" />
               <field name="fechaPublicacion" />         
-              <!--
               <field name="usuario_id" widget="many2one"/>
-              -->
               <field name="pregunta_id" widget="many2one"/>
               
           </group>
@@ -20,22 +18,31 @@
     </field>
   </record>
 
-  <record id="upopet_respuesta_filter_view" model="ir.ui.view">
+  <record id="upopet_respuesta_tree_view" model="ir.ui.view">
     <field name="name">upopet.respuesta.tree</field>
     <field name="model">upopet.respuesta</field>
     <field name="arch" type="xml">
-      <tree string="tree_string">
+      <tree string="Respuestas">
         <field name="name" />
         <field name="contenido" />
         <field name="fechaPublicacion" />
-        <!--
         <field name="usuario_id" widget="many2one"/>
-        -->
         <field name="pregunta_id" widget="many2one"/>
             
       </tree>
     </field>
   </record>
+
+  <record id="upopet_respuesta_search_view" model="ir.ui.view">
+    <field name="name">upopet.respuesta.search</field>
+    <field name="model">upopet.respuesta</field>
+    <field name="arch" type="xml">
+      <search>
+        <filter name="fechaPublicacion" string="Después de mi respuesta" domain="[('fechaPublicacion', '>=', context_today().strftime('%Y-%m-%d'))]" />  
+      </search>
+    </field>
+  </record>
+
 
   <record id="upopet_calendar_view" model="ir.ui.view">
     <field name="name">upopet.respuesta.calendar</field>
@@ -51,7 +58,7 @@
   <record id="respuesta_list_action" model="ir.actions.act_window">
     <field name="name">Respuesta</field>
     <field name="res_model">upopet.respuesta</field>   
-   <!-- <field name="search_view_id" ref="upopet_class_search_view"/> -->
+    <field name="search_view_id" ref="upopet_respuesta_search_view"/> 
     <field name="view_mode">tree,form,calendar</field>    
     <field name="help" type="html">
       <p class="o_view_nocontent_smiling_face">Crea la primera respuesta</p>
