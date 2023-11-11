@@ -19,8 +19,7 @@ class usuario(models.Model):
     correo = fields.Char(string="Correo Electronico",required=True, size=50, help="Correo electronico del usuario")
 
 
-    matricula_ids = fields.Many2one('upopet.matricula', string='Matrícula')
-
+    matricula_ids = fields.One2many('upopet.matricula',"usuario_id", 'Matrículado')
     respuesta_ids = fields.One2many("upopet.respuesta", "usuario_id", 'Usuario que realiza la respuesta')
     pregunta_ids = fields.One2many("upopet.pregunta", "usuario_id", 'Usuario que realiza la pregunta')
     
