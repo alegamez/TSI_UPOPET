@@ -13,6 +13,6 @@ class categoriapregunta(models.Model):
                                      ('adopcion','Adopcion'),
                                      ('cuestionario','Cuestionario'),],
                                      'Nombre de la categoria', required=True)
-    descripcion = fields.Char(string="Descripción categoria", required=True, size=50)
+    descripcion = fields.Char(string="Descripción categoria", required=True, size=150)
 
     pregunta_ids = fields.One2many("upopet.pregunta", 'categoriapregunta_id', "pregunta")
