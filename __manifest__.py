@@ -61,6 +61,7 @@
         'demo/upopet.categoriapregunta.csv',
         'demo/upopet.pregunta.csv',
         'demo/upopet.respuesta.csv',
+        'demo/upopet.valoracion.csv',
     ],
     'application': True,
 }
