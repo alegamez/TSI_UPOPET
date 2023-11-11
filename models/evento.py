@@ -3,6 +3,7 @@ from odoo import models, fields, api
 class evento(models.Model):
     _name = 'upopet.evento'
     _description = 'Modelo para los distintos tipos de eventos'
+    _rec_name='nombre'
     
     name = fields.Integer(string="Identificador", size=9, required=True)
     nombre = fields.Char(string="Nombre", required=True, size=30, help="Nombre del evento")
