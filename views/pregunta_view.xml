@@ -9,9 +9,7 @@
               <field name="name" />
               <field name="contenido" />
               <field name="fechaPublicacion" />
-              
-              <!--
-              <field name="id_usuario" widget="many2one"/>-->
+              <field name="id_usuario" widget="many2one"/>
               <field name="categoriapregunta_id" widget="many2one"/>
                        
           </group>
@@ -28,9 +26,7 @@
         <field name="name" />
         <field name="contenido" />
         <field name="fechaPublicacion" />
-        <!--
         <field name="id_usuario" widget="many2one"/>
-        -->
         <field name="categoriapregunta_id" widget="many2one"/>
             
       </tree>
