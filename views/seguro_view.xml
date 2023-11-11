@@ -14,9 +14,7 @@
                     </group>
                     
                     <group>
-                    <!--
                         <field name="especie_id" />
-                        -->
                         <field name="empresa_id" />
                     </group>
                     
@@ -35,22 +33,33 @@
                 <field name="cobertura" />
                 <field name="categoria" />
                 <field name="duracion" />
-                <!--
                 <field name="especie_id" />
-                -->
                 <field name="empresa_id" />
                 
             </tree>
         </field>
     </record>
 
-    <!--Filtrar por categoria-->
+    <!--Filtrar por cobertura-->
     <record id="upopet_seguro_filter_view" model="ir.ui.view">
         <field name="name">upopet.seguro.filter</field>
         <field name="model">upopet.seguro</field>
         <field name="arch" type="xml">
             <search string="Filtrar Seguros">
-                <field name="categoria" string="Categoría" filter_domain="[('categoria', '=', self)]" />
+                <filter name="filter_seguro_cobertura" string="Coberura" domain="[('cobertura', '=', context.get('search_default_filter_seguro_cobertura'))]" />
+            </search>
+        </field>
+    </record>
+
+    <!--Agrupar por categoria-->
+    <record id="upopet_seguro_search_view" model="ir.ui.view">
+        <field name="name">upopet.seguro.search</field>
+        <field name="model">upopet.seguro</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="0" string="Agrupar por...">
+                    <filter name="group_by_categoria" string="Seguros por categorias" context="{'group_by': 'categoria'}"/>
+                </group>
             </search>
         </field>
     </record>
@@ -60,6 +69,8 @@
         <field name="res_model">upopet.seguro</field>
         <field name="view_mode">tree,form</field>
         <field name="search_view_id" ref="upopet_seguro_filter_view" />
+        <field name="search_view_id" ref="upopet_seguro_search_view" />
+        <field name="context">{'search_default_filter_seguro_cobertura': 1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">No se encontraron seguros.</p>
         </field>
