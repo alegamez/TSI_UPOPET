@@ -58,6 +58,9 @@
         'demo/upopet.usuario.csv',
         'demo/upopet.metodopago.csv',
         'demo/upopet.pago.csv',
+        'demo/upopet.categoriapregunta.csv',
+        'demo/upopet.pregunta.csv',
+        'demo/upopet.respuesta.csv',
     ],
     'application': True,
 }
