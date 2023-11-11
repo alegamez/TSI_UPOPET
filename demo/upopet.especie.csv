@@ -1,0 +1,21 @@
+id,name,nombre,tamanyo,peso,estado,nombreCientifico,tipoespecie_id/id
+especie1,1,Iguana,30,2,permitido,Iguana vulgaris,tiporeptil
+especie2,2,Elefante,300,5000,permitido,Loxodonta africana,tipomamifero
+especie3,3,Águila,70,5,permitido,Aquila chrysaetos,tipoave
+especie4,4,Leopardo,120,80,permitido,Panthera pardus,tipomamifero
+especie5,5,Tucán,50,1,permitido,Ramphastos toco,tipoave
+especie6,6,Orca,800,5000,prohibido,Orcinus orca,tipopez
+especie7,7,Serpiente de Coral,120,0.1,prohibido,Micrurus sp.,tiporeptil
+especie8,8,Tigre Blanco,110,150,prohibido,Panthera tigris,tipoanfibio
+especie9,9,Lémur,40,3,permitido,Lemur catta,tipomamifero
+especie10,10,Pingüino Emperador,120,40,permitido,Aptenodytes forsteri,tipoave
+especie11,11,Camaleón,30,0.5,permitido,Chamaeleonidae,tiporeptil
+especie12,12,Pez Globo,20,0.3,prohibido,Tetraodontidae,tipopez
+especie13,13,Fénec,20,1,permitido,Vulpes zerda,tipomamifero
+especie14,14,Águila Harpía,102,9,prohibido,Harpia harpyja,tipoave
+especie15,15,Caimán,200,100,permitido,Caimaninae,tiporeptil
+especie16,16,Siamese Fighting Fish,6,0.02,prohibido,Betta splendens,tipopez
+especie17,17,Canguro Rojo,150,70,prohibido,Macropus rufus,tipomamifero
+especie18,18,Tarántula,15,0.1,prohibido,Theraphosidae,tipomamifero
+especie19,19,Cóndor Andino,320,15,prohibido,Vultur gryphus,tipoave
+especie20,20,Gecko Leopardo,20,0.06,permitido,Eublepharis macularius,tiporeptil

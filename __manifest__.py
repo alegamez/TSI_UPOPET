@@ -19,10 +19,14 @@
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
+    
 
     # always loaded
     'data': [
-
+        'security/security.xml',
+        'security/ir.model.access.csv',
+        #'views/views.xml',
+        #'views/templates.xml',
         'views/pregunta_view.xml',
         'views/respuesta_view.xml',
         'views/categoriapregunta_view.xml',
@@ -30,12 +34,34 @@
         'views/empresa_view.xml',
         'views/evento_view.xml',
         'views/seguro_view.xml',
+        'views/especie_view.xml',
+        'views/pago_view.xml',
+        'views/metodopago_view.xml',
+        'views/tipo_view.xml',
+        'views/usuario_view.xml',
+        'views/valoracion_view.xml',
+        'views/matricula_view.xml',
         'views/menu.xml',
+
     ],
+    'css': ['static/src/css/style.css'],
     # only loaded in demonstration mode
     'demo': [
         #'demo/demo.xml',
+        'demo/upopet.tipo.csv',
+        'demo/upopet.especie.csv',
+        'demo/upopet.empresa.csv',
+        'demo/upopet.tipoevento.csv',
         'demo/upopet.evento.csv',
+        'demo/upopet.seguro.csv',
+        'demo/upopet.matricula.csv',
+        'demo/upopet.usuario.csv',
+        'demo/upopet.metodopago.csv',
+        'demo/upopet.pago.csv',
+        'demo/upopet.categoriapregunta.csv',
+        'demo/upopet.pregunta.csv',
+        'demo/upopet.respuesta.csv',
     ],
     'application': True,
 }
+

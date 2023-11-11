@@ -1,0 +1,7 @@
+id,name,contenido,fechaPublicacion,usuario_id/id,categoriapregunta_id/id
+pregunta1,1,¿Puede comer lechuga mi pájaro?,2023-11-10 10:00:00,usuario1,categoria1
+pregunta2,2,¿Cuantos metros cuadrados necesito para mi galgo?,2022-10-31 19:30:00,usuario2,categoria2
+pregunta3,3,Estoy interesado en adoptar un gato cachorro,2023-10-05 15:30:00,usuario3,categoria3
+pregunta4,4,¿Alguna competicion de belleza de perros por el sur de España?,2023-01-12 16:00:00,usuario4,categoria4
+pregunta5,5,¿Cuáles son los aspectos clave que tengo que tener en cuenta para proporcionar cuidados adecuados a un perro de raza grande?,2023-04-20 10:00:00,usuario1,categoria5
+pregunta6,6,¿Cuántos metros cuadrados tiene su residencia actual?,2023-01-23 11:00:00,usuario2,categoria6

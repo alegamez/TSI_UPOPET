@@ -9,16 +9,18 @@
                         <field name="name" />
                         <field name="nombre" />
                         <field name="descripcion" />
+                        <field name="tipoevento_id" />
                     </group>
                     <group>
                         <field name="fecha" />
-                        <field name="url"/>
+                        <field name="url" />
                     </group>
+                    
                     <group>
-                        <field name="tipoevento_id" widget="many2one" options="{'no_create': True}"/>
                         <field name="especie_ids" widget="many2many_tags" options="{'no_create': True}" />
-                        <field name="empresa_id" widget="many2one" options="{'no_create': True}"/>
+                        <field name="empresa_id" />
                     </group>
+                    
                 </sheet>
             </form>
         </field>
@@ -31,11 +33,11 @@
             <tree string="tree_string">
                 <field name="name" />
                 <field name="nombre" />
-                <field name="fecha"/>
-                <field name="descripcion"/>
+                <field name="tipoevento_id" />
+                <field name="fecha" />
                 <field name="url" />
-                <field name="tipoevento_id" widget="many2one" options="{'no_create': True}"/>
-                <field name="empresa_id" widget="many2one" options="{'no_create': True}" />
+                
+                <field name="empresa_id" />
                 <field name="especie_ids" widget="many2many_tags" options="{'no_create': True}" />
             </tree>
         </field>
@@ -58,7 +60,22 @@
         <field name="model">upopet.evento</field>
         <field name="arch" type="xml">
             <search string="Filtrar Eventos">
-                <field name="fecha" string="Fecha de inicio" filter_domain="[('fecha', '>=', self)]" />
+                <filter name="filter_fecha" string="Fecha de inicio" domain="[('fecha', '>=', context.get('search_default_fecha'))]" />
+            </search>
+        </field>
+    </record>
+
+    <!-- Agrupar eventos por tipo, especie y empresa -->
+    <record id="upopet_evento_search_view" model="ir.ui.view">
+        <field name="name">upopet.evento.filter</field>
+        <field name="model">upopet.evento</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="0" string="Agrupar por...">
+                    <filter name="group_by_tipo" string="Eventos por tipo" context="{'group_by': 'tipoevento_id'}" />
+                    <filter name="group_by_especies" string="Eventos por especies" context="{'group_by': 'especie_ids'}" />
+                    <filter name="group_by_empresas" string="Eventos por empresas" context="{'group_by': 'empresa_ids'}" />
+                </group>
             </search>
         </field>
     </record>
@@ -69,6 +86,8 @@
         <field name="res_model">upopet.evento</field>
         <field name="view_mode">tree,form,calendar</field>
         <field name="search_view_id" ref="upopet_evento_filter_view" />
+        <field name="search_view_id" ref="upopet_evento_search_view" />
+        <field name="context">{'search_default_fecha': '2023-01-01'}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">No se encontraron eventos.</p>
         </field>

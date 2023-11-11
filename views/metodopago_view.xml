@@ -1,0 +1,71 @@
+<odoo>
+  <!-- Vista de Formulario -->
+  
+
+  <!-- Vista de Árbol -->
+  <record id="upopet_metodopago_tree_view" model="ir.ui.view">
+    <field name="name">upopet.metodopago.tree</field>
+    <field name="model">upopet.metodopago</field>
+    <field name="arch" type="xml">
+      <tree string="Métodos de Pago">
+        <field name="name"/>
+        <field name="nombre"/>
+        <field name="pago_ids" widget="one2many"/>
+        <field name="create_date" string="Fecha de Creación" readonly="1"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- Vista de Búsqueda -->
+  <record id="upopet_search_view" model="ir.ui.view">
+    <field name="name">upopet.metodopago.search</field>
+    <field name="model">upopet.metodopago</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="nombre"/>
+      </search>
+    </field>
+  </record>
+
+  <!-- Acción de Lista -->
+  <record id="metodopago_list_action" model="ir.actions.act_window">
+    <field name="name">Métodos de Pago</field>
+    <field name="res_model">upopet.metodopago</field>
+    <field name="search_view_id" ref="upopet_search_view"/>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">No hay métodos de pago registrados.</p>
+    </field>
+  </record>
+
+  <!-- Pongo el form abajo ya que uso un botón que necesita que esté cargada la acción. Si no, a la hora de instalar pegará petardazo -->
+
+  <record id="upopet_metodopago_form_view" model="ir.ui.view">
+    <field name="name">upopet.metodopago.form</field>
+    <field name="model">upopet.metodopago</field>
+    <field name="arch" type="xml">
+      <form string="Método de Pago">
+        <sheet>
+          <div class="oe_title">
+            <label for="name" class="oe_edit_only"/>
+            <h3>
+              <field name="name" class="oe_inline"/>
+            </h3>
+          </div>
+          <group>
+            <group>
+              <field name="nombre" class="oe_inline"/>
+            </group>
+            <group>
+              <field name="pago_ids" widget="one2many" class="oe_inline"/>
+            </group>
+            <group>
+              <button string="Borrar" class="oe_highlight" special="cancel" />
+               <button name="%(pago_list_action)d" string="Guardar y volver" type="action" class="oe_highlight"/>
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+</odoo>

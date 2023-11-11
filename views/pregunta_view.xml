@@ -9,28 +9,25 @@
               <field name="name" />
               <field name="contenido" />
               <field name="fechaPublicacion" />
-              <!--
-              <field name="id_usuario" widget="many2one"/>-->
+              <field name="id_usuario" widget="many2one"/>
               <field name="categoriapregunta_id" widget="many2one"/>
+                       
           </group>
         </sheet>     
       </form>
     </field>
   </record>
 
-  <record id="upopet_pregunta_filter_view" model="ir.ui.view">
+  <record id="upopet_pregunta_tree_view" model="ir.ui.view">
     <field name="name">upopet.pregunta.tree</field>
     <field name="model">upopet.pregunta</field>
     <field name="arch" type="xml">
-      <tree string="tree_string">
+      <tree string="Preguntas">
         <field name="name" />
         <field name="contenido" />
         <field name="fechaPublicacion" />
-        <!--
         <field name="id_usuario" widget="many2one"/>
-        -->
         <field name="categoriapregunta_id" widget="many2one"/>
-        <field name="respuesta_ids" widget="one2many"/>
             
       </tree>
     </field>
@@ -41,9 +38,8 @@
     <field name="model">upopet.pregunta</field>
     <field name="arch" type="xml">
       <search>
-       <!--<field name="contenido"/>-->
         <group expand="0" string="Agrupar por...">
-          <filter name="group_by_categoria" string="Pregunta por categoria" context="{'group_by':'categoriapregunta_id'}" />
+          <filter name="group_by_categoria" string="Preguntas por categoria" context="{'group_by':'categoriapregunta_id'}" />
         </group>
         
       </search>

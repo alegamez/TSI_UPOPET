@@ -1,106 +1,30 @@
 <odoo>
     <data>
-        <!--eventos-->
-        <record id="curso_cuidado_perros" model="upopet.evento">
-          <field name="name">1</field>
-          <field name="nombre">Curso de Cuidado de Perros</field>
-          <field name="fecha">2023-11-20 10:00:00</field>
-          <field name="descripcion">Aprende a cuidar y entrenar a tus perros de manera efectiva.</field>
-          <field name="url">https://www.ejemplo.com/curso-cuidado-perros</field>
-          <field name="id_tipo_curso" ref="tipo_curso_cuidado_perros" />
-          <field name="id_empresa" ref="empresa_cuidado_mascotas" />
-        </record>
+<!--
+          <record id="object0" model="tsi_upopet.tsi_upopet">
+            <field name="name">Object 0</field>
+            <field name="value">0</field>
+          </record>
 
-        <record id="curso_nutricion_gatos" model="upopet.evento">
-          <field name="name">2</field>
-          <field name="nombre">Curso de Nutrición para Gatos</field>
-          <field name="fecha">2023-12-05 15:30:00</field>
-          <field name="descripcion">Descubre cómo alimentar a tus gatos de manera equilibrada y saludable.</field>
-          <field name="url">https://www.ejemplo.com/curso-nutricion-gatos</field>
-          <field name="id_tipo_curso" ref="tipo_curso_nutricion_gatos" />
-          <field name="id_empresa" ref="empresa_cuidado_mascotas" />
-        </record>
+          <record id="object1" model="tsi_upopet.tsi_upopet">
+            <field name="name">Object 1</field>
+            <field name="value">10</field>
+          </record>
 
-        <record id="recurso_alimentacion_gatos" model="upopet.evento">
-          <field name="name">1</field>
-          <field name="nombre">Guía de Alimentación para Gatos</field>
-          <field name="fecha">2023-10-10 14:00:00</field>
-          <field name="descripcion">Descubre cómo alimentar a tu gato de manera saludable y equilibrada con esta guía educativa.</field>
-          <field name="url">https://www.ejemplo.com/guia-alimentacion-gatos</field>
-          <field name="id_tipo_curso" ref="tipo_recurso_alimentacion" />
-          <field name="id_empresa" ref="empresa_cuidado_mascotas" />
-        </record>
+          <record id="object2" model="tsi_upopet.tsi_upopet">
+            <field name="name">Object 2</field>
+            <field name="value">20</field>
+          </record>
 
-        <record id="recurso_limpieza_perros" model="upopet.evento">
-          <field name="name">2</field>
-          <field name="nombre">Manual de Limpieza para Dueños de Perros</field>
-          <field name="fecha">2023-11-15 16:30:00</field>
-          <field name="descripcion">Aprende cómo mantener limpio el entorno de tu perro con este completo manual.</field>
-          <field name="url">https://www.ejemplo.com/manual-limpieza-perros</field>
-          <field name="id_tipo_curso" ref="tipo_recurso_limpieza" />
-          <field name="id_empresa" ref="empresa_cuidado_mascotas" />
-        </record>
+          <record id="object3" model="tsi_upopet.tsi_upopet">
+            <field name="name">Object 3</field>
+            <field name="value">30</field>
+          </record>
 
-        <record id="evento_feria_adopcion" model="upopet.evento">
-          <field name="name">1</field>
-          <field name="nombre">Feria de Adopción de Mascotas</field>
-          <field name="fecha">2023-11-25 11:00:00</field>
-          <field name="descripcion">Un evento donde puedes adoptar a una mascota y aprender sobre el cuidado de los animales.</field>
-          <field name="url">https://www.ejemplo.com/feria-adopcion-mascotas</field>
-          <field name="id_tipo_evento" ref="tipo_evento_adopcion" />
-          <field name="id_empresa" ref="empresa_animal" />
-        </record>
-
-        <record id="evento_taller_entrenamiento" model="upopet.evento">
-          <field name="name">2</field>
-          <field name="nombre">Taller de Entrenamiento Canino</field>
-          <field name="fecha">2023-12-10 15:00:00</field>
-          <field name="descripcion">Un taller donde aprenderás técnicas de entrenamiento para perros.</field>
-          <field name="url">https://www.ejemplo.com/taller-entrenamiento-canino</field>
-          <field name="id_tipo_evento" ref="tipo_evento_entrenamiento" />
-          <field name="id_empresa" ref="empresa_animal" />
-        </record>
-
-        <record id="empresa_seguro_pet" model="upopet.empresa">
-          <field name="name">1</field>
-          <field name="nombreEmpresa">SeguroPet</field>
-          <field name="id_evento" ref="[]" />
-          <field name="ids_seguro" eval="[(0, 0, {'nombre': 'Seguro de Salud para Mascotas', 'descripcion': 'Ofrecemos seguros de salud para proteger a tus mascotas.', 'url': 'https://www.seguropet.com/seguro-salud-mascotas'})]" />
-        </record>
-
-        <record id="empresa_mascota_segura" model="upopet.empresa">
-          <field name="name">2</field>
-          <field name="nombreEmpresa">MascotaSegura</field>
-          <field name="id_evento" ref="[]" />
-          <field name="ids_seguro" eval="[(0, 0, {'nombre': 'Seguro de Mascotas Integral', 'descripcion': 'Protege a tus mascotas con nuestro seguro integral.', 'url': 'https://www.mascotasegura.com/seguro-mascotas-integral'})]" />
-        </record>
-
-        <record id="empresa_eventos_animales" model="upopet.empresa">
-          <field name="name">3</field>
-          <field name="nombreEmpresa">EventosAnimales</field>
-          <field name="id_evento" ref="evento_feria_adopcion" />
-          <field name="ids_seguro" eval="[]"/>
-        </record>
-
-        <record id="seguro_salud_mascotas" model="upopet.seguro">
-          <field name="name">1</field>
-          <field name="precio">50.0</field>
-          <field name="cobertura">Cobertura completa de gastos médicos para mascotas</field>
-          <field name="categoria">Salud</field>
-          <field name="duracion">12</field>
-          <field name="id_especie" ref="especie_perro" />
-          <field name="id_empresa" ref="empresa_seguro_pet" />
-        </record>
-
-        <record id="seguro_integral_mascotas" model="upopet.seguro">
-          <field name="name">2</field>
-          <field name="precio">75.0</field>
-          <field name="cobertura">Cobertura médica, daños a terceros y pérdida de mascota</field>
-          <field name="categoria">Integral</field>
-          <field name="duracion">24</field>
-          <field name="id_especie" ref="especie_gato" />
-          <field name="id_empresa" ref="empresa_mascota_segura" />
-        </record>
-
+          <record id="object4" model="tsi_upopet.tsi_upopet">
+            <field name="name">Object 4</field>
+            <field name="value">40</field>
+          </record>
+-->
     </data>
 </odoo>
