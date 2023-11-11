@@ -7,7 +7,7 @@ class pregunta(models.Model):
     _rec_name='contenido'
     
     name = fields.Integer(string="Identificador de la pregunta", size=9, required=True)
-    contenido = fields.Char(string="Contenido", required=True, size=50, help="Contenido de la pregunta")
+    contenido = fields.Char(string="Contenido", required=True, size=150, help="Contenido de la pregunta")
     fechaPublicacion = fields.Datetime("Fecha Publicación", required=True)
 
     usuario_id = fields.Many2one("upopet.usuario", string= "Usuario que realiza la pregunta")
