@@ -1,3 +1,4 @@
+
 <odoo>
     <record id="upopet_empresa_form_view" model="ir.ui.view">
         <field name="name">upopet.empresa.form</field>
@@ -43,10 +44,6 @@
                 <filter name="filter_empresas_seguros" string="Empresas de Seguros" domain="[('seguro_ids', '!=', False)]" />
                 <filter name="filter_empresas_eventos" string="Empresas de Eventos" domain="[('evento_ids', '!=', False)]" />
             </search>
-            <!-- Busquedas por los distintos nombres de las empresas -->
-            <search string="Buscar Empresas">
-                <filter name="name" string="Nombre de la Empresa" />
-            </search>
         </field>
     </record>
 
@@ -61,3 +58,4 @@
     </record>
 
 </odoo>
+
