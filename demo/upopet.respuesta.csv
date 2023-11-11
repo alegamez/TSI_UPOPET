@@ -1,7 +1,7 @@
 id,name,contenido,fechaPublicacion,pregunta_id/id,usuario_id/id
-respuesta1,1,Puede comer todo tipo de verduras,2023-10-11 20:00:00,pregunta1,usuario4
-respuesta2,2,Puede depender de factores como el tamaño específico del galgo o su nivel de actividad,2023-10-11 20:00:00,pregunta2,usuario1
-respuesta3,3,Mi gata acaba de dar a luz y estoy buscando a alguien que quiera un cachorro,2023-10-11 20:00:00,pregunta3,usuario2
-respuesta4,4,En sevilla se organiza el proximo domingo el tercer campeonato de belleza internacional,2023-10-11 20:00:00,pregunta4,usuario3
-respuesta5,5,Entre los aspectos más importantes estan la alimentacion adecuada y el ejercicio regular,2023-10-11 20:00:00,pregunta5,usuario3
-respuesta6,6,150 metros cuadrados,2023-10-11 20:00:00,pregunta6,usuario1
+respuesta1,1,Puede comer todo tipo de verduras,2023-11-10 20:00:00,pregunta1,usuario4
+respuesta2,2,Puede depender de factores como el tamaño específico del galgo o su nivel de actividad,2023-10-11 19:00:00,pregunta2,usuario1
+respuesta3,3,Mi gata acaba de dar a luz y estoy buscando a alguien que quiera un cachorro,2023-10-11 10:30:00,pregunta3,usuario2
+respuesta4,4,En sevilla se organiza el proximo domingo el tercer campeonato de belleza internacional,2023-05-11 20:00:00,pregunta4,usuario3
+respuesta5,5,Entre los aspectos más importantes estan la alimentacion adecuada y el ejercicio regular,2023-08-25 20:00:00,pregunta5,usuario3
+respuesta6,6,Lo mejor para un pájaro recien nacido es alpiste o algo de verdura,2023-09-11 13:00:00,pregunta6,usuario1
