@@ -1,3 +1,4 @@
+
 from odoo import models, fields, api
 
 class respuesta(models.Model):
@@ -10,3 +11,4 @@ class respuesta(models.Model):
     
     pregunta_id = fields.Many2one("upopet.pregunta", string="Pregunta a la que pertenece la respuesta")
     usuario_id = fields.Many2one("upopet.usuario", string="Usuario que realiza la respuesta")
+

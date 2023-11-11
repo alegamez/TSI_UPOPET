@@ -1,13 +1,9 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
-class Pago(models.Model):
+class pago(models.Model):
     _name = 'upopet.pago'
     _description = 'Modelo para los pagos'
 
-    id_pago = fields.Char(string="Pago ID", required=True, help="Identificador del pago")
-    id_metodoPago = fields.Many2one("upopet.metodo_pago", string="Método de Pago", required=True, help="Método de pago utilizado")
-    id_matricula = fields.Many2one("upopet.matricula", string="Matrícula", required=True, help="Matrícula relacionada al pago")
-    
-
-  
-
+    name = fields.Integer(string="Pago ID", required=True, help="Identificador del pago")
+    metodopago_id = fields.Many2one("upopet.metodopago", string="Método de Pago", required=True, help="Método de pago utilizado")
+    matricula_id = fields.Many2one("upopet.matricula", string="Matrícula", required=True, help="Matrícula relacionada al pago")

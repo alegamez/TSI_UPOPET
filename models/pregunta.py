@@ -1,3 +1,4 @@
+
 from odoo import models, fields, api
 
 class pregunta(models.Model):
@@ -12,3 +13,4 @@ class pregunta(models.Model):
     usuario_id = fields.Many2one("upopet.usuario", string= "Usuario que realiza la pregunta")
     categoriapregunta_id = fields.Many2one("upopet.categoriapregunta", string= "Categoria pregunta")
     respuesta_ids = fields.One2many("upopet.respuesta", 'pregunta_id', string="Respuestas")
+

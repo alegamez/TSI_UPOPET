@@ -1,0 +1,78 @@
+<odoo>
+    <record id="upopet_evento_form_view" model="ir.ui.view">
+        <field name="name">upopet.evento.form</field>
+        <field name="model">upopet.evento</field>
+        <field name="arch" type="xml">
+            <form string="Evento">
+                <sheet layout="auto">
+                    <group>
+                        <field name="name" />
+                        <field name="nombre" />
+                        <field name="descripcion" />
+                        <field name="tipoevento_id" />
+                    </group>
+                    <group>
+                        <field name="fecha" />
+                        <field name="url" />
+                    </group>
+                    
+                    <group>
+                        <field name="especie_ids" widget="many2many_tags" options="{'no_create': True}" />
+                        <field name="empresa_id" />
+                    </group>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="upopet_tree_view" model="ir.ui.view">
+        <field name="name">upopet.evento.tree</field>
+        <field name="model">upopet.evento</field>
+        <field name="arch" type="xml">
+            <tree string="tree_string">
+                <field name="name" />
+                <field name="nombre" />
+                <field name="tipoevento_id" />
+                <field name="fecha" />
+                <field name="url" />
+                
+                <field name="empresa_id" />
+                <field name="especie_ids" widget="many2many_tags" options="{'no_create': True}" />
+            </tree>
+        </field>
+    </record>
+
+    <!--Calendario de eventos-->
+    <record id="upopet_evento_calendar_view" model="ir.ui.view">
+        <field name="name">upopet.evento.calendar</field>
+        <field name="model">upopet.evento</field>
+        <field name="arch" type="xml">
+            <calendar string="Calendario de Eventos" date_start="fecha">
+                <field name="fecha"/>
+            </calendar>
+        </field>
+    </record>
+
+    <!--Filtro para los eventos que ocurran despues de una fecha dada-->
+    <record id="upopet_evento_filter_view" model="ir.ui.view">
+        <field name="name">upopet.evento.filter</field>
+        <field name="model">upopet.evento</field>
+        <field name="arch" type="xml">
+            <search string="Filtrar Eventos">
+                <field name="fecha" string="Fecha de inicio" filter_domain="[('fecha', '>=', self)]" />
+            </search>
+        </field>
+    </record>
+
+
+    <record id="evento_list_action" model="ir.actions.act_window">
+        <field name="name">Eventos</field>
+        <field name="res_model">upopet.evento</field>
+        <field name="view_mode">tree,form,calendar</field>
+        <field name="search_view_id" ref="upopet_evento_filter_view" />
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No se encontraron eventos.</p>
+        </field>
+    </record>
+</odoo>
