@@ -10,5 +10,5 @@ class seguro(models.Model):
     categoria = fields.Char(string="Cateogria", required=False, size=20, help="Categoria del seguro")
     duracion = fields.Integer(string="Duracion", size=9, required=True, help="Duración del seguro")
     
-    especie_id = fields.Many2one("upopet.especie", "Seguro tiene la especie")
-    empresa_id= fields.Many2one("upopet.empresa", "Empresa del seguro")
+    especie_id = fields.Many2one("upopet.especie", "Especie asegurada")
+    empresa_id= fields.Many2one("upopet.empresa", "Empresa gestora")
