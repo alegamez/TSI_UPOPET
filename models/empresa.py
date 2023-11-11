@@ -3,6 +3,7 @@ from odoo import models, fields, api
 class empresa(models.Model):
     _name = "upopet.empresa"
     _descripcion = 'Modelo para los distintos tipos de empresas'
+    _rec_name = 'nombreEmpresa'
     
     name = fields.Integer(string="Identificador de la empresa", size=9, required=True)
     nombreEmpresa = fields.Char(string="Nombre", required=False, size=20, help="Nombre de la empresa")

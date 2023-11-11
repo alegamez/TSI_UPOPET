@@ -3,6 +3,7 @@ from odoo import models, fields, api
 class usuario(models.Model):
     _name = "upopet.usuario"
     _description = 'Modelo para los clientes'
+    _rec_name = 'nombre'
     #Para asegurar la unicidad de la relación
     _sql_constraints = [
         ('matricula_id_unique',

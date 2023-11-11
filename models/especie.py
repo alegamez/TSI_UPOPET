@@ -3,6 +3,7 @@ from odoo import models, fields, api
 class Especie(models.Model):
     _name = 'upopet.especie'
     _description = 'Modelo para las especies de animales'
+    _rec_name = 'nombre'
 
     name = fields.Integer(string="Especie ID", size=10, required=True)
     nombre = fields.Char(string="Nombre", required=True, size=50, help="Nombre de la especie")
