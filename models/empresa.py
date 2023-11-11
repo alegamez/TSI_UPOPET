@@ -9,5 +9,5 @@ class empresa(models.Model):
     nombreEmpresa = fields.Char(string="Nombre", required=False, size=20, help="Nombre de la empresa")
     
 
-    evento_ids = fields.One2many("upopet.evento", 'empresa_id', string="Evento")
-    seguro_ids= fields.One2many("upopet.seguro","empresa_id", string="Seguro")
+    evento_ids = fields.One2many("upopet.evento", 'empresa_id', string="Eventos")
+    seguro_ids= fields.One2many("upopet.seguro","empresa_id", string="Seguros")
