@@ -14,3 +14,9 @@ class pregunta(models.Model):
     categoriapregunta_id = fields.Many2one("upopet.categoriapregunta", string= "Categoria pregunta")
     respuesta_ids = fields.One2many("upopet.respuesta", 'pregunta_id', string="Respuestas")
 
+    count = fields.Integer(compute='_compute_count', store=True)
+
+    @api.depends('name')
+    def _compute_count(self):
+        for record in self:
+            record.count = 1
