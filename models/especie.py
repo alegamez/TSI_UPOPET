@@ -13,6 +13,12 @@ class Especie(models.Model):
     nombreCientifico = fields.Char(string="Nombre Científico", required=True, size=100, help="Nombre científico de la especie")
 
     tipoespecie_id = fields.Many2one("upopet.tipo", string="Tipo de animal")
-    banner_image = fields.Binary("Banner Image")
+    
+    count = fields.Integer(compute='_compute_count', store=True)
+
+    @api.depends('name')
+    def _compute_count(self):
+        for record in self:
+            record.count = 1
 
     
