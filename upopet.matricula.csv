@@ -1,5 +1,0 @@
-id,name,precio,fecha,evento_id/id,usuario_id/id,valoracion_id/id
-matricula1,1,123,2023-01-01,evento1,usuario1,valoracion1
-matricula2,2,503,2023-02-01,evento2,usuario2,valoracion2
-matricula3,3,20.00,2023-03-01,evento3,usuario3,valoracion3
-matricula4,4,0,2023-04-014,evento4,usuario4,valoracion4
