@@ -21,4 +21,5 @@
   <menuitem name="Usuario" id="usuario_menu" parent="upopet_menu" groups="group_upopet_manager" action="usuario_list_action"/>
   <menuitem name="Valoracion" id="valoracion_menu" parent="upopet_menu" groups="group_upopet_manager" action="valoracion_list_action"/>
   <menuitem name="Matricula" id="matricula_menu" parent="upopet_menu" groups="group_upopet_manager" action="matricula_list_action"/>
+ <menuitem name="Cuestionario" id="cuestionario_menu" parent="upopet_menu" groups="group_upopet_manager" action="cuestionario_list_action"/>
 </odoo>
