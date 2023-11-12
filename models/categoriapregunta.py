@@ -10,8 +10,7 @@ class categoriapregunta(models.Model):
                                      ('habitat','Habitat'),
                                      ('cuidados','Cuidados'),
                                      ('deporte','Deporte'),
-                                     ('adopcion','Adopcion'),
-                                     ('cuestionario','Cuestionario'),],
+                                     ('adopcion','Adopcion'),],
                                      'Nombre de la categoria', required=True)
     descripcion = fields.Char(string="Descripción categoria", required=True, size=150)
 
