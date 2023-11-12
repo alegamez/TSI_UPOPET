@@ -51,8 +51,8 @@
     <field name="model">upopet.pregunta</field>
     <field name="arch" type="xml">
         <graph string="Pregunta" type="bar">
-            <field name="categoriapregunta_id" widget="many2one"/>
-            <field name="name" type="measure" string="Numero de respuestas" operator="count"/>
+            <field name="contenido" widget="many2one"/>
+            <field name="count" type="measure" string="Numero de respuestas"/>
         </graph>
     </field>
   </record>
