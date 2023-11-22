@@ -9,3 +9,5 @@ class metodopago(models.Model):
     nombre = fields.Char(string="Nombre", required=True, size=50, help="Nombre del método de pago")
     pago_ids = fields.One2many("upopet.pago", 'metodopago_id', 'Pagos')
     imagentipo = fields.Image("Imagen del tipo")
+
+    _sql_constraints = [('metodopago_nombre_unique','UNIQUE (nombre)','El nombre debe ser único')]

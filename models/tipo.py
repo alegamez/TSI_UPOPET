@@ -14,3 +14,9 @@ class tipo(models.Model):
 
     especie_ids = fields.One2many("upopet.especie", 'tipoespecie_id', "especie")
     
+    _sql_constraints = [('tipo_nombre_unique','UNIQUE (nombre)','El nombre debe ser único')]
+
+    
+    def btn_desasociarEspecies(self):
+        self.ensure_one()
+        self.especie_ids.write({'tipoespecie_id': False})

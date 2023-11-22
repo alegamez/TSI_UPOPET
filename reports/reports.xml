@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- E2. Esquema basico -->
+    <report id="report_especies" string="Especie report" model="upopet.especie" report_type="qweb-pdf" name="upopet.especie" />
+
+
+</odoo>
