@@ -1,10 +1,10 @@
 <odoo>
 
  <!--    Top menu item --> 
-  <menuitem name="UPO Pet" id="main_upopet_menu" groups="group_upopet_manager"/>
+  <menuitem name="UPOPET" id="main_upopet_menu" groups="group_upopet_manager"/>
 
  <!--   menu categories --> 
-  <menuitem name="UPO Pet" id="upopet_menu" groups="group_upopet_manager" parent="main_upopet_menu"/>
+  <menuitem name="UPOPET" id="upopet_menu" groups="group_upopet_manager" parent="main_upopet_menu"/>
 
 <!-- actions --> 
   <menuitem name="Pregunta" id="pregunta_menu" parent="upopet_menu" groups="group_upopet_manager" action="pregunta_list_action"/> 

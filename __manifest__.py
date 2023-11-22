@@ -28,6 +28,8 @@
         #'views/views.xml',
         #'views/templates.xml',
         'views/pregunta_view.xml',
+        'reports/reports.xml',
+        'reports/especie_report.xml', 
         'views/respuesta_view.xml',
         'views/categoriapregunta_view.xml',
         'views/tipoevento_view.xml',
