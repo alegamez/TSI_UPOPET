@@ -4,6 +4,10 @@
     <field name="model">upopet.tipoevento</field>
     <field name="arch" type="xml">
       <form string="Tipo de Evento">
+        <header>
+          <button name="btn_eliminar_respuesta" string="Eliminar" type="object" class="oe_highlight" />
+          <button name="btn_duplicar_respuesta" string="Duplicar" type="object" class="oe_highlight" />
+        </header>
         <sheet layout="auto">
           <group>
             <field name="name" />
