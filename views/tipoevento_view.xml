@@ -17,6 +17,8 @@
             <button name="btn_eliminarEventos" string="Eliminar Eventos" type="object" class="oe_highlight" />
           </group>
           <notebook>
+            <newline></newline>
+            <button name="btn_eliminarRespuestas" string="Eliminar Respuestas" type="object" class="oe_highlight" />
             <page string="Cursos">
             </page>
             <page string="Encuentros">
