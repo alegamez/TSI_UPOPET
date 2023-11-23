@@ -11,9 +11,6 @@ class categoriapregunta(models.Model):
 
     _sql_constraints = [('categoriapregunta_name_unique','UNIQUE (name)','El name debe ser único')]
 
-    def btn_eliminarPreguntas(self):
-        self.write({'pregunta_ids':[(5,)]})
-
     @api.onchange('descripcion')  
     def onchange_descripcion(self):
         print(f'La descripcion de la categoria ha cambiado a: {self.descripcion}')
