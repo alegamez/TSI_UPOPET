@@ -9,6 +9,8 @@
             <field name="name" />
             <field name="nombre" />
             <field name="evento_ids"/>
+            <newline></newline>
+            <button name="btn_eliminarEventos" string="Eliminar Eventos" type="object" class="oe_highlight" />
           </group>
           <notebook>
             <page string="Cursos">
