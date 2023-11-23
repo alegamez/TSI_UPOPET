@@ -10,9 +10,17 @@
               <field name="contenido" />
               <field name="fechaPublicacion" />
               <field name="usuario_id" widget="many2one"/>
-              <field name="categoriapregunta_id" widget="many2one"/>
-                       
+              <field name="categoriapregunta_id" widget="many2one"/>                       
           </group>
+          <notebook>
+            <page name="respuestas" string="Respuestas">
+                <group>
+                  <field name="respuesta_ids" widget="one2many" />
+                </group>
+            </page>
+          </notebook>
+          <newline></newline>
+            <button name="btn_eliminarRespuestas" string="Eliminar Respuestas" type="object" class="oe_highlight" />
         </sheet>     
       </form>
     </field>
