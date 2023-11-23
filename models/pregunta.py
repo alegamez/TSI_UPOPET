@@ -14,3 +14,19 @@ class pregunta(models.Model):
     categoriapregunta_id = fields.Many2one("upopet.categoriapregunta", string= "Categoria pregunta")
     respuesta_ids = fields.One2many("upopet.respuesta", 'pregunta_id', string="Respuestas")
 
+    _sql_constraints = [('pregunta_name_unique','UNIQUE (name)','El name debe ser único')]
+
+    count = fields.Integer(compute='_compute_count', store=True)
+
+    @api.depends('name')
+    def _compute_count(self):
+        for record in self:
+            record.count = 1
+
+    def btn_eliminarRespuesta(self):
+        self.write({'respuesta_ids':[(5,)]})
+
+    @api.onchange('contenido')
+    def onchange_contenido(self):
+        #Actualizar la fecha de publicación cada vez que el contenido cambie
+        self.fechaPublicacion = fields.Datetime.now()
