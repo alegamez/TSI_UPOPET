@@ -27,7 +27,7 @@
     </field>
   </record>
 
-  <record id="upopet_categoriapregunta_filter_view" model="ir.ui.view">
+  <record id="upopet_categoriapregunta_tree_view" model="ir.ui.view">
     <field name="name">upopet.categoriapregunta.tree</field>
     <field name="model">upopet.categoriapregunta</field>
     <field name="arch" type="xml">

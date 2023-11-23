@@ -1,55 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <record id="upopet_tipo_form_view" model="ir.ui.view">
-    <field name="name">upopet.tipo.form</field>
-    <field name="model">upopet.tipo</field>
-    <field name="arch" type="xml">
-      <form string="Tipo de animal">
-        <sheet layout="auto">
-          <group>
-            <field name="name"/>
-            <field name="nombre"/>
-          </group>
-        </sheet>
-      </form>
-    </field>
-  </record>
+    <record id="upopet_tipo_form_view" model="ir.ui.view">
+        <field name="name">upopet.tipo.form</field>
+        <field name="model">upopet.tipo</field>
+        <field name="arch" type="xml">
+            <form string="Tipo de animal">
+                <sheet layout="auto">
+                    <group>
+                        <field name="name"/>
+                        <field name="nombre"/>
+                        <field name="especie_ids" widget="many2many_tags"/>
+                    </group>
+                    <!-- Añade este botón para desasociar las especies -->
+                    <group>
+                        <button name="btn_desasociarEspecies" string="Desasociar especies" type="object" class="btn-primary"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-  <record id="upopet_tipo_kanban_view" model="ir.ui.view">
-    <field name="name">upopet.tipo.kanban</field>
-    <field name="model">upopet.tipo</field>
-    <field name="arch" type="xml">
-      <kanban class="o_kanban_mobile">
-        <templates>
-          <t t-name="kanban-box">
-            <div t-attf-class="oe_kanban_global_click" style="text-align: center; transition: background-color 0.3s ease;">
-              <div class="o_kanban_record_top mb16">
-                <field name="nombre" style="font-size: 20px;"/>
-              </div>
-            </div>
-          </t>
-        </templates>
-      </kanban>
-    </field>
-  </record>
+    <record id="upopet_tipo_kanban_view" model="ir.ui.view">
+        <field name="name">upopet.tipo.kanban</field>
+        <field name="model">upopet.tipo</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click" style="text-align: center; transition: background-color 0.3s ease;">
+                            <div class="o_kanban_record_top mb16">
+                                <field name="nombre" style="font-size: 20px;"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
 
-  <record id="upopet_search_view" model="ir.ui.view">
-    <field name="name">upopet.tipo.search</field>
-    <field name="model">upopet.tipo</field>
-    <field name="arch" type="xml">
-      <search>
-        <field name="nombre"/>
-      </search>
-    </field>
-  </record>
 
-  <record id="tipo_list_action" model="ir.actions.act_window">
-    <field name="name">Tipos de animales</field>
-    <field name="res_model">upopet.tipo</field>    
-    <field name="search_view_id" ref="upopet_search_view"/>
-    <field name="view_mode">kanban,form</field>    
-    <field name="help" type="html">
-      <p class="o_view_nocontent_smiling_face">No hay tipos de animales registrados.</p>
-    </field>
-  </record>
+    <record id="upopet_tipo_tree_view" model="ir.ui.view">
+        <field name="name">upopet.tipo.tree</field>
+        <field name="model">upopet.tipo</field>
+        <field name="arch" type="xml">
+            <tree string="Tipos de Animales">
+                <field name="name"/>
+                <field name="nombre"/>
+
+            </tree>
+        </field>
+    </record>
+
+
+
+    <record id="upopet_search_view" model="ir.ui.view">
+        <field name="name">upopet.tipo.search</field>
+        <field name="model">upopet.tipo</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="nombre"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="tipo_list_action" model="ir.actions.act_window">
+        <field name="name">Tipos de animales</field>
+        <field name="res_model">upopet.tipo</field>
+        <field name="search_view_id" ref="upopet_search_view"/>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No hay tipos de animales registrados.</p>
+        </field>
+    </record>
 </odoo>
