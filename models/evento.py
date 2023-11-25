@@ -16,6 +16,15 @@ class evento(models.Model):
     tipoevento_id = fields.Many2one("upopet.tipoevento", string="Tipo de Evento", required=True)
     especie_ids = fields.Many2many("upopet.especie")
     empresa_id = fields.Many2one("upopet.empresa",string="Evento")
+
+    _sql_constraints = [
+        ('evento_tipoempresa_unique',
+         'UNIQUE(name, empresa_id)',
+         "El evento ya está gestionado por una empresa."),
+        ('evento_tipoevento_unique',
+         'UNIQUE(name, tipoevento_id)',
+         "El evento ya tiene un tipo."),
+    ]
     
     #Validar que la fecha del evento sea posterior a la actual
     @api.constrains('fecha')
