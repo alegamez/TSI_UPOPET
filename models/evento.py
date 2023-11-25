@@ -10,8 +10,8 @@ class evento(models.Model):
     name = fields.Integer(string="Identificador", size=9, required=True)
     nombre = fields.Char(string="Nombre", required=True, size=50, help="Nombre del evento")
     fecha = fields.Datetime("Fecha", required=True, help="Fecha del evento")
-    descripcion = fields.Char(string="Descripcion", required=True, size=100, help="Descripción del evento")
-    url = fields.Char(string="URL", required=True, size=50, help="Enlace al evento")
+    descripcion = fields.Char(string="Descripcion", size=100, help="Descripción del evento")
+    url = fields.Char(string="URL", , size=50, help="Enlace al evento")
     
     tipoevento_id = fields.Many2one("upopet.tipoevento", string="Tipo de Evento", required=True)
     especie_ids = fields.Many2many("upopet.especie")
