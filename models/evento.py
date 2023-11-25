@@ -18,6 +18,9 @@ class evento(models.Model):
     empresa_id = fields.Many2one("upopet.empresa",string="Evento")
 
     _sql_constraints = [
+        ('evento_tipoempresa_unique',
+         'UNIQUE(name, empresa_id)',
+         "El evento ya está gestionado por una empresa."),
         ('evento_tipoevento_unique',
          'UNIQUE(name, tipoevento_id)',
          "El evento ya tiene un tipo."),
