@@ -13,3 +13,4 @@ tipo_manager,tipo_manager,model_upopet_tipo,group_upopet_manager,1,1,1,1
 usuario_manager,usuario_manager,model_upopet_usuario,group_upopet_manager,1,1,1,1
 valoracion_manager,valoracion_manager,model_upopet_valoracion,group_upopet_manager,1,1,1,1
 matricula_manager,matricula_manager,model_upopet_matricula,group_upopet_manager,1,1,1,1
+cuestionario_manager,cuestionario_manager,model_upopet_cuestionario,group_upopet_manager,1,1,1,1

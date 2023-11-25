@@ -14,3 +14,4 @@ from . import tipo
 from . import usuario
 from . import matricula
 from . import valoracion
+from . import cuestionario

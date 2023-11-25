@@ -28,6 +28,8 @@
         #'views/views.xml',
         #'views/templates.xml',
         'views/pregunta_view.xml',
+        'reports/reports.xml',
+        'reports/especie_report.xml', 
         'views/respuesta_view.xml',
         'views/categoriapregunta_view.xml',
         'views/tipoevento_view.xml',
@@ -41,26 +43,32 @@
         'views/usuario_view.xml',
         'views/valoracion_view.xml',
         'views/matricula_view.xml',
+        'views/cuestionario_view.xml',
         'views/menu.xml',
 
     ],
-    'css': ['static/src/css/style.css'],
+    
     # only loaded in demonstration mode
     'demo': [
         #'demo/demo.xml',
+        #'demo/tipoimg.xml',
         'demo/upopet.tipo.csv',
         'demo/upopet.especie.csv',
         'demo/upopet.empresa.csv',
         'demo/upopet.tipoevento.csv',
         'demo/upopet.evento.csv',
         'demo/upopet.seguro.csv',
-        'demo/upopet.matricula.csv',
         'demo/upopet.usuario.csv',
+        'demo/upopet.valoracion.csv',
+        'demo/upopet.matricula.csv',
         'demo/upopet.metodopago.csv',
         'demo/upopet.pago.csv',
         'demo/upopet.categoriapregunta.csv',
         'demo/upopet.pregunta.csv',
         'demo/upopet.respuesta.csv',
+        'demo/upopet.cuestionario.csv',
+        
+        
     ],
     'application': True,
 }

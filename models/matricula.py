@@ -10,5 +10,6 @@ class matricula(models.Model):
 
 
     pago_ids = fields.One2many("upopet.pago", "matricula_id", 'El pago de su matricula es')
-    usuario_id = fields.One2many("upopet.usuario", 'matricula_ids', string='Usuario')
-    evento_id = fields.Many2one("upopet.evento", 'Evento de matricula',required=True)
+    usuario_id = fields.Many2one("upopet.usuario", string='Usuario Matriculado')
+    evento_id = fields.Many2one("upopet.evento", 'Matriculado en Evento',required=True)
+    valoracion_id = fields.One2many("upopet.valoracion", "matricula_id", 'Valoracion de la matricula')

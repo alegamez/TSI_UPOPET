@@ -1,0 +1,5 @@
+id,name,jardin,espacioDisponible,experienciaPrevia,exotico,preferencia,usuario_id/id
+cuestionario1,1,si,100.0,alta,no,perros,usuario1
+cuestionario2,2,no,50.0,media,si,gatos,usuario2
+cuestionario3,3,si,75.0,baja,no,peces,usuario3
+cuestionario4,4,no,25.0,alta,si,reptiles exoticos,usuario4

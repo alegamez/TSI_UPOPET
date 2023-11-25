@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  
 
+  <record id="upopet_especie_form_view" model="ir.ui.view">
+    <field name="name">upopet.especie.form</field>
+    <field name="model">upopet.especie</field>
+    <field name="arch" type="xml">
+      <form string="Especie">
+        <header>
+          <button name="btn_generate_report" string="Generar informe" type="object" class="oe_highlight" />
+        </header>
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="nombre"/>
+            <field name="nombreCientifico"/>
+            <field name="tamanyo"/>
+            <field name="peso"/>
+            <field name="estado" widget="statusbar" options="{'clickable': 'true'}" />
+            <field name="tipoespecie_id" widget="many2one"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  
   <record id="upopet_especie_tree_view" model="ir.ui.view">
     <field name="name">upopet.especie.tree</field>
     <field name="model">upopet.especie</field>
@@ -26,7 +49,21 @@
         <field name="nombre"/>
         <filter string="Permitido" name="filter_permitido" domain="[('estado','=','permitido')]"/>
         <filter string="Prohibido" name="filter_prohibido" domain="[('estado','=','prohibido')]"/>
+        <group expand="0" string="Agrupar por...">
+          <filter name="group_by_tipo" string="Especies por tipo" context="{'group_by':'tipoespecie_id'}" />
+        </group>
       </search>
+    </field>
+  </record>
+
+  <record id="especie_graph_view" model="ir.ui.view">
+    <field name="name">upopet.especie.graph</field>
+    <field name="model">upopet.especie</field>
+    <field name="arch" type="xml">
+      <graph string="Especies" type="bar">
+        <field name="tipoespecie_id" widget="many2one"/>
+        <field name="count" type="measure" string="Numero especies por tipo"/>
+      </graph>
     </field>
   </record>
 
@@ -34,39 +71,11 @@
     <field name="name">Especies</field>
     <field name="res_model">upopet.especie</field>
     <field name="search_view_id" ref="upopet_search_view"/>
-    <field name="view_mode">tree,form</field>
+    <field name="view_mode">tree,form,graph</field>
     <field name="help" type="html">
       <p class="o_view_nocontent_smiling_face">No hay especies registradas.</p>
     </field>
   </record>
 
-  <record id="upopet_especie_form_view" model="ir.ui.view">
-    <field name="name">upopet.especie.form</field>
-    <field name="model">upopet.especie</field>
-    <field name="arch" type="xml">
-      <form string="Especie">
-        <sheet>
-          <group>
-            <field name="name"/>
-            <field name="nombre"/>
-            <field name="nombreCientifico"/>
-            <field name="tamanyo"/>
-            <field name="peso"/>
-            <field name="estado" widget="statusbar" options="{'clickable': 'true'}" />
-            <field name="tipoespecie_id" widget="many2one"/>
-          </group>
-          <!-- <notebook>
-            <page string="Informacion Adicional">
-              
-            </page>
-          </notebook> -->
-          <group>
-            <button string="Borrar" class="oe_highlight" special="cancel" />
-             <button name="%(especie_list_action)d" string="Guardar y volver" type="action" class="oe_highlight"/>
-          </group>
-          
-        </sheet>
-      </form>
-    </field>
-  </record>
+
 </odoo>

@@ -9,6 +9,8 @@
             <field name="name" />
             <field name="nombre" />
             <field name="evento_ids"/>
+            <newline></newline>
+            <button name="btn_eliminarEventos" string="Eliminar Eventos" type="object" class="oe_highlight" />
           </group>
           <notebook>
             <page string="Cursos">
@@ -50,7 +52,7 @@
   </record>
 
   <record id="tipoevento_list_action" model="ir.actions.act_window">
-    <field name="name">tipoevento</field>
+    <field name="name">Tipo de Evento</field>
     <field name="res_model">upopet.tipoevento</field>   
     <field name="search_view_id" ref="upopet_class_search_view"/> 
     <field name="view_mode">tree,form</field>    
