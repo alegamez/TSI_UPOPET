@@ -14,6 +14,12 @@ class seguro(models.Model):
     especie_id = fields.Many2one("upopet.especie", "Especie asegurada")
     empresa_id= fields.Many2one("upopet.empresa", "Empresa gestora")
 
+    _sql_constraints = [
+        ('seguro_especie_unique',
+         'UNIQUE(especie_id)',
+         "Un seguro solo puede pertenecer a una única especie."),
+    ]
+
     @api.model
     def create(self, values): 
         if 'duracion' in values and values['duracion'] <= 0:
