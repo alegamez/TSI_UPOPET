@@ -23,7 +23,7 @@ class pregunta(models.Model):
         for record in self:
             record.count = 1
 
-    def btn_eliminarRespuesta(self):
+    def btn_eliminarRespuestas(self):
         self.write({'respuesta_ids':[(5,)]})
 
     @api.onchange('contenido')
