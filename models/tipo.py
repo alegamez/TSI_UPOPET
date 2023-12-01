@@ -8,9 +8,7 @@ class tipo(models.Model):
     
     name = fields.Integer(string="tipo ID", size=10, required=True, readonly=False)
     nombre = fields.Char(string="nombre", required=True, size=50, help="Nombre del tipo de animal")
-    
-    #para la vista
-    #imagentipo = fields.Binary('Photo')
+
 
     especie_ids = fields.One2many("upopet.especie", 'tipoespecie_id', "especie")
     
