@@ -1,4 +1,4 @@
-id,name,nombre,apellidos,nombreUsuario,contraseña,correo
+id,name,nombre,apellidos,nombreUsuario,contrasena,correo
 usuario1,1,Carlos,González,carlos123,abc123,carlos@gmail.com
 usuario2,2,Ana,Rodríguez,ana456,def456,ana@gmail.com
 usuario3,3,Pedro,Martínez,pedro789,ghi789,pedro@gmail.com
