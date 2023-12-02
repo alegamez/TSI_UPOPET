@@ -16,35 +16,14 @@
     </field>
   </record>
 
-  <!-- Vista de Búsqueda -->
-  <record id="upopet_search_view" model="ir.ui.view">
-    <field name="name">upopet.metodopago.search</field>
-    <field name="model">upopet.metodopago</field>
-    <field name="arch" type="xml">
-      <search>
-        <field name="nombre"/>
-      </search>
-    </field>
-  </record>
-
-  <!-- Acción de Lista -->
-  <record id="metodopago_list_action" model="ir.actions.act_window">
-    <field name="name">Métodos de Pago</field>
-    <field name="res_model">upopet.metodopago</field>
-    <field name="search_view_id" ref="upopet_search_view"/>
-    <field name="view_mode">tree,form</field>
-    <field name="help" type="html">
-      <p class="o_view_nocontent_smiling_face">No hay métodos de pago registrados.</p>
-    </field>
-  </record>
-
-  <!-- Pongo el form abajo ya que uso un botón que necesita que esté cargada la acción. Si no, a la hora de instalar pegará petardazo -->
-
   <record id="upopet_metodopago_form_view" model="ir.ui.view">
     <field name="name">upopet.metodopago.form</field>
     <field name="model">upopet.metodopago</field>
     <field name="arch" type="xml">
       <form string="Método de Pago">
+      <header>
+          <button name="btn_generate_report" string="Generar informe" type="object" class="oe_highlight" />
+        </header>
         <sheet>
           <div class="oe_title">
             <label for="name" class="oe_edit_only"/>
@@ -68,4 +47,28 @@
       </form>
     </field>
   </record>
+
+  <!-- Vista de Búsqueda -->
+  <record id="upopet_search_view" model="ir.ui.view">
+    <field name="name">upopet.metodopago.search</field>
+    <field name="model">upopet.metodopago</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="nombre"/>
+      </search>
+    </field>
+  </record>
+
+  <!-- Acción de Lista -->
+  <record id="metodopago_list_action" model="ir.actions.act_window">
+    <field name="name">Métodos de Pago</field>
+    <field name="res_model">upopet.metodopago</field>
+    <field name="search_view_id" ref="upopet_search_view"/>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">No hay métodos de pago registrados.</p>
+    </field>
+  </record>
+
+  
 </odoo>

@@ -6,6 +6,8 @@
     <report id="action_upopet_seguro_report" string="Informe Seguros" model="upopet.seguro" report_type="qweb-pdf" name="upopet.upopet_seguro_template"/>
     <report id="report_especies" string="Especie report" model="upopet.especie" report_type="qweb-pdf" name="upopet.report_especie" />
     <report id="report_tipos" string="Tipo report" model="upopet.tipo" report_type="qweb-pdf" name="upopet.report_tipo" />
+    <report id="report_pagos" string="Pago report" model="upopet.pago" report_type="qweb-pdf" name="upopet.report_pago" />
+    <report id="report_metodopagos" string="Metodo de pago report" model="upopet.metodopago" report_type="qweb-pdf" name="upopet.report_metodopago" />
     <report id="report_preguntas" string="Pregunta report" model="upopet.pregunta" report_type="qweb-pdf" name="upopet.report_pregunta" />
   
 </odoo>

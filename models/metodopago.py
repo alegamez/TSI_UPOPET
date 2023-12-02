@@ -11,3 +11,6 @@ class metodopago(models.Model):
     imagentipo = fields.Image("Imagen del tipo")
 
     _sql_constraints = [('metodopago_nombre_unique','UNIQUE (nombre)','El nombre debe ser único')]
+    
+    def btn_generate_report(self):
+          return self.env.ref('upopet.report_metodopagos').report_action(self)
