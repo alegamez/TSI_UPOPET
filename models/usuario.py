@@ -15,7 +15,7 @@ class usuario(models.Model):
     nombre = fields.Char(string="Nombre", required=True, size=30, help="Nombre del Usuario")
     apellidos = fields.Char(string="Apellidos",required=True, size=50, help="Apellidos del Usuario")
     nombreUsuario = fields.Char(string="NombreUsuario", required=True, size=30, help="Nombre de usuario del usuario")
-    contraseña = fields.Char(string="Contraseña",required=True, size=50, help="Contraseña del usuario")
+    contrasena = fields.Char(string="Contraseña",required=True, size=50, help="Contraseña del usuario")
     correo = fields.Char(string="Correo Electronico",required=True, size=50, help="Correo electronico del usuario")
 
 
