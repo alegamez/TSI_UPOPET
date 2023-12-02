@@ -19,7 +19,6 @@ class seguro(models.Model):
          'UNIQUE(especie_id)',
          "Un seguro solo puede pertenecer a una única especie."),
     ]
-
     @api.model
     def create(self, values): 
         if 'duracion' in values and values['duracion'] <= 0:
@@ -63,5 +62,20 @@ class seguro(models.Model):
             if seguro.duracion <= 0:
                 raise ValidationError("La duración del seguro debe ser mayor que cero.")
 
+    def btn_generate_report(self):
+          return self.env.ref('upopet.report_seguro').report_action(self)
 
+    
+    def button_validate_species(self):
+        for seguro in self:
+            seguro._onchange_especie_id()
+        return True
 
+    def button_check_duration(self):
+        for seguro in self:
+            seguro._check_duration()
+        return True
+
+    def btn_unlink_seguro(self):
+        self.unlink()
+        return {'type': 'ir.actions.act_window_close'}
