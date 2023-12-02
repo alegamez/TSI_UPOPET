@@ -1,4 +1,6 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
+from datetime import datetime
 
 class evento(models.Model):
     _name = 'upopet.evento'
@@ -14,3 +16,59 @@ class evento(models.Model):
     tipoevento_id = fields.Many2one("upopet.tipoevento", string="Tipo de Evento", required=True)
     especie_ids = fields.Many2many("upopet.especie")
     empresa_id = fields.Many2one("upopet.empresa",string="Evento")
+    
+    _sql_constraints = [
+        ('evento_tipoempresa_unique',
+         'UNIQUE(name, empresa_id)',
+         "El evento ya está gestionado por una empresa."),
+        ('evento_tipoevento_unique',
+         'UNIQUE(name, tipoevento_id)',
+         "El evento ya tiene un tipo."),
+    ]
+    
+    #Validar que la fecha del evento sea posterior a la actual
+    @api.constrains('fecha')
+    def _check_fecha_futura(self):
+       for evento in self:
+            if evento.fecha and evento.fecha < fields.Datetime.now():
+                raise ValidationError("La fecha del evento debe ser en el futuro.")
+
+    #Validar que el nombre es unico para cada evento
+    @api.constrains('nombre')
+    def _check_nombre_unico(self):
+        for evento in self:
+            if self.env['upopet.evento'].search([('nombre', '=', evento.nombre), ('id', '!=', evento.id)]):
+                raise ValidationError("El nombre del evento debe ser único.")
+      
+    #Actualizacion de la descripcion basandome en el tipo de evento      
+    @api.onchange('tipoevento_id')
+    def _onchange_tipoevento_id(self):
+        if self.tipoevento_id:
+            self.descripcion = f"Evento de tipo {self.tipoevento_id.name}"
+
+    #Actualizacion de la URL del evento basada en el nombre
+    @api.onchange('nombre')
+    def _onchange_nombre(self):
+        if self.nombre:
+            self.url = f"/evento/{self.nombre.replace(' ', '-').lower()}"
+            
+    def btn_generate_report(self):
+          return self.env.ref('upopet.report_evento').report_action(self)
+    
+    def button_validate_future_date(self):
+        for evento in self:
+            evento._check_fecha_futura()
+        return True
+
+    def button_update_description(self):
+        for evento in self:
+            evento._onchange_tipoevento_id()
+        return True
+
+    def button_update_url(self):
+        for evento in self:
+            evento._onchange_nombre()
+        return True
+      
+ 
+

@@ -1,0 +1,65 @@
+<odoo>
+    <template id="report_seguro">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="seguro">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure" />
+                        <div class="row" style="font-size: 24px; margin-bottom: 20px;">
+                            <span style="font-weight: bold; text-decoration: underline; ">Seguro:</span>
+                            <span style="color: #999999;" t-field="seguro.name" />
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12" style="text-align: center; margin: auto; padding-left: 15px; padding-right: 15px; border-bottom: 2px solid #cccccc;">
+                                <p style="padding-top: 10px;">
+                                    <!-- Puedes agregar aquí una imagen o cualquier otro elemento visual -->
+                                </p>
+                                <p t-field="seguro.name" style="font-size: 20px; font-weight: bold;" />
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 40px; font-weight: bold; font-size: 19px;">
+                            Detalles del Seguro
+                        </div>
+                        <div class="row" style="margin-top: 10px;">
+                            <table class="table">
+                                <tr>
+                                    <td><strong>Precio:</strong></td>
+                                    <td><p t-field="seguro.precio" /></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cobertura:</strong></td>
+                                    <td><p t-field="seguro.cobertura" /></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Categoría:</strong></td>
+                                    <td><p t-field="seguro.categoria" /></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Duración:</strong></td>
+                                    <td><p t-field="seguro.duracion" /></td>
+                                </tr>
+                                <!-- Agrega más campos según tus necesidades -->
+                            </table>
+                        </div>
+                        <div class="row" style="margin-top: 40px; font-weight: bold; font-size: 19px;">
+                            Asociaciones
+                        </div>
+                        <div class="row" style="margin-top: 10px;">
+                            <table class="table">
+                                <tr>
+                                    <td><strong>Especie Asegurada:</strong></td>
+                                    <td><p t-field="seguro.especie_id.name" /></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Empresa Gestora:</strong></td>
+                                    <td><p t-field="seguro.empresa_id.nombreEmpresa" /></td>
+                                </tr>
+                                <!-- Agrega más celdas según tus necesidades -->
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
