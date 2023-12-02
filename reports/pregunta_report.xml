@@ -11,9 +11,9 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-2" style="margin: auto; text-align: center; padding-left: 15px; padding-right: 15px; border-right: 2px solid #cccccc;">
-                                <p t-field="o.name" style="font-size: 14px; font-weight: bold;" />
+                                    <p>Categoría: <span t-field="o.categoriapregunta_id" style="font-size: 14px; font-weight: bold;"/></p>
                             </div>
-                            <div class="col-xs-8" style="text-align: left; margin: auto; padding-left: 15px; padding-top: 10px;">
+                            <div class="col-xs-8" style="text-align: center; padding: 20px; border: 1px solid black;">
                                 <table>
                                     <tr>
                                         <td>
@@ -42,7 +42,6 @@
                                         <th>ID</th>
                                         <th>Respuesta</th>
                                         <th>Fecha Publicacion</th>
-                                        <th>Categoria</th>
                                         <th>Usuario</th>
                                     </tr>
                                 </thead>
@@ -51,9 +50,6 @@
                                         <tr>
                                             <td>
                                                 <p t-field="respuesta.name" />
-                                            </td>
-                                            <td>
-                                                <p t-field="respuesta.contenido" />
                                             </td>
                                             <td>
                                                 <p t-field="respuesta.contenido" />
