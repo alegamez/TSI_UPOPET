@@ -1,4 +1,4 @@
-rom odoo import models, fields, api
+from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 from datetime import datetime
 
@@ -38,3 +38,22 @@ class empresa(models.Model):
             for evento in empresa.evento_ids:
                 if evento.fecha and datetime.strptime(evento.fecha, '%Y-%m-%d %H:%M:%S') < datetime.now():
                     raise ValidationError("No se pueden asociar eventos pasados a la empresa.")
+                
+    def btn_generate_report(self):
+          return self.env.ref('upopet.report_empresa').report_action(self)
+    
+    def btn_create_evento(self):
+        return {'type': 'ir.actions.act_window_close'}
+
+    def btn_create_seguro(self):
+        return {'type': 'ir.actions.act_window_close'}
+    
+    def button_check_past_events(self):
+        for empresa in self:
+            empresa._check_eventos_pasados()
+        return True
+    
+    def button_update_name(self):
+        for empresa in self:
+            empresa._onchange_name()
+        return True
