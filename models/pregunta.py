@@ -30,3 +30,6 @@ class pregunta(models.Model):
     def onchange_contenido(self):
         #Actualizar la fecha de publicación cada vez que el contenido cambie
         self.fechaPublicacion = fields.Datetime.now()
+        
+    def btn_generate_report(self):
+        return self.env.ref('upopet.report_preguntas').report_action(self)
