@@ -18,12 +18,7 @@ class seguro(models.Model):
          'UNIQUE(especie_id)',
          "Un seguro solo puede pertenecer a una única especie."),
     ]
-    @api.model
-    def create(self, values): 
-        if 'duracion' in values and values['duracion'] <= 0:
-            raise Warning("La duración del seguro debe ser mayor que cero.")
-        seguro = super(seguro, self).create(values)
-        return seguro
+    
 
     @api.model
     def write(self, values):
@@ -37,7 +32,8 @@ class seguro(models.Model):
             raise Warning("No se puede eliminar un seguro con duración menor o igual a cero.")
         if self.empresa_id and self.empresa_id.exists():
             raise Warning("No se puede eliminar un seguro asociado a una empresa existente.")
-        super(seguro, self).unlink()
+        #
+        # super(seguro, self).unlink()
     
     @api.onchange('especie_id')
     def _onchange_especie_id(self):
@@ -45,7 +41,7 @@ class seguro(models.Model):
             especie = self.especie_id
             self.categoria = especie.default_categoria
             self.cobertura = f"Cobertura para {especie.name}"
-            self.validar_especie()
+            self._check_duration()
 
     def validar_especie(self):
         if self.especie_id.name == 'Gato' and self.precio > 100:
@@ -63,7 +59,6 @@ class seguro(models.Model):
 
     def btn_generate_report(self):
           return self.env.ref('upopet.report_seguro').report_action(self)
-
     
     def button_validate_species(self):
         for seguro in self:
@@ -78,4 +73,3 @@ class seguro(models.Model):
     def btn_unlink_seguro(self):
         self.unlink()
         return {'type': 'ir.actions.act_window_close'}
-
