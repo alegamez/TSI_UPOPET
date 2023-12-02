@@ -1,7 +1,6 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 from datetime import datetime
-
 class evento(models.Model):
     _name = 'upopet.evento'
     _description = 'Modelo para los distintos tipos de eventos'
@@ -16,7 +15,7 @@ class evento(models.Model):
     tipoevento_id = fields.Many2one("upopet.tipoevento", string="Tipo de Evento", required=True)
     especie_ids = fields.Many2many("upopet.especie")
     empresa_id = fields.Many2one("upopet.empresa",string="Evento")
-
+    
     _sql_constraints = [
         ('evento_tipoempresa_unique',
          'UNIQUE(name, empresa_id)',
@@ -29,7 +28,7 @@ class evento(models.Model):
     #Validar que la fecha del evento sea posterior a la actual
     @api.constrains('fecha')
     def _check_fecha_futura(self):
-        for evento in self:
+       for evento in self:
             if evento.fecha and evento.fecha < fields.Datetime.now():
                 raise ValidationError("La fecha del evento debe ser en el futuro.")
 
@@ -51,3 +50,25 @@ class evento(models.Model):
     def _onchange_nombre(self):
         if self.nombre:
             self.url = f"/evento/{self.nombre.replace(' ', '-').lower()}"
+            
+    def btn_generate_report(self):
+          return self.env.ref('upopet.report_evento').report_action(self)
+    
+    def button_validate_future_date(self):
+        for evento in self:
+            evento._check_fecha_futura()
+        return True
+
+    def button_update_description(self):
+        for evento in self:
+            evento._onchange_tipoevento_id()
+        return True
+
+    def button_update_url(self):
+        for evento in self:
+            evento._onchange_nombre()
+        return True
+      
+ 
+
+    
