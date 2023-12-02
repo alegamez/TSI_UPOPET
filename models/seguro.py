@@ -1,6 +1,5 @@
 from odoo import models, fields, api
-from odoo.exceptions import ValidationError
-from datetime import datetime
+
 class seguro(models.Model):
     _name = "upopet.seguro"
     _description = 'Modelo para los distintos tipos de seguros'
@@ -79,3 +78,4 @@ class seguro(models.Model):
     def btn_unlink_seguro(self):
         self.unlink()
         return {'type': 'ir.actions.act_window_close'}
+

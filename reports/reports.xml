@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- E2. Esquema basico -->
-    <report id="report_especies" string="Especie report" model="upopet.especie" report_type="qweb-pdf" name="upopet.especie" />
     <report id="action_upopet_empresa_report" string="Informe Empresas" model="upopet.empresa" report_type="qweb-pdf" name="upopet.upopet_empresa_template"/>
     <report id="action_upopet_evento_report" string="Informe Eventos" model="upopet.evento" report_type="qweb-pdf" name="upopet.upopet_evento_template"/>
     <report id="action_upopet_seguro_report" string="Informe Seguros" model="upopet.seguro" report_type="qweb-pdf" name="upopet.upopet_seguro_template"/>
+    <report id="report_especies" string="Especie report" model="upopet.especie" report_type="qweb-pdf" name="upopet.report_especie" />
+    <report id="report_tipos" string="Tipo report" model="upopet.tipo" report_type="qweb-pdf" name="upopet.report_tipo" />
+    <report id="report_preguntas" string="Pregunta report" model="upopet.pregunta" report_type="qweb-pdf" name="upopet.report_pregunta" />
+  
 </odoo>

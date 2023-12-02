@@ -32,6 +32,8 @@
         'reports/empresa_report.xml',
         'reports/evento_report.xml',
         'reports/seguro_report.xml',
+        'reports/tipo_report.xml',  
+        'reports/pregunta_report.xml',
         'views/respuesta_view.xml',
         'views/pregunta_view.xml',
         'views/categoriapregunta_view.xml',

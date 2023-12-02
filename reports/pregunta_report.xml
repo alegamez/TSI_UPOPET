@@ -1,0 +1,73 @@
+<odoo>
+    <template id="report_pregunta">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout"> 
+                    <div class="page">
+                        <div class="oe_structure" />
+                        <div class="row" style="font-size: 24px; margin-bottom: 20px;">
+                            <span style="font-weight: bold; text-decoration: underline; ">Contenido:</span>
+                            <span style="color: #999999;" t-field="o.contenido" />
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-2" style="margin: auto; text-align: center; padding-left: 15px; padding-right: 15px; border-right: 2px solid #cccccc;">
+                                    <p>Categoría: <span t-field="o.categoriapregunta_id" style="font-size: 14px; font-weight: bold;"/></p>
+                            </div>
+                            <div class="col-xs-8" style="text-align: center; padding: 20px; border: 1px solid black;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <p>
+                                                <strong>ID Pregunta: </strong>
+                                            </p>
+                                            <p>
+                                                <strong>Fecha publicacion: </strong>
+                                            </p>
+                                        </td>
+                                        <td style="padding-left: 10px;">
+                                            <p t-field="o.name" />
+                                            <p t-field="o.fechaPublicacion" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div t-if="o.respuesta_ids" class="row" style="margin-top: 40px; font-weight: bold; font-size: 19px;">
+                            Respuestas a la pregunta <span t-field="o.name" />
+                        </div>
+                        <div t-if="o.respuesta_ids" id="respuestas" class="row" style="margin-top: 10px;">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Respuesta</th>
+                                        <th>Fecha Publicacion</th>
+                                        <th>Usuario</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="o.respuesta_ids" t-as="respuesta">
+                                        <tr>
+                                            <td>
+                                                <p t-field="respuesta.name" />
+                                            </td>
+                                            <td>
+                                                <p t-field="respuesta.contenido" />
+                                            </td>
+                                            <td>
+                                                <p t-field="respuesta.fechaPublicacion" />
+                                            </td>
+                                            <td>
+                                                <p t-field="respuesta.usuario_id" />
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

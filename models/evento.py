@@ -1,6 +1,7 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 from datetime import datetime
+
 class evento(models.Model):
     _name = 'upopet.evento'
     _description = 'Modelo para los distintos tipos de eventos'
@@ -71,4 +72,3 @@ class evento(models.Model):
       
  
 
-    
