@@ -1,5 +1,5 @@
 <odoo>
-    <template id="report_especie">
+    <template id="report_tipo">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.external_layout">
@@ -18,28 +18,16 @@
                                                 <strong>ID: </strong>
                                             </p>
                                             <p>
-                                                <strong>Nombre Científico: </strong>
+                                                <strong>Nombre: </strong>
                                             </p>
                                             <p>
-                                                <strong>Tamaño (cm): </strong>
-                                            </p>
-                                            <p>
-                                                <strong>Peso (kg): </strong>
-                                            </p>
-                                            <p>
-                                                <strong>Estado: </strong>
-                                            </p>
-                                            <p>
-                                                <strong>Tipo de Animal: </strong>
+                                                <strong>Número de Especies: </strong>
                                             </p>
                                         </td>
                                         <td style="padding-left: 10px;">
                                             <p t-field="o.name"/>
-                                            <p t-field="o.nombreCientifico"/>
-                                            <p t-field="o.tamanyo"/>
-                                            <p t-field="o.peso"/>
-                                            <p t-field="o.estado"/>
-                                            <p t-field="o.tipoespecie_id.nombre"/>
+                                            <p t-field="o.nombre"/>
+                                            <p t-esc="len(o.especie_ids)"/>
                                         </td>
                                     </tr>
                                 </table>

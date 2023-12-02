@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- E2. Esquema basico -->
-    <report id="report_especies" string="Especie report" model="upopet.especie" report_type="qweb-pdf" name="upopet.especie" />
+    <report id="report_especies" string="Especie report" model="upopet.especie" report_type="qweb-pdf" name="upopet.report_especie" />
+    <report id="report_tipos" string="Tipo report" model="upopet.tipo" report_type="qweb-pdf" name="upopet.report_tipo" />
     <report id="report_preguntas" string="Pregunta report" model="upopet.pregunta" report_type="qweb-pdf" name="upopet.report_pregunta" />
-
+  
 </odoo>

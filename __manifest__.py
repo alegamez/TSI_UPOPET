@@ -30,6 +30,7 @@
         'views/pregunta_view.xml',
         'reports/reports.xml',
         'reports/especie_report.xml', 
+        'reports/tipo_report.xml',  
         'reports/pregunta_report.xml',
         'views/respuesta_view.xml',
         'views/categoriapregunta_view.xml',
