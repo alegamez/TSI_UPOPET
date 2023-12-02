@@ -30,15 +30,18 @@ class empresa(models.Model):
     #Actualizar el nombre  de la empresa de manera automatico con un formato dado
     def _onchange_name(self):
         if self.name:
-            self.nombreEmpresa = f"Empresa-{self.name}"
+            nuevo_nombre = f"Empresa-{self.name}"
+            self.write({'nombreEmpresa': nuevo_nombre})
+
 
     #Verifica si hay evento anteriores organizados por esa empresa y lanza una excepción si existen
     @api.constrains('evento_ids')
     def _check_eventos_pasados(self):
         for empresa in self:
             for evento in empresa.evento_ids:
-                if evento.fecha and datetime.strptime(evento.fecha, '%Y-%m-%d %H:%M:%S') < datetime.now():
+                if evento.fecha and evento.fecha < datetime.now():
                     raise ValidationError("No se pueden asociar eventos pasados a la empresa.")
+
                 
     def btn_generate_report(self):
           return self.env.ref('upopet.report_empresa').report_action(self)
