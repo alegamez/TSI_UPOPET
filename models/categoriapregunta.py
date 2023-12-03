@@ -20,3 +20,6 @@ class categoriapregunta(models.Model):
             raise Warning("No se puede eliminar una categoria que tenga asociadas preguntas.")
         else:
             self.unlink()
+
+    def btn_generate_report(self):
+        return self.env.ref('upopet.report_categoriapreguntas').report_action(self)
