@@ -1,0 +1,67 @@
+<odoo>
+    <template id="report_tipoevento">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>                        
+                        <div class="row" style="border: 1px solid #cccccc; margin: 15px; padding: 15px; border-radius: 5px;">
+                            <div class="col-xs-2" style="margin: auto; text-align: center; padding-left: 15px; padding-right: 15px; border-right: 2px solid #cccccc;">
+                                <p t-field="o.nombre" style="font-size: 20px; font-weight: bold; color: #000000;"/>
+                            </div>
+                            <div class="col-xs-8" style="text-align: left; margin: auto; padding-left: 15px; padding-top: 10px;">
+                                <table style="width: 100%; text-align: center;">
+                                    <tr>
+                                        <td style="width: 30%;">
+                                            <p>
+                                                <strong>ID: </strong>
+                                            </p>
+                                            <p>
+                                                <strong>Número de Eventos: </strong>
+                                            </p>
+                                        </td>
+                                        <td style="padding-left: 10px;">
+                                            <p t-field="o.name"/>
+                                            <p t-esc="len(o.evento_ids)"/>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <div class="row" style="border: 1px solid #cccccc; margin: 15px; padding: 15px; border-radius: 5px;">
+                                    <div class="col-xs-12" style="text-align: left; margin: auto; padding-left: 15px; padding-top: 10px;">
+                                        <h2>Eventos</h2>
+                                        <table style="width: 100%; text-align: center;">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Nombre</th>
+                                                    <th>Fecha</th>
+                                                    <th>Descripcion</th>
+                                                    <th>Url</th>
+                                                    <th>Empresa</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <t t-foreach="o.evento_ids" t-as="evento">
+                                                    <tr>
+                                                        <td><span t-field="evento.name"/></td>
+                                                        <td><span t-field="evento.nombre"/></td>
+                                                        <td><span t-field="evento.fecha"/></td>
+                                                        <td><span t-field="evento.descripcion"/></td>
+                                                        <td><span t-field="evento.url"/></td>
+                                                        <td><span t-field="evento.empresa_id"/></td>
+                                                    </tr>
+                                                </t>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

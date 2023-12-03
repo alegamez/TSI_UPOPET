@@ -9,5 +9,7 @@
     <report id="report_pagos" string="Pago report" model="upopet.pago" report_type="qweb-pdf" name="upopet.report_pago" />
     <report id="report_metodopagos" string="Metodo de pago report" model="upopet.metodopago" report_type="qweb-pdf" name="upopet.report_metodopago" />
     <report id="report_preguntas" string="Pregunta report" model="upopet.pregunta" report_type="qweb-pdf" name="upopet.report_pregunta" />
-  
+    <report id="report_respuestas" string="Respuesta report" model="upopet.respuesta" report_type="qweb-pdf" name="upopet.report_respuesta" />
+    <report id="report_categoriapreguntas" string="Categoria report" model="upopet.categoriapregunta" report_type="qweb-pdf" name="upopet.report_categoriapregunta" />
+    <report id="report_tipoeventos" string="Tipo Evento report" model="upopet.tipoevento" report_type="qweb-pdf" name="upopet.report_tipoevento" />
 </odoo>
