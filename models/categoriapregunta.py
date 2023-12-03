@@ -14,3 +14,9 @@ class categoriapregunta(models.Model):
     @api.onchange('descripcion')  
     def onchange_descripcion(self):
         print(f'La descripcion de la categoria ha cambiado a: {self.descripcion}')
+
+    def btn_unlink(self):
+        if self.pregunta_ids and self.pregunta_ids.exists():
+            raise Warning("No se puede eliminar una categoria que tenga asociadas preguntas.")
+        else:
+            self.unlink()
