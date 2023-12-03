@@ -4,6 +4,9 @@
     <field name="model">upopet.tipoevento</field>
     <field name="arch" type="xml">
       <form string="Tipo de Evento">
+      <head>
+        <button name="btn_generate_report" string="Generar Informe" type="object" class="oe_highlight" />
+      </head>
         <sheet layout="auto">
           <group>
             <field name="name" />
