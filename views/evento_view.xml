@@ -6,7 +6,6 @@
             <form string="Evento">
                 <header>
                     <button name="btn_generate_report" string="Generar informe" type="object" class="oe_highlight" />
-                    <button string="Validar Fecha Futura" class="oe_highlight" type="object" name="button_validate_future_date" />
                     <button string="Actualizar Descripción" class="oe_highlight" type="object" name="button_update_description" />
                     <button string="Actualizar URL" class="oe_highlight" type="object" name="button_update_url" />
                 </header>
