@@ -47,17 +47,44 @@ class empresa(models.Model):
           return self.env.ref('upopet.report_empresa').report_action(self)
     
     def btn_create_evento(self):
-        return {'type': 'ir.actions.act_window_close'}
+        return {
+            'name': 'Crear Evento',
+            'type': 'ir.actions.act_window',
+            'res_model': 'upopet.evento',
+            'view_mode': 'form',
+            'view_id': self.env.ref('tsi_upopet.upopet_evento_form_view').id,
+            'target': 'new',
+        }
 
     def btn_create_seguro(self):
-        return {'type': 'ir.actions.act_window_close'}
+        return {
+            'name': 'Crear Seguro',
+            'type': 'ir.actions.act_window',
+            'res_model': 'upopet.seguro',
+            'view_mode': 'form',
+            'view_id': self.env.ref('tsi_upopet.upopet_seguro_form_view').id,
+            'target': 'new',
+        }
     
     def button_check_past_events(self):
         for empresa in self:
-            empresa._check_eventos_pasados()
+            for evento in empresa.evento_ids:
+                if evento.fecha and evento.fecha < datetime.now():
+                    raise Warning("No se pueden asociar eventos pasados a la empresa.")
+
+        raise Warning("Verificación de eventos pasados completada.")
+
         return True
     
     def button_update_name(self):
         for empresa in self:
             empresa._onchange_name()
-        return True
+        return {
+            'name': 'Actualizar Nombre de Empresa',
+            'type': 'ir.actions.act_window',
+            'res_model': 'upopet.empresa',
+            'view_mode': 'form',
+            'view_id': self.env.ref('tsi_upopet.upopet_empresa_form_view').id,  
+            'res_id': self.id,  
+            'target': 'new',
+    }
