@@ -66,16 +66,6 @@ class empresa(models.Model):
             'target': 'new',
         }
     
-    def button_check_past_events(self):
-        for empresa in self:
-            for evento in empresa.evento_ids:
-                if evento.fecha and evento.fecha < datetime.now():
-                    raise Warning("No se pueden asociar eventos pasados a la empresa.")
-
-        raise Warning("Verificación de eventos pasados completada.")
-
-        return True
-    
     def button_update_name(self):
         for empresa in self:
             empresa._onchange_name()
