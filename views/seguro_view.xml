@@ -7,7 +7,6 @@
                 <header>
                     <button name="btn_generate_report" string="Generar informe" type="object" class="oe_highlight" />
                     <button string="Validar Especie" class="oe_highlight" type="object" name="button_validate_species" />
-                    <button string="Verificar Duración" class="oe_highlight" type="object" name="button_check_duration" />
                     <button string="Eliminar" class="oe_highlight" type="object" name="btn_unlink_seguro"/>
                 </header>
                 <sheet>
