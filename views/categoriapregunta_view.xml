@@ -10,9 +10,7 @@
             <field name="descripcion" />
             <field name="pregunta_ids" widget="one2many"/>
             <newline></newline>
-            <button name="btn_buscar_preguntas" string="Buscar preguntas" type="object" class="oe_highlight" />
             <button name="btn_unlink" string="Borrar categoria" type="object" class="oe_highlight" />
-            <button name="btn_create_pregunta" string="Nueva pregunta" type="object" class="oe_highlight" />
           </group>
           <notebook>
             <page name="alimentacion" string="Alimentacion" >
