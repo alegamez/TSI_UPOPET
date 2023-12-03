@@ -1,11 +1,10 @@
 <odoo>
-    <template id="report_tipo">
+    <template id="report_tipoevento">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.external_layout">
                     <div class="page">
-                        <div class="oe_structure"/>
-                        
+                        <div class="oe_structure"/>                        
                         <div class="row" style="border: 1px solid #cccccc; margin: 15px; padding: 15px; border-radius: 5px;">
                             <div class="col-xs-2" style="margin: auto; text-align: center; padding-left: 15px; padding-right: 15px; border-right: 2px solid #cccccc;">
                                 <p t-field="o.nombre" style="font-size: 20px; font-weight: bold; color: #000000;"/>
@@ -18,44 +17,39 @@
                                                 <strong>ID: </strong>
                                             </p>
                                             <p>
-                                                <strong>Nombre: </strong>
-                                            </p>
-                                            <p>
-                                                <strong>Número de Especies: </strong>
+                                                <strong>Número de Eventos: </strong>
                                             </p>
                                         </td>
                                         <td style="padding-left: 10px;">
                                             <p t-field="o.name"/>
-                                            <p t-field="o.nombre"/>
-                                            <p t-esc="len(o.especie_ids)"/>
+                                            <p t-esc="len(o.evento_ids)"/>
                                         </td>
                                     </tr>
                                 </table>
 
-                                <!-- especies asociadas -->
                                 <div class="row" style="border: 1px solid #cccccc; margin: 15px; padding: 15px; border-radius: 5px;">
                                     <div class="col-xs-12" style="text-align: left; margin: auto; padding-left: 15px; padding-top: 10px;">
-                                        <h2>Especies Asociadas</h2>
+                                        <h2>Eventos</h2>
                                         <table style="width: 100%; text-align: center;">
                                             <thead>
                                                 <tr>
-                                                    <th>ID Especie</th>
+                                                    <th>ID</th>
                                                     <th>Nombre</th>
-                                                    <th>Tamaño (cm)</th>
-                                                    <th>Peso (kg)</th>
-                                                    <th>Estado</th>
-                                                    <th>Nombre Científico</th>
+                                                    <th>Fecha</th>
+                                                    <th>Descripcion</th>
+                                                    <th>Url</th>
+                                                    <th>Empresa</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <t t-foreach="o.especie_ids" t-as="especie">
+                                                <t t-foreach="o.evento_ids" t-as="evento">
                                                     <tr>
-                                                        <td><span t-field="especie.name"/></td>
-                                                        <td><span t-field="especie.nombre"/></td>
-                                                        <td><span t-field="especie.tamanyo"/></td>
-                                                        <td><span t-field="especie.peso"/></td>
-                                                        <td><span t-field="especie.estado"/></td>
-                                                        <td><span t-field="especie.nombreCientifico"/></td>
+                                                        <td><span t-field="evento.name"/></td>
+                                                        <td><span t-field="evento.nombre"/></td>
+                                                        <td><span t-field="evento.fecha"/></td>
+                                                        <td><span t-field="evento.descripcion"/></td>
+                                                        <td><span t-field="evento.url"/></td>
+                                                        <td><span t-field="evento.empresa_id"/></td>
                                                     </tr>
                                                 </t>
                                             </tbody>
@@ -64,10 +58,6 @@
                                 </div>
                                 
                             </div>
-                        </div>
-                        <div class="footer" style="position: fixed; bottom: 0; width: 100%; background-color: #f8f9fa; padding: 10px 0; text-align: center;">
-                            <span class="page">Página <span class="page-number"/></span>
-                            <span class="date">Fecha: <span t-esc="time.strftime('%d/%m/%Y')"/></span>
                         </div>
                     </div>
                 </t>

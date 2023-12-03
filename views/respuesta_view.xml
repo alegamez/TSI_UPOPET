@@ -7,6 +7,7 @@
         <header>
           <button name="btn_eliminar_respuesta" string="Eliminar" type="object" class="oe_highlight" />
           <button name="btn_duplicar_respuesta" string="Duplicar" type="object" class="oe_highlight" />
+          <button name="btn_generate_report" string="Generar Informe" type="object" class="oe_highlight" />
         </header>
         <sheet layout="auto">
           <group>

@@ -1,0 +1,71 @@
+<odoo>
+    <template id="report_pago">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="pago">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure" />
+                        <div class="row" style="font-size: 24px; margin-bottom: 20px;">
+                            <span style="font-weight: bold; text-decoration: underline; ">Detalles del Pago:</span>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-2" style="margin: auto; text-align: center; padding-left: 15px; padding-right: 15px; border-right: 2px solid #cccccc;">
+                                <p>Pago ID: <span t-field="pago.name" style="font-size: 14px; font-weight: bold;"/></p>
+                                <p>Método de Pago: <span t-field="pago.metodopago_id.nombre" style="font-size: 14px; font-weight: bold;"/></p>
+                            </div>
+                            <div class="col-xs-8" style="text-align: center; padding: 20px; border: 1px solid black;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <p>
+                                                <strong>Matrícula ID: </strong>
+                                            </p>
+                                            <p>
+                                                <strong>Fecha del Pago: </strong>
+                                            </p>
+                                        </td>
+                                        <td style="padding-left: 10px;">
+                                            <p t-field="pago.matricula_id.name" />
+                                            <p t-field="pago.matricula_id.fecha" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 40px; font-weight: bold; font-size: 19px;">
+                            Información de la Matrícula
+                        </div>
+                        <div class="row" style="margin-top: 10px;">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Matrícula ID</th>
+                                        <th>Precio</th>
+                                        <th>Fecha de Matrícula</th>
+                                        <th>Usuario Matriculado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p t-field="pago.matricula_id.name" />
+                                        </td>
+                                        <td>
+                                            <p t-field="pago.matricula_id.precio" />
+                                        </td>
+                                        <td>
+                                            <p t-field="pago.matricula_id.fecha" />
+                                        </td>
+                                        <td>
+                                            <p t-field="pago.matricula_id.usuario_id" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

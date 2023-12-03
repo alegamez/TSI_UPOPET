@@ -18,3 +18,6 @@ class tipo(models.Model):
     def btn_desasociarEspecies(self):
         self.ensure_one()
         self.especie_ids.write({'tipoespecie_id': False})
+
+    def btn_generate_report(self):
+          return self.env.ref('upopet.report_tipos').report_action(self)    

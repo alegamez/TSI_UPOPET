@@ -24,3 +24,6 @@ class respuesta(models.Model):
     @api.onchange('contenido')  
     def onchange_contenido(self):
         print(f'El contenido de la respuesta ha cambiado a: {self.contenido}')
+
+    def btn_generate_report(self):
+        return self.env.ref('upopet.report_respuestas').report_action(self)

@@ -1,0 +1,56 @@
+<odoo>
+    <template id="report_categoriapregunta">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout"> 
+                    <div class="page">
+                        <div class="oe_structure" />
+                        <div class="row" style="font-size: 24px; margin-bottom: 20px;">
+                            <span style="font-weight: bold; text-decoration: underline;" t-field="o.name" />
+                        </div>
+                        <div style="margin: auto; color: #999999; text-align: center; padding-left: 15px; padding-right: 15px;">
+                                <span t-field="o.descripcion" style="font-size: 14px; font-weight: bold;"/>
+                        </div>  
+                        <div t-if="o.pregunta_ids" class="row" style="margin-top: 40px; font-weight: bold; font-size: 19px;">
+                            Preguntas de la categoria  <span t-field="o.name" />
+                        </div>
+                        <div t-if="o.pregunta_ids" id="preguntas" class="row" style="margin-top: 10px;">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Pregunta</th>
+                                        <th>Fecha Publicacion</th>
+                                        <th>Usuario</th>
+                                        <th>Nº Respuestas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="o.pregunta_ids" t-as="pregunta">
+                                        <tr>
+                                            <td>
+                                                <p t-field="pregunta.name" />
+                                            </td>
+                                            <td>
+                                                <p t-field="pregunta.contenido" />
+                                            </td>
+                                            <td>
+                                                <p t-field="pregunta.fechaPublicacion" />
+                                            </td>
+                                            <td>
+                                                <p t-field="pregunta.usuario_id" />
+                                            </td>
+                                            <th>
+                                                <p t-esc="len(pregunta.respuesta_ids)"/>
+                                            </th>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

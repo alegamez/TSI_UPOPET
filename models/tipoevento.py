@@ -13,3 +13,6 @@ class tipoevento(models.Model):
 
     def btn_eliminarEventos(self):
         self.write({'evento_ids':[(5,)]})
+
+    def btn_generate_report(self):
+        return self.env.ref('upopet.report_tipoeventos').report_action(self)

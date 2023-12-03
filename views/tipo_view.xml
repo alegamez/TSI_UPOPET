@@ -5,6 +5,9 @@
         <field name="model">upopet.tipo</field>
         <field name="arch" type="xml">
             <form string="Tipo de animal">
+                <header>
+                    <button name="btn_generate_report" string="Generar informe" type="object" class="oe_highlight" />
+                </header>
                 <sheet layout="auto">
                     <group>
                         <field name="name"/>
