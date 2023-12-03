@@ -9,6 +9,8 @@
             <field name="name" />
             <field name="descripcion" />
             <field name="pregunta_ids" widget="one2many"/>
+            <newline></newline>
+            <button name="btn_unlink" string="Borrar categoria" type="object" class="oe_highlight" />
           </group>
           <notebook>
             <page name="alimentacion" string="Alimentacion" >
