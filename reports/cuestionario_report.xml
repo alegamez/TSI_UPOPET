@@ -1,0 +1,61 @@
+<odoo>
+    <template id="report_cuestionario">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="cuestionario">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure" />
+                        <div class="row" style="font-size: 24px; margin-bottom: 20px;">
+                            <span style="font-weight: bold; text-decoration: underline;">Cuestionario:</span>
+                            <span style="color: #999999;" t-field="cuestionario.name" />
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-2" style="margin: auto; text-align: center; padding-left: 15px; padding-right: 15px; border-right: 2px solid #cccccc;">
+                                <p>Jardín: <span t-field="cuestionario.jardin" style="font-size: 14px; font-weight: bold;" /></p>
+                            </div>
+                            <div class="col-xs-8" style="text-align: center; padding: 20px; border: 1px solid black;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <p>
+                                                <strong>Espacio Disponible:</strong>
+                                            </p>
+                                            <p>
+                                                <strong>Experiencia Previa:</strong>
+                                            </p>
+                                        </td>
+                                        <td style="padding-left: 10px;">
+                                            <p t-field="cuestionario.espacioDisponible" />
+                                            <p t-field="cuestionario.experienciaPrevia" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 40px; font-weight: bold; font-size: 19px;">
+                            Detalles del Usuario
+                        </div>
+                        <div class="row" style="margin-top: 10px;">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>Preferencia de Mascota</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><p t-field="cuestionario.usuario_id.id" /></td>
+                                        <td><p t-field="cuestionario.usuario_id.name" /></td>
+                                        <td><p t-field="cuestionario.usuario_id.preferencia" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

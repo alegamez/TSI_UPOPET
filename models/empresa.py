@@ -30,31 +30,51 @@ class empresa(models.Model):
     #Actualizar el nombre  de la empresa de manera automatico con un formato dado
     def _onchange_name(self):
         if self.name:
-            self.nombreEmpresa = f"Empresa-{self.name}"
+            nuevo_nombre = f"Empresa-{self.name}"
+            self.write({'nombreEmpresa': nuevo_nombre})
+
 
     #Verifica si hay evento anteriores organizados por esa empresa y lanza una excepción si existen
     @api.constrains('evento_ids')
     def _check_eventos_pasados(self):
         for empresa in self:
             for evento in empresa.evento_ids:
-                if evento.fecha and datetime.strptime(evento.fecha, '%Y-%m-%d %H:%M:%S') < datetime.now():
+                if evento.fecha and evento.fecha < datetime.now():
                     raise ValidationError("No se pueden asociar eventos pasados a la empresa.")
+
                 
     def btn_generate_report(self):
           return self.env.ref('upopet.report_empresa').report_action(self)
     
     def btn_create_evento(self):
-        return {'type': 'ir.actions.act_window_close'}
+        return {
+            'name': 'Crear Evento',
+            'type': 'ir.actions.act_window',
+            'res_model': 'upopet.evento',
+            'view_mode': 'form',
+            'view_id': self.env.ref('tsi_upopet.upopet_evento_form_view').id,
+            'target': 'new',
+        }
 
     def btn_create_seguro(self):
-        return {'type': 'ir.actions.act_window_close'}
-    
-    def button_check_past_events(self):
-        for empresa in self:
-            empresa._check_eventos_pasados()
-        return True
+        return {
+            'name': 'Crear Seguro',
+            'type': 'ir.actions.act_window',
+            'res_model': 'upopet.seguro',
+            'view_mode': 'form',
+            'view_id': self.env.ref('tsi_upopet.upopet_seguro_form_view').id,
+            'target': 'new',
+        }
     
     def button_update_name(self):
         for empresa in self:
             empresa._onchange_name()
-        return True
+        return {
+            'name': 'Actualizar Nombre de Empresa',
+            'type': 'ir.actions.act_window',
+            'res_model': 'upopet.empresa',
+            'view_mode': 'form',
+            'view_id': self.env.ref('tsi_upopet.upopet_empresa_form_view').id,  
+            'res_id': self.id,  
+            'target': 'new',
+    }

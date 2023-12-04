@@ -50,25 +50,34 @@ class evento(models.Model):
     @api.onchange('nombre')
     def _onchange_nombre(self):
         if self.nombre:
-            self.url = f"/evento/{self.nombre.replace(' ', '-').lower()}"
+            nueva_url = f"Evento-{self.url}"
+            self.write({'url': nueva_url})
             
     def btn_generate_report(self):
-          return self.env.ref('upopet.report_evento').report_action(self)
+          return self.env.ref('tsi_upopet.report_evento').report_action(self)
     
-    def button_validate_future_date(self):
-        for evento in self:
-            evento._check_fecha_futura()
-        return True
-
     def button_update_description(self):
-        for evento in self:
-            evento._onchange_tipoevento_id()
-        return True
+        self.ensure_one()
+        self._onchange_tipoevento_id()
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': 'upopet.evento',
+            'view_mode': 'form',
+            'view_id': self.env.ref('tsi_upopet.upopet_evento_form_view').id,
+            'res_id': self.id,
+            'target': 'current',
+        }
 
     def button_update_url(self):
-        for evento in self:
-            evento._onchange_nombre()
-        return True
-      
+        self.ensure_one()
+        self._onchange_nombre()
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': 'upopet.evento',
+            'view_mode': 'form',
+            'view_id': self.env.ref('tsi_upopet.upopet_evento_form_view').id,
+            'res_id': self.id,
+            'target': 'current',
+        }
  
 
