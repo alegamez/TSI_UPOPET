@@ -5,9 +5,9 @@
         <field name="arch" type="xml">
             <form string="Empresa">
                 <header>
-                    <button string="Crear Evento" class="oe_highlight" type="object" name="btn_create_evento"/>
-                    <button string="Crear Seguro" class="oe_highlight" type="object" name="btn_create_seguro"/>
-                    <button string="Actualizar Nombre" class="oe_highlight" type="object" name="button_update_name" />
+                    <button name="btn_create_evento" string="Crear Evento" class="oe_highlight" type="object"/>
+                    <button name="btn_create_seguro" string="Crear Seguro" class="oe_highlight" type="object"/>
+                    <button name="button_update_name" string="Actualizar Nombre" class="oe_highlight" type="object" />
                     <button name="btn_generate_report" string="Generar informe" type="object" class="oe_highlight" />
                 </header>
                 <sheet>

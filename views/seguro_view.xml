@@ -6,8 +6,8 @@
             <form string="Seguro">
                 <header>
                     <button name="btn_generate_report" string="Generar informe" type="object" class="oe_highlight" />
-                    <button string="Validar Especie" class="oe_highlight" type="object" name="button_validate_species" />
-                    <button string="Eliminar" class="oe_highlight" type="object" name="btn_unlink_seguro"/>
+                    <button name="button_validate_species" string="Validar Especie" class="oe_highlight" type="object"  />
+                    <button name="btn_unlink_seguro" string="Eliminar" class="oe_highlight" type="object" />
                 </header>
                 <sheet>
                     <group>
