@@ -7,7 +7,7 @@
                 <header>
                     <button name="btn_generate_report" string="Generar informe" type="object" class="oe_highlight" />
                     <button name="button_validate_species" string="Validar Especie" class="oe_highlight" type="object"  />
-                    <button name="btn_unlink_seguro" string="Eliminar" class="oe_highlight" type="object" />
+                    <button name="button_eliminar_seguros_condicionados" string="Eliminar Seguros"  confirm="¿Estás seguro de que quieres eliminar los seguros que cumplen con los criterios?" class="oe_highlight" type="object" />                   
                 </header>
                 <sheet>
                     <group>
