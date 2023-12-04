@@ -34,12 +34,12 @@ class seguro(models.Model):
             self.cobertura = f"Cobertura para {especie.name}"
             self._check_duration()
 
-    @api.model
+    @api.constrains('especie_id')
     def validar_especie(self):
         if self.especie_id.name == 'Gato' and self.precio > 100:
             raise Warning("¡El precio para seguros de gatos no debería ser mayor a 100!")
         elif self.especie_id.name == 'Perro' and self.precio > 500:
-            raise Warning("¡El precio para seguros de gatos no debería ser mayor a 500!")
+            raise Warning("¡El precio para seguros de perros no debería ser mayor a 500!")
         elif self.especie_id.name == 'Conejo' and (self.precio < 500 or self.precio > 5000):
             raise Warning("¡El precio para seguros de conejos no debe ser menor de 500 ni mayor que 5000!")
 
@@ -52,14 +52,6 @@ class seguro(models.Model):
     def btn_generate_report(self):
           return self.env.ref('upopet.report_seguro').report_action(self)
     
-    def button_validate_species(self):
-        self.ensure_one()
-        try:
-            self._onchange_especie_id()
-        except Exception:
-            pass 
-        return {'type': 'ir.actions.act_window_close'}
-
     
     def button_eliminar_seguros(self):
         seguros_a_eliminar = self.filtered(lambda s: s.duracion > 730 or s.duracion < 0)
