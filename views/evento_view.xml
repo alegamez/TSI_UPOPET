@@ -6,8 +6,8 @@
             <form string="Evento">
                 <header>
                     <button name="btn_generate_report" string="Generar informe" type="object" class="oe_highlight" />
-                    <button string="Actualizar Descripción" class="oe_highlight" type="object" name="button_update_description" />
-                    <button string="Actualizar URL" class="oe_highlight" type="object" name="button_update_url" />
+                    <button name="button_update_description" string="Actualizar Descripción" class="oe_highlight" type="object" />
+                    <button name="button_update_url" string="Actualizar URL" class="oe_highlight" type="object" />
                 </header>
                 <sheet layout="auto">
                     <group>
