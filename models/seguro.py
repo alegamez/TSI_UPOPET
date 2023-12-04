@@ -25,15 +25,6 @@ class seguro(models.Model):
         if 'duracion' in values and values['duracion'] <= 0:
             raise Warning("La duración del seguro debe ser mayor que cero.")
         super(seguro, self).write(values)
-
-    @api.model
-    def unlink(self):
-        seguros_duracion_cero = self.filtered(lambda s: s.duracion <= 0)
-        if seguros_duracion_cero:
-            raise Warning("No se puede eliminar un seguro con duración menor o igual a cero.")
-        if self.empresa_id and self.empresa_id.exists():
-            raise Warning("No se puede eliminar un seguro asociado a una empresa existente.")
-        super(seguro, seguros_duracion_cero).unlink()
     
     @api.onchange('especie_id')
     def _onchange_especie_id(self):
@@ -70,5 +61,9 @@ class seguro(models.Model):
         return {'type': 'ir.actions.act_window_close'}
 
     
-    def btn_unlink_seguro(self):
-        self.unlink()
+    def button_eliminar_seguros(self):
+        seguros_a_eliminar = self.filtered(lambda s: s.duracion > 730 or s.duracion < 0)
+        if seguros_a_eliminar:
+            seguros_a_eliminar.unlink()
+        else:
+            raise exceptions.UserError("No hay seguros que cumplan con los criterios de duración.")
