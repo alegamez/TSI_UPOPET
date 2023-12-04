@@ -75,6 +75,13 @@
         
         
     ],
+    'assets':{
+        'web.assets_backend': [
+            'upopet/static/src/components/*/*.js',
+            'upopet/static/src/components/*/*.xml',
+            'upopet/static/src/components/*/*.scss',
+        ],
+    },
     'application': True,
 }
 
