@@ -11,6 +11,12 @@ class tipoevento(models.Model):
 
     _sql_constraints = [('tipoevento_name_unique','UNIQUE (name)','El name debe ser único')]
 
+    @api.onchange('nombre')
+    def onchange_nombre(self):
+        if self.nombre:
+            nuevo_nombre = f"Tipo Evento-{self.nombre}"
+            self.write({'nombre': nuevo_nombre})  
+    
     def btn_eliminarEventos(self):
         self.write({'evento_ids':[(5,)]})
 
