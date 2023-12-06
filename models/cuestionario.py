@@ -1,27 +1,47 @@
-from odoo import models, fields, api
+<odoo>
+    <!-- tree view -->
+    <record id="view_cuestionario_tree" model="ir.ui.view">
+        <field name="name">cuestionario.tree</field>
+        <field name="model">upopet.cuestionario</field>
+        <field name="arch" type="xml">
+            <tree string="Cuestionario">
+                <field name="name"/>
+                <field name="jardin"/>
+                <field name="espacioDisponible"/>
+                <field name="experienciaPrevia"/>
+                <field name="exotico"/>
+                <field name="preferencia"/>
+                <field name="usuario_id"/>
+            </tree>
+        </field>
+    </record>
 
-class cuestionario(models.Model):
-    _name = "upopet.cuestionario"
-    _description = 'Modelo para el cuestionario de los usuarios'
+    <!-- form view -->
+    <record id="view_cuestionario_form" model="ir.ui.view">
+        <field name="name">cuestionario.form</field>
+        <field name="model">upopet.cuestionario</field>
+        <field name="arch" type="xml">
+            <form string="Cuestionario">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="jardin"/>
+                        <field name="espacioDisponible"/>
+                        <field name="experienciaPrevia"/>
+                        <field name="exotico"/>
+                        <field name="preferencia"/>
+                        <field name="usuario_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-    name = fields.Char(string="Identificador", required=True, help="Identificador del cuestionario")
-    jardin = fields.Selection([('si', 'Si'), ('no', 'No')], string="¿Tiene jardín?", help="Indica si el usuario tiene jardín o no")
-    espacioDisponible = fields.Float(string="Espacio disponible", help="Espacio disponible en la vivienda del usuario")
-    experienciaPrevia = fields.Selection([('baja', 'Baja'), ('media', 'Media'), ('alta', 'Alta')], string="Experiencia previa", help="Nivel de experiencia previa del usuario con mascotas")
-    exotico = fields.Selection([('si', 'Si'), ('no', 'No')], string="¿Le gustan los animales exóticos?", help="Indica si al usuario le gustan los animales exóticos o no")
-    preferencia = fields.Selection([('perros', 'Perros'), ('gatos', 'Gatos'), ('peces', 'Peces'), ('pequeños mamíferos', 'Pequeños mamíferos'), ('insectos', 'Insectos'), ('reptiles exoticos', 'Reptiles exóticos'), ('indiferente', 'Indiferente')], string="Preferencia de mascota", help="Tipo de mascota preferida por el usuario")
-    usuario_id = fields.Many2one("upopet.usuario", string='Usuario')
-    
-    @api.constrains('espacioDisponible')
-    def _check_espacio_disponible(self):
-        for cuestionario in self:
-            if cuestionario.espacioDisponible < 0:
-                raise ValueError("El espacio disponible no puede ser negativo.")
-            
-    @api.onchange('jardin')
-    def _onchange_jardin(self):
-        if self.jardin == 'si':
-            self.espacioDisponible = 100  
-        elif self.jardin == 'no':
-            self.espacioDisponible = 50
-            
+    <!-- action to open the tree & form view -->
+    <record id="cuestionario_list_action" model="ir.actions.act_window">
+        <field name="name">Cuestionario</field>
+        <field name="res_model">upopet.cuestionario</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
