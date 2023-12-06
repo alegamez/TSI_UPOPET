@@ -13,7 +13,13 @@ class categoriapregunta(models.Model):
 
     @api.onchange('descripcion')  
     def onchange_descripcion(self):
-        print(f'La descripcion de la categoria ha cambiado a: {self.descripcion}')
+        if self.descripcion:
+            message = f'La descripción de la categoría ha cambiado a: {self.descripcion}'
+            warning = {
+                'title': 'Cambio de Descripción',
+                'message': message,
+            }
+            return {'warning': warning}
 
     def btn_unlink(self):
         if self.pregunta_ids and self.pregunta_ids.exists():

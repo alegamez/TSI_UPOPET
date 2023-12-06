@@ -48,7 +48,7 @@ class empresa(models.Model):
             'type': 'ir.actions.act_window',
             'res_model': 'upopet.evento',
             'view_mode': 'form',
-            'view_id': self.env.ref('tsi_upopet.upopet_evento_form_view').id,
+            'view_id': self.env.ref('upopet.upopet_evento_form_view').id,
             'target': 'new',
         }
 
@@ -58,7 +58,7 @@ class empresa(models.Model):
             'type': 'ir.actions.act_window',
             'res_model': 'upopet.seguro',
             'view_mode': 'form',
-            'view_id': self.env.ref('tsi_upopet.upopet_seguro_form_view').id,
+            'view_id': self.env.ref('upopet.upopet_seguro_form_view').id,
             'target': 'new',
         }
     
@@ -70,7 +70,7 @@ class empresa(models.Model):
             'type': 'ir.actions.act_window',
             'res_model': 'upopet.empresa',
             'view_mode': 'form',
-            'view_id': self.env.ref('tsi_upopet.upopet_empresa_form_view').id,  
+            'view_id': self.env.ref('upopet.upopet_empresa_form_view').id,  
             'res_id': self.id,  
             'target': 'new',
     }

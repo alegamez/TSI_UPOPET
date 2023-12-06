@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "tsi_upopet",
+    'name': "upopet",
 
     'summary': """Gestion del modulo UPOPET""",
 
@@ -8,8 +8,8 @@
         Long description of module's purpose
     """,
 
-    'author': "My Company",
-    'website': "https://www.yourcompany.com",
+    'author': "UPOPET",
+    'website': "https://www.upopet.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/16.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -81,6 +81,13 @@
         
         
     ],
+    'assets':{
+        'web.assets_backend': [
+            'upopet/static/src/components/*/*.js',
+            'upopet/static/src/components/*/*.xml',
+            'upopet/static/src/components/*/*.scss',
+        ],
+    },
     'application': True,
 }
 
