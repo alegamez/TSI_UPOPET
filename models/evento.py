@@ -54,7 +54,7 @@ class evento(models.Model):
             self.write({'url': nueva_url})
             
     def btn_generate_report(self):
-          return self.env.ref('tsi_upopet.report_evento').report_action(self)
+          return self.env.ref('upopet.report_evento').report_action(self)
     
     def button_update_description(self):
         self.ensure_one()
@@ -63,7 +63,7 @@ class evento(models.Model):
             'type': 'ir.actions.act_window',
             'res_model': 'upopet.evento',
             'view_mode': 'form',
-            'view_id': self.env.ref('tsi_upopet.upopet_evento_form_view').id,
+            'view_id': self.env.ref('upopet.upopet_evento_form_view').id,
             'res_id': self.id,
             'target': 'current',
         }
@@ -75,7 +75,7 @@ class evento(models.Model):
             'type': 'ir.actions.act_window',
             'res_model': 'upopet.evento',
             'view_mode': 'form',
-            'view_id': self.env.ref('tsi_upopet.upopet_evento_form_view').id,
+            'view_id': self.env.ref('upopet.upopet_evento_form_view').id,
             'res_id': self.id,
             'target': 'current',
         }
