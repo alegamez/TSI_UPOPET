@@ -25,6 +25,15 @@ class seguro(models.Model):
         if 'duracion' in values and values['duracion'] <= 0:
             raise Warning("La duración del seguro debe ser mayor que cero.")
         super(seguro, self).write(values)
+
+    @api.model
+    def unlink(self):
+        seguros_duracion_cero = self.filtered(lambda s: s.duracion <= 0)
+        if seguros_duracion_cero:
+            raise Warning("No se puede eliminar un seguro con duración menor o igual a cero.")
+        if self.empresa_id and self.empresa_id.exists():
+            raise Warning("No se puede eliminar un seguro asociado a una empresa existente.")
+        super(seguro, seguros_duracion_cero).unlink()
     
     @api.onchange('especie_id')
     def _onchange_especie_id(self):
@@ -34,12 +43,12 @@ class seguro(models.Model):
             self.cobertura = f"Cobertura para {especie.name}"
             self._check_duration()
 
-    @api.constrains('especie_id')
+    @api.model
     def validar_especie(self):
         if self.especie_id.name == 'Gato' and self.precio > 100:
             raise Warning("¡El precio para seguros de gatos no debería ser mayor a 100!")
         elif self.especie_id.name == 'Perro' and self.precio > 500:
-            raise Warning("¡El precio para seguros de perros no debería ser mayor a 500!")
+            raise Warning("¡El precio para seguros de gatos no debería ser mayor a 500!")
         elif self.especie_id.name == 'Conejo' and (self.precio < 500 or self.precio > 5000):
             raise Warning("¡El precio para seguros de conejos no debe ser menor de 500 ni mayor que 5000!")
 
@@ -52,10 +61,14 @@ class seguro(models.Model):
     def btn_generate_report(self):
           return self.env.ref('upopet.report_seguro').report_action(self)
     
+    def button_validate_species(self):
+        self.ensure_one()
+        try:
+            self._onchange_especie_id()
+        except Exception:
+            pass 
+        return {'type': 'ir.actions.act_window_close'}
+
     
-    def button_eliminar_seguros(self):
-        seguros_a_eliminar = self.filtered(lambda s: s.duracion > 730 or s.duracion < 0)
-        if seguros_a_eliminar:
-            seguros_a_eliminar.unlink()
-        else:
-            raise exceptions.UserError("No hay seguros que cumplan con los criterios de duración.")
+    def btn_unlink_seguro(self):
+        self.unlink()
