@@ -12,7 +12,7 @@ class componente1 extends Component {
             activeId: false,
         })
         this.orm = useService("orm")
-        this.model = "upopet.categoriaPregunta"
+        this.model = "upopet.categoriapregunta"
         this.searchInput = useRef("search-input")
 
         onWillStart(async ()=>{
