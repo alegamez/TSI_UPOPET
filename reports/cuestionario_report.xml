@@ -1,5 +1,5 @@
 <odoo>
-    <template id="report_cuestionario">
+    <template id="upopet_cuestionario_template">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="cuestionario">
                 <t t-call="web.external_layout">
@@ -10,23 +10,28 @@
                             <span style="color: #999999;" t-field="cuestionario.name" />
                         </div>
                         <div class="row">
-                            <div class="col-xs-2" style="margin: auto; text-align: center; padding-left: 15px; padding-right: 15px; border-right: 2px solid #cccccc;">
-                                <p>Jardín: <span t-field="cuestionario.jardin" style="font-size: 14px; font-weight: bold;" /></p>
-                            </div>
                             <div class="col-xs-8" style="text-align: center; padding: 20px; border: 1px solid black;">
                                 <table>
                                     <tr>
                                         <td>
+                                            <p>
+                                                <strong>Jardin:</strong>
+                                            </p>
                                             <p>
                                                 <strong>Espacio Disponible:</strong>
                                             </p>
                                             <p>
                                                 <strong>Experiencia Previa:</strong>
                                             </p>
+                                            <p>
+                                                <strong>Exotico:</strong>
+                                            </p>
                                         </td>
                                         <td style="padding-left: 10px;">
+                                            <p t-field="cuestionario.jardin" />
                                             <p t-field="cuestionario.espacioDisponible" />
                                             <p t-field="cuestionario.experienciaPrevia" />
+                                            <p t-field="cuestionario.exotico" />
                                         </td>
                                     </tr>
                                 </table>
@@ -46,9 +51,9 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><p t-field="cuestionario.usuario_id.id" /></td>
                                         <td><p t-field="cuestionario.usuario_id.name" /></td>
-                                        <td><p t-field="cuestionario.usuario_id.preferencia" /></td>
+                                        <td><p t-field="cuestionario.usuario_id.nombre" /></td>
+                                        <td><p t-field="cuestionario.preferencia" /></td>
                                     </tr>
                                 </tbody>
                             </table>
