@@ -41,10 +41,6 @@ class empresa(models.Model):
             for evento in empresa.evento_ids:
                 if evento.fecha and evento.fecha < datetime.now():
                     raise ValidationError("No se pueden asociar eventos pasados a la empresa.")
-
-                
-    def btn_generate_report(self):
-          return self.env.ref('upopet.report_empresa').report_action(self)
     
     def btn_create_evento(self):
         return {
