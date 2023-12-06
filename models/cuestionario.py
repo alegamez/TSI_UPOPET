@@ -25,5 +25,3 @@ class cuestionario(models.Model):
         elif self.jardin == 'no':
             self.espacioDisponible = 50
             
-    def btn_generate_report(self):
-        return self.env.ref('upopet.report_cuestionario').report_action(self) 
