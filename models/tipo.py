@@ -8,16 +8,9 @@ class tipo(models.Model):
     
     name = fields.Integer(string="tipo ID", size=10, required=True, readonly=False)
     nombre = fields.Char(string="nombre", required=True, size=50, help="Nombre del tipo de animal")
-
+    
+    #para la vista
+    imagentipo = fields.Binary('Photo')
 
     especie_ids = fields.One2many("upopet.especie", 'tipoespecie_id', "especie")
     
-    _sql_constraints = [('tipo_nombre_unique','UNIQUE (nombre)','El nombre debe ser único')]
-
-    
-    def btn_desasociarEspecies(self):
-        self.ensure_one()
-        self.especie_ids.write({'tipoespecie_id': False})
-
-    def btn_generate_report(self):
-          return self.env.ref('upopet.report_tipos').report_action(self)    

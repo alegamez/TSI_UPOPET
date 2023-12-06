@@ -11,14 +11,15 @@ class tipoevento(models.Model):
 
     _sql_constraints = [('tipoevento_name_unique','UNIQUE (name)','El name debe ser único')]
 
+
+    def btn_eliminarEventos(self):
+        self.write({'evento_ids':[(5,)]})
+
     @api.onchange('nombre')
     def onchange_nombre(self):
         if self.nombre:
             nuevo_nombre = f"Tipo Evento-{self.nombre}"
             self.write({'nombre': nuevo_nombre})  
-    
-    def btn_eliminarEventos(self):
-        self.write({'evento_ids':[(5,)]})
 
     def btn_generate_report(self):
         return self.env.ref('upopet.report_tipoeventos').report_action(self)

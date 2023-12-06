@@ -1,15 +1,10 @@
+
 <odoo>
     <record id="upopet_empresa_form_view" model="ir.ui.view">
         <field name="name">upopet.empresa.form</field>
         <field name="model">upopet.empresa</field>
         <field name="arch" type="xml">
             <form string="Empresa">
-                <header>
-                    <button name="btn_create_evento" string="Crear Evento" class="oe_highlight" type="object"/>
-                    <button name="btn_create_seguro" string="Crear Seguro" class="oe_highlight" type="object"/>
-                    <button name="button_update_name" string="Actualizar Nombre" class="oe_highlight" type="object" />
-                    <button name="btn_generate_report" string="Generar informe" type="object" class="oe_highlight" />
-                </header>
                 <sheet>
                     <group> 
                         <field name="name"/> 

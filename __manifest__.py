@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "tsi_upopet",
+    'name': "upopet",
 
     'summary': """Gestion del modulo UPOPET""",
 
@@ -28,20 +28,12 @@
         #'views/views.xml',
         #'views/templates.xml',
         'reports/reports.xml',
-        'reports/especie_report.xml', 
-        'reports/empresa_report.xml',
-        'reports/evento_report.xml',
-        'reports/seguro_report.xml',
-        'reports/tipo_report.xml', 
-        'reports/pago_report.xml',
-        'reports/metodopago_report.xml',    
         'reports/pregunta_report.xml',
         'reports/respuesta_report.xml',
         'reports/categoriapregunta_report.xml',
         'reports/tipoevento_report.xml',
-        'reports/cuestionario_report.xml',
-        'views/respuesta_view.xml',
         'views/pregunta_view.xml',
+        'views/respuesta_view.xml',
         'views/categoriapregunta_view.xml',
         'views/tipoevento_view.xml',
         'views/empresa_view.xml',

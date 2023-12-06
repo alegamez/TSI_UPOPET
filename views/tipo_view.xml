@@ -5,18 +5,11 @@
         <field name="model">upopet.tipo</field>
         <field name="arch" type="xml">
             <form string="Tipo de animal">
-                <header>
-                    <button name="btn_generate_report" string="Generar informe" type="object" class="oe_highlight" />
-                </header>
                 <sheet layout="auto">
                     <group>
                         <field name="name"/>
                         <field name="nombre"/>
-                        <field name="especie_ids" widget="many2many_tags"/>
-                    </group>
-                    <!-- Añade este botón para desasociar las especies -->
-                    <group>
-                        <button name="btn_desasociarEspecies" string="Desasociar especies" type="object" class="btn-primary"/>
+                        <field name="imagentipo" widget="image" class="oe_avatar"/>
                     </group>
                 </sheet>
             </form>
@@ -49,7 +42,7 @@
             <tree string="Tipos de Animales">
                 <field name="name"/>
                 <field name="nombre"/>
-
+                
             </tree>
         </field>
     </record>

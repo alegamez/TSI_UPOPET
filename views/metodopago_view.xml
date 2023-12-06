@@ -16,35 +16,6 @@
     </field>
   </record>
 
-  <record id="upopet_metodopago_form_view" model="ir.ui.view">
-    <field name="name">upopet.metodopago.form</field>
-    <field name="model">upopet.metodopago</field>
-    <field name="arch" type="xml">
-      <form string="Método de Pago">
-      <header>
-          <button name="btn_generate_report" string="Generar informe" type="object" class="oe_highlight" />
-        </header>
-        <sheet>
-          <div class="oe_title">
-            <label for="name" class="oe_edit_only"/>
-            <h3>
-              <field name="name" class="oe_inline"/>
-            </h3>
-          </div>
-          <group>
-            <group>
-              <field name="nombre" class="oe_inline"/>
-            </group>
-            <group>
-              <field name="pago_ids" widget="one2many" class="oe_inline"/>
-            </group>
-            
-          </group>
-        </sheet>
-      </form>
-    </field>
-  </record>
-
   <!-- Vista de Búsqueda -->
   <record id="upopet_search_view" model="ir.ui.view">
     <field name="name">upopet.metodopago.search</field>
@@ -67,5 +38,34 @@
     </field>
   </record>
 
-  
+  <!-- Pongo el form abajo ya que uso un botón que necesita que esté cargada la acción. Si no, a la hora de instalar pegará petardazo -->
+
+  <record id="upopet_metodopago_form_view" model="ir.ui.view">
+    <field name="name">upopet.metodopago.form</field>
+    <field name="model">upopet.metodopago</field>
+    <field name="arch" type="xml">
+      <form string="Método de Pago">
+        <sheet>
+          <div class="oe_title">
+            <label for="name" class="oe_edit_only"/>
+            <h3>
+              <field name="name" class="oe_inline"/>
+            </h3>
+          </div>
+          <group>
+            <group>
+              <field name="nombre" class="oe_inline"/>
+            </group>
+            <group>
+              <field name="pago_ids" widget="one2many" class="oe_inline"/>
+            </group>
+            <group>
+              <button string="Borrar" class="oe_highlight" special="cancel" />
+               <button name="%(pago_list_action)d" string="Guardar y volver" type="action" class="oe_highlight"/>
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
 </odoo>

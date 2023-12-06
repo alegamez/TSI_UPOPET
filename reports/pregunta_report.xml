@@ -23,10 +23,14 @@
                                             <p>
                                                 <strong>Fecha publicacion: </strong>
                                             </p>
+                                            <p>
+                                                <strong>Usuario: </strong>
+                                            </p>
                                         </td>
                                         <td style="padding-left: 10px;">
                                             <p t-field="o.name" />
                                             <p t-field="o.fechaPublicacion" />
+                                            <p t-field="o.usuario_id" />
                                         </td>
                                     </tr>
                                 </table>

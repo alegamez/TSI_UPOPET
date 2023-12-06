@@ -14,18 +14,11 @@ class Especie(models.Model):
 
     tipoespecie_id = fields.Many2one("upopet.tipo", string="Tipo de animal")
     
-    _sql_constraints = [('especie_nombreCientifico_unique','UNIQUE (nombreCientifico)','El nombre cientifico debe ser único')]
-
     count = fields.Integer(compute='_compute_count', store=True)
 
-    
-
-    #para la vista avanzada, contamos las especies
     @api.depends('name')
     def _compute_count(self):
         for record in self:
             record.count = 1
 
-    def btn_generate_report(self):
-          return self.env.ref('upopet.report_especies').report_action(self)
     

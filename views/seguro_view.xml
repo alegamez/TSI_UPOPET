@@ -4,11 +4,6 @@
         <field name="model">upopet.seguro</field>
         <field name="arch" type="xml">
             <form string="Seguro">
-                <header>
-                    <button name="btn_generate_report" string="Generar informe" type="object" class="oe_highlight" />
-                    <button name="button_validate_species" string="Validar Especie" class="oe_highlight" type="object"  />
-                    <button name="btn_unlink_seguro" string="Eliminar" class="oe_highlight" type="object" />
-                </header>
                 <sheet>
                     <group>
                         <field name="name" />
@@ -81,4 +76,3 @@
         </field>
     </record>
 </odoo>
-
