@@ -1,4 +1,4 @@
-odoo>
+<odoo>
     <!-- tree view -->
     <record id="view_cuestionario_tree" model="ir.ui.view">
         <field name="name">cuestionario.tree</field>
