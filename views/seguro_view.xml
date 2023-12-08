@@ -44,17 +44,6 @@
         </field>
     </record>
 
-    <!--Filtrar por cobertura
-    <record id="upopet_seguro_search_filter_view" model="ir.ui.view">
-        <field name="name">upopet.seguro.filter</field>
-        <field name="model">upopet.seguro</field>
-        <field name="arch" type="xml">
-            <search string="Filtrar Seguros">
-                <filter name="filter_seguro_cobertura" string="Coberura" domain="[('cobertura', '=', context.get('search_default_filter_seguro_cobertura'))]" />
-            </search>
-        </field>
-    </record>
--->
     <!--Filtrar por cobertura y agrupar por categoria-->
     <record id="upopet_seguro_search_view" model="ir.ui.view">
         <field name="name">upopet.seguro.search</field>
@@ -82,5 +71,7 @@
         </field>
     </record>
 </odoo>
+
+
 
 
