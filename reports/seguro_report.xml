@@ -1,5 +1,5 @@
 <odoo>
-    <template id="upopet_seguro_template">
+    <template id="report_seguro">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="seguro">
                 <t t-call="web.external_layout">
