@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- E2. Esquema basico -->
+    <?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- E2. Esquema basico -->
     <record id="report_upopet_empresa_report" model="ir.actions.report">
         <field name="name">Empresa report</field>
         <field name="model">upopet.empresa</field>
@@ -42,4 +45,3 @@
     <report id="report_categoriapreguntas" string="Categoria report" model="upopet.categoriapregunta" report_type="qweb-pdf" name="upopet.report_categoriapregunta" />
     <report id="report_tipoeventos" string="Tipo Evento report" model="upopet.tipoevento" report_type="qweb-pdf" name="upopet.report_tipoevento" />
 </odoo>
-
