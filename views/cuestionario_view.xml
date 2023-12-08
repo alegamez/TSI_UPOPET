@@ -1,64 +1,47 @@
 <odoo>
-    <record id="upopet_empresa_form_view" model="ir.ui.view">
-        <field name="name">upopet.empresa.form</field>
-        <field name="model">upopet.empresa</field>
+    <!-- tree view -->
+    <record id="view_cuestionario_tree" model="ir.ui.view">
+        <field name="name">cuestionario.tree</field>
+        <field name="model">upopet.cuestionario</field>
         <field name="arch" type="xml">
-            <form string="Empresa">
-                <header>
-                    <button name="btn_create_evento" string="Crear Evento" class="oe_highlight" type="object"/>
-                    <button name="btn_create_seguro" string="Crear Seguro" class="oe_highlight" type="object"/>
-                    <button name="button_update_name" string="Actualizar Nombre" class="oe_highlight" type="object" />
-                </header>
+            <tree string="Cuestionario">
+                <field name="name"/>
+                <field name="jardin"/>
+                <field name="espacioDisponible"/>
+                <field name="experienciaPrevia"/>
+                <field name="exotico"/>
+                <field name="preferencia"/>
+                <field name="usuario_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- form view -->
+    <record id="view_cuestionario_form" model="ir.ui.view">
+        <field name="name">cuestionario.form</field>
+        <field name="model">upopet.cuestionario</field>
+        <field name="arch" type="xml">
+            <form string="Cuestionario">
                 <sheet>
-                    <group> 
-                        <field name="name"/> 
-                        <field name="nombreEmpresa" />
+                    <group>
+                        <field name="name"/>
+                        <field name="jardin"/>
+                        <field name="espacioDisponible"/>
+                        <field name="experienciaPrevia"/>
+                        <field name="exotico"/>
+                        <field name="preferencia"/>
+                        <field name="usuario_id"/>
                     </group>
-                    <notebook>
-                        <page name="eventos" string="Eventos">
-                            <field name="evento_ids" widget="many2many" options="{'no_create': True}" />
-                        </page>
-                        <page name="seguros" string="Seguros">
-                            <field name="seguro_ids" widget="many2many" options="{'no_create': True}"/>
-                        </page>
-                    </notebook>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <record id="upopet_empresa_tree_view" model="ir.ui.view">
-        <field name="name">upopet.empresa.tree</field>
-        <field name="model">upopet.empresa</field>
-        <field name="arch" type="xml">
-            <tree string="Empresas">
-                <field name="name" />
-                <field name="nombreEmpresa" />
-            </tree>
-        </field>
-    </record>
-
-    <!-- Busquedas personalizadas -->
-    <record id="upopet_empresa_filter_view" model="ir.ui.view">
-        <field name="name">upopet.empresa.filter</field>
-        <field name="model">upopet.empresa</field>
-        <field name="arch" type="xml">
-            <!-- Busquedas por empresas segun su tipo: evento o seguro -->
-            <search string="Busqueda empresa por tipo">
-                <filter name="filter_empresas_seguros" string="Empresas de Seguros" domain="[('seguro_ids', '!=', False)]" />
-                <filter name="filter_empresas_eventos" string="Empresas de Eventos" domain="[('evento_ids', '!=', False)]" />
-            </search>
-        </field>
-    </record>
-
-    <record id="empresa_list_action" model="ir.actions.act_window">
-        <field name="name">Empresas</field>
-        <field name="res_model">upopet.empresa</field>
+    <!-- action to open the tree & form view -->
+    <record id="cuestionario_list_action" model="ir.actions.act_window">
+        <field name="name">Cuestionario</field>
+        <field name="res_model">upopet.cuestionario</field>
         <field name="view_mode">tree,form</field>
-        <field name="search_view_id" ref="upopet_empresa_filter_view" />
-        <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">No se encontraron empresas.</p>
-        </field>
     </record>
 
 </odoo>
