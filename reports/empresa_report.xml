@@ -1,47 +1,70 @@
 <odoo>
-    <template id="upopet_evento_template">
+    <template id="upopet_empresa_template">
         <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="evento">
+            <t t-foreach="docs" t-as="o">
                 <t t-call="web.external_layout">
                     <div class="page">
                         <div class="oe_structure" />
                         <div class="row" style="font-size: 24px; margin-bottom: 20px;">
-                            <span style="font-weight: bold; text-decoration: underline; ">Evento:</span>
-                            <span style="color: #999999;" t-field="evento.nombre" />
+                            <span style="font-weight: bold; text-decoration: underline; ">Empresa:</span>
+                            <span style="color: #999999;" t-field="o.nombreEmpresa" />
                         </div>
                         <div class="row">
                             <div class="col-xs-12" style="text-align: center; margin: auto; padding-left: 15px; padding-right: 15px; border-bottom: 2px solid #cccccc;">
-                                <p t-field="evento.nombre" style="font-size: 20px; font-weight: bold;" />
+                                <p t-field="o.nombreEmpresa" style="font-size: 20px; font-weight: bold;" />
                             </div>
                         </div>
                         <div class="row" style="margin-top: 40px; font-weight: bold; font-size: 19px;">
-                            Detalles del Evento
+                            Eventos de <span t-field="o.nombreEmpresa" />
                         </div>
-                        <div class="row" style="margin-top: 10px;">
+                        <div t-if="o.evento_ids" id="eventos" class="row" style="margin-top: 10px;">
                             <table class="table">
-                                <tr>
-                                    <td><strong>Fecha:</strong></td>
-                                    <td><p t-field="evento.fecha" /></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Descripción:</strong></td>
-                                    <td><p t-field="evento.descripcion" /></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Tipo de Evento:</strong></td>
-                                    <td><p t-field="evento.tipoevento_id.name" /></td>
-                                </tr>
+                                <thead>
+                                    <tr>
+                                        <th>Nombre del Evento</th>
+                                        <th>Fecha</th>
+                                        <th>Otra Información</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="o.evento_ids" t-as="evento">
+                                        <tr>
+                                            <td>
+                                                <p t-field="evento.nombre" />
+                                            </td>
+                                            <td>
+                                                <p t-field="evento.fecha" />
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
                             </table>
                         </div>
                         <div class="row" style="margin-top: 40px; font-weight: bold; font-size: 19px;">
-                            Especies Asociadas
+                            Seguros de <span t-field="o.nombreEmpresa" />
                         </div>
-                        <div t-if="evento.especie_ids" id="especies" class="row" style="margin-top: 10px;">
-                            <ul>
-                                <t t-foreach="evento.especie_ids" t-as="especie">
-                                    <li><p t-field="especie.name" /></li>
-                                </t>
-                            </ul>
+                        <div t-if="o.seguro_ids" id="seguros" class="row" style="margin-top: 10px;">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Precio del seguro</th>
+                                        <th>Cobertura</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="o.seguro_ids" t-as="seguro">
+                                        <tr>
+                                            <td>
+                                                <p t-field="seguro.precio" />
+                                            </td>
+                                            <td>
+                                                <p t-field="seguro.cobertura" />
+                                            </td>
+                                        
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </t>
