@@ -18,9 +18,7 @@
             <field name="peso"/>
             <field name="estado" widget="statusbar" options="{'clickable': 'true'}" />
             <field name="tipoespecie_id" widget="many2one"/>
-            <div class="owl" colspan="2"/> 
           </group>
-          
         </sheet>
       </form>
     </field>
@@ -79,9 +77,5 @@
     </field>
   </record>
 
-  <record id="action_owl_EspecieComponent_js" model="ir.actions.client">
-    <field name="name">EspecieComponent OWL</field>
-    <field name="tag">owl.action_EspecieComponent_js</field>
-  </record>
 
 </odoo>

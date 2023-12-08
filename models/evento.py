@@ -60,7 +60,7 @@ class evento(models.Model):
             'type': 'ir.actions.act_window',
             'res_model': 'upopet.evento',
             'view_mode': 'form',
-            'view_id': self.env.ref('upopet.upopet_evento_form_view').id,
+            'view_id': self.env.ref('tsi_upopet.upopet_evento_form_view').id,
             'res_id': self.id,
             'target': 'current',
         }
@@ -72,7 +72,7 @@ class evento(models.Model):
             'type': 'ir.actions.act_window',
             'res_model': 'upopet.evento',
             'view_mode': 'form',
-            'view_id': self.env.ref('upopet.upopet_evento_form_view').id,
+            'view_id': self.env.ref('tsi_upopet.upopet_evento_form_view').id,
             'res_id': self.id,
             'target': 'current',
         }

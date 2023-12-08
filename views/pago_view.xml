@@ -34,7 +34,10 @@
                             <field name="matricula_id" class="oe_inline"/>
                         </group>
                     </group>
-                    
+                    <group>
+                        <button string="Borrar" class="oe_highlight" special="cancel" />
+                        <button name="%(pago_list_action)d" string="Guardar y volver" type="action" class="oe_highlight"/>
+                    </group>
                 </sheet>
             </form>
         </field>
