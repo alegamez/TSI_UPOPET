@@ -57,9 +57,6 @@ class seguro(models.Model):
         for seguro in self:
             if seguro.duracion <= 0:
                 raise ValidationError("La duración del seguro debe ser mayor que cero.")
-
-    def btn_generate_report(self):
-          return self.env.ref('upopet.report_seguro').report_action(self)
     
     def button_validate_species(self):
         self.ensure_one()
