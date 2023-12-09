@@ -5,7 +5,6 @@
         <field name="arch" type="xml">
             <form string="Evento">
                 <header>
-                    <button name="btn_generate_report" string="Generar informe" type="object" class="oe_highlight" />
                     <button name="button_update_description" string="Actualizar Descripción" class="oe_highlight" type="object" />
                     <button name="button_update_url" string="Actualizar URL" class="oe_highlight" type="object" />
                 </header>
@@ -59,23 +58,13 @@
         </field>
     </record>
 
-    <!--Filtro para los eventos que ocurran despues de una fecha dada-->
-    <record id="upopet_evento_filter_view" model="ir.ui.view">
-        <field name="name">upopet.evento.filter</field>
-        <field name="model">upopet.evento</field>
-        <field name="arch" type="xml">
-            <search string="Filtrar Eventos">
-                <filter name="filter_fecha" string="Fecha de inicio" domain="[('fecha', '>=', context.get('search_default_fecha'))]" />
-            </search>
-        </field>
-    </record>
-
-    <!-- Agrupar eventos por tipo, especie y empresa -->
+    <!-- Filtro para los eventos que ocurran despues de una fecha dada y Agrupar eventos por tipo, especie y empresa -->
     <record id="upopet_evento_search_view" model="ir.ui.view">
         <field name="name">upopet.evento.filter</field>
         <field name="model">upopet.evento</field>
         <field name="arch" type="xml">
             <search>
+                <filter name="filter_fecha" string="Fecha de inicio" domain="[('fecha', '>=', context.get('search_default_fecha'))]" />
                 <group expand="0" string="Agrupar por...">
                     <filter name="group_by_tipo" string="Eventos por tipo" context="{'group_by': 'tipoevento_id'}" />
                     <filter name="group_by_especies" string="Eventos por especies" context="{'group_by': 'especie_ids'}" />
@@ -90,7 +79,6 @@
         <field name="name">Eventos</field>
         <field name="res_model">upopet.evento</field>
         <field name="view_mode">tree,form,calendar</field>
-        <field name="search_view_id" ref="upopet_evento_filter_view" />
         <field name="search_view_id" ref="upopet_evento_search_view" />
         <field name="context">{'search_default_fecha': '2023-01-01'}</field>
         <field name="help" type="html">
