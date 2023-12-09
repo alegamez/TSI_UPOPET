@@ -1,23 +1,23 @@
 <odoo>
-    <template id="report_empresa">
+    <template id="upopet_empresa_template">
         <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="empresa">
+            <t t-foreach="docs" t-as="o">
                 <t t-call="web.external_layout">
                     <div class="page">
                         <div class="oe_structure" />
                         <div class="row" style="font-size: 24px; margin-bottom: 20px;">
                             <span style="font-weight: bold; text-decoration: underline; ">Empresa:</span>
-                            <span style="color: #999999;" t-field="empresa.nombreEmpresa" />
+                            <span style="color: #999999;" t-field="o.nombreEmpresa" />
                         </div>
                         <div class="row">
                             <div class="col-xs-12" style="text-align: center; margin: auto; padding-left: 15px; padding-right: 15px; border-bottom: 2px solid #cccccc;">
-                                <p t-field="empresa.nombreEmpresa" style="font-size: 20px; font-weight: bold;" />
+                                <p t-field="o.nombreEmpresa" style="font-size: 20px; font-weight: bold;" />
                             </div>
                         </div>
                         <div class="row" style="margin-top: 40px; font-weight: bold; font-size: 19px;">
-                            Eventos de <span t-field="empresa.nombreEmpresa" />
+                            Eventos de <span t-field="o.nombreEmpresa" />
                         </div>
-                        <div t-if="empresa.evento_ids" id="eventos" class="row" style="margin-top: 10px;">
+                        <div t-if="o.evento_ids" id="eventos" class="row" style="margin-top: 10px;">
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -27,16 +27,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <t t-foreach="empresa.evento_ids" t-as="evento">
+                                    <t t-foreach="o.evento_ids" t-as="evento">
                                         <tr>
                                             <td>
-                                                <p t-field="evento.nombreEvento" />
+                                                <p t-field="evento.nombre" />
                                             </td>
                                             <td>
                                                 <p t-field="evento.fecha" />
-                                            </td>
-                                            <td>
-                                                <!-- Agrega aquí otros campos relevantes del evento -->
                                             </td>
                                         </tr>
                                     </t>
@@ -44,27 +41,26 @@
                             </table>
                         </div>
                         <div class="row" style="margin-top: 40px; font-weight: bold; font-size: 19px;">
-                            Seguros de <span t-field="empresa.nombreEmpresa" />
+                            Seguros de <span t-field="o.nombreEmpresa" />
                         </div>
-                        <div t-if="empresa.seguro_ids" id="seguros" class="row" style="margin-top: 10px;">
+                        <div t-if="o.seguro_ids" id="seguros" class="row" style="margin-top: 10px;">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Nombre del Seguro</th>
+                                        <th>Precio del seguro</th>
                                         <th>Cobertura</th>
-                                        <!-- Agrega más columnas según tus necesidades -->
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <t t-foreach="empresa.seguro_ids" t-as="seguro">
+                                    <t t-foreach="o.seguro_ids" t-as="seguro">
                                         <tr>
                                             <td>
-                                                <p t-field="seguro.nombreSeguro" />
+                                                <p t-field="seguro.precio" />
                                             </td>
                                             <td>
                                                 <p t-field="seguro.cobertura" />
                                             </td>
-                                            <!-- Agrega más celdas según tus necesidades -->
+                                        
                                         </tr>
                                     </t>
                                 </tbody>
