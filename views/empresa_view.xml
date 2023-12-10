@@ -61,4 +61,9 @@
         </field>
     </record>
 
+    <record id="action_owl_empresaComponente_js" model="ir.actions.client">
+    <field name="name">Empresa Componente OWL</field>
+    <field name="tag">owl.action_empresaComponente_js</field>
+  </record>
+
 </odoo>
