@@ -1,5 +1,5 @@
 <odoo>
-    <template id="report_seguro">
+    <template id="upopet_seguro_template">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="seguro">
                 <t t-call="web.external_layout">
@@ -11,9 +11,6 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12" style="text-align: center; margin: auto; padding-left: 15px; padding-right: 15px; border-bottom: 2px solid #cccccc;">
-                                <p style="padding-top: 10px;">
-                                    <!-- Puedes agregar aquí una imagen o cualquier otro elemento visual -->
-                                </p>
                                 <p t-field="seguro.name" style="font-size: 20px; font-weight: bold;" />
                             </div>
                         </div>
@@ -38,11 +35,10 @@
                                     <td><strong>Duración:</strong></td>
                                     <td><p t-field="seguro.duracion" /></td>
                                 </tr>
-                                <!-- Agrega más campos según tus necesidades -->
                             </table>
                         </div>
                         <div class="row" style="margin-top: 40px; font-weight: bold; font-size: 19px;">
-                            Asociaciones
+                            Relaciones
                         </div>
                         <div class="row" style="margin-top: 10px;">
                             <table class="table">
@@ -54,7 +50,6 @@
                                     <td><strong>Empresa Gestora:</strong></td>
                                     <td><p t-field="seguro.empresa_id.nombreEmpresa" /></td>
                                 </tr>
-                                <!-- Agrega más celdas según tus necesidades -->
                             </table>
                         </div>
                     </div>

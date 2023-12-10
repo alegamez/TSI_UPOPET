@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- E2. Esquema basico -->
-    <report id="action_upopet_empresa_report" string="Informe Empresas" model="upopet.empresa" report_type="qweb-pdf" name="upopet.upopet_empresa_template"/>
-    <report id="action_upopet_evento_report" string="Informe Eventos" model="upopet.evento" report_type="qweb-pdf" name="upopet.upopet_evento_template"/>
-    <report id="action_upopet_seguro_report" string="Informe Seguros" model="upopet.seguro" report_type="qweb-pdf" name="upopet.upopet_seguro_template"/>
+    <record id="report_upopet_empresa_report" model="ir.actions.report">
+        <field name="name">Empresa report</field>
+        <field name="model">upopet.empresa</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">tsi_upopet.upopet_empresa_template</field>
+        <field name="binding_model_id" ref="model_upopet_empresa"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="report_upopet_evento_report" model="ir.actions.report">
+        <field name="name">Evento report</field>
+        <field name="model">upopet.evento</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">tsi_upopet.upopet_evento_template</field>
+        <field name="binding_model_id" ref="model_upopet_evento"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="report_upopet_seguro_report" model="ir.actions.report">
+        <field name="name">Seguro report</field>
+        <field name="model">upopet.seguro</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">tsi_upopet.upopet_seguro_template</field>
+        <field name="binding_model_id" ref="model_upopet_seguro"/>
+        <field name="binding_type">report</field>
+    </record>
+     <record id="report_upopet_cuestionario_report" model="ir.actions.report">
+        <field name="name">Cuestionario report</field>
+        <field name="model">upopet.cuestionario</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">tsi_upopet.upopet_cuestionario_template</field>
+        <field name="binding_model_id" ref="model_upopet_cuestionario"/>
+        <field name="binding_type">report</field>
+    </record>
     <report id="report_especies" string="Especie report" model="upopet.especie" report_type="qweb-pdf" name="upopet.report_especie" />
     <report id="report_tipos" string="Tipo report" model="upopet.tipo" report_type="qweb-pdf" name="upopet.report_tipo" />
     <report id="report_pagos" string="Pago report" model="upopet.pago" report_type="qweb-pdf" name="upopet.report_pago" />
