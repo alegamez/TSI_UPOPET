@@ -21,7 +21,7 @@ class empresaComponente extends Component {
     }
 
     async getAllTasks(){
-        this.state.taskList = await this.orm.searchRead(this.model, [], ["name", "descripcion"])
+        this.state.taskList = await this.orm.searchRead(this.model, [], ["name", "nombreEmpresa"])
     }
 
     async saveTask(){
