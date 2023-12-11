@@ -26,4 +26,5 @@
 
   <menuitem name="Categoria Pregunta Componente1" id="categoriapregunta_menu_owl_componente1" parent="upopet_menu" groups="group_upopet_manager" action="action_owl_componente1_js"/>
   <menuitem name="EspecieComponent" id="especie_menu_owl_especieComponent" parent="upopet_menu" groups="group_upopet_manager" action="action_owl_EspecieComponent_js"/>
+  <menuitem name="Componente Empresa" id="especie_menu_owl_empresaComponente" parent="upopet_menu" groups="group_upopet_manager" action="action_owl_empresaComponente_js"/>
 </odoo>
