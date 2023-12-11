@@ -62,7 +62,37 @@ class EspecieComponent extends Component {
         const text = this.searchInput.el.value;
         this.state.especieList = await this.orm.searchRead(this.model, [['nombre', 'ilike', text]], ["nombre", "tamanyo", "peso", "estado", "nombreCientifico", "tipoespecie_id"]);
     }
+
+    async updateNombre(e, especie) {
+        await this.orm.write(this.model, [especie.id], { nombre: e.target.value });
+        await this.getAllEspecies();
+    }
+
+    async updateTamanyo(e, especie) {
+        await this.orm.write(this.model, [especie.id], { tamanyo: e.target.value });
+        await this.getAllEspecies();
+    }
+
+    async updatePeso(e, especie) {
+        await this.orm.write(this.model, [especie.id], { peso: e.target.value });
+        await this.getAllEspecies();
+    }
+
+    async updateEstado(e, especie) {
+        await this.orm.write(this.model, [especie.id], { estado: e.target.value });
+        await this.getAllEspecies();
+    }
+
+    async updateNombreCientifico(e, especie) {
+        await this.orm.write(this.model, [especie.id], { nombreCientifico: e.target.value });
+        await this.getAllEspecies();
+    }
+
+    async updateTipoEspecieId(e, especie) {
+        await this.orm.write(this.model, [especie.id], { tipoespecie_id: e.target.value });
+        await this.getAllEspecies();
+    }
 }
-    
+
 EspecieComponent.template = 'owl.EspecieComponent';
 registry.category('actions').add('owl.action_EspecieComponent_js', EspecieComponent);

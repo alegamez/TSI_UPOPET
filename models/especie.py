@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class Especie(models.Model):
     _name = 'upopet.especie'
@@ -18,8 +19,6 @@ class Especie(models.Model):
 
     count = fields.Integer(compute='_compute_count', store=True)
 
-    
-
     #para la vista avanzada, contamos las especies
     @api.depends('name')
     def _compute_count(self):
@@ -27,5 +26,34 @@ class Especie(models.Model):
             record.count = 1
 
     def btn_generate_report(self):
-          return self.env.ref('upopet.report_especies').report_action(self)
+        return self.env.ref('upopet.report_especies').report_action(self)
+
+    @api.constrains('peso')
+    def _check_peso(self):
+        for record in self:
+            if record.peso <= 0 or record.peso < 0.1:
+                raise ValidationError("El peso no puede ser inferior a 0.1 ni mayor a 0")
+
+    @api.constrains('tamanyo')
+    def _check_tamanyo(self):
+        for record in self:
+            if record.tamanyo <= 0 or record.tamanyo < 0.1:
+                raise ValidationError("El tamaño no puede ser inferior a 0.1 ni mayor a 0")
+
+    @api.onchange('tamanyo')
+    def _onchange_tamanyo(self):
+        if self.tamanyo > 500:
+            self.estado = 'prohibido'
+
+    @api.onchange('estado')
+    def _onchange_estado(self):
+        if self.estado == 'permitido' and self.tamanyo > 500:
+            self.estado = 'prohibido'
+            return {
+                'warning': {
+                    'title': "Valor incorrecto",
+                    'message': "No se puede cambiar el estado a permitido si el tamaño es mayor a 500 cm",
+                },
+            }
+
     
