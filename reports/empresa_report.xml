@@ -4,67 +4,72 @@
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.external_layout">
                     <div class="page">
+                        <span style="font-family: Arial, sans-serif; padding: 20px;"/>
                         <div class="oe_structure" />
-                        <div class="row" style="font-size: 24px; margin-bottom: 20px;">
-                            <span style="font-weight: bold; text-decoration: underline; ">Empresa:</span>
-                            <span style="color: #999999;" t-field="o.nombreEmpresa" />
+                        <div class="header-row" style="font-size: 24px; margin-bottom: 20px; display:flex; align-items:center;">
+                            <span style="font-weight: bold; text-decoration: underline; font-size: 32px; font-family: Impact, sans-serif;">Empresa:</span>
+                            <span style="color: #999999; margin-left:10px" t-field="o.nombreEmpresa" />
                         </div>
-                        <div class="row">
-                            <div class="col-xs-12" style="text-align: center; margin: auto; padding-left: 15px; padding-right: 15px; border-bottom: 2px solid #cccccc;">
-                                <p t-field="o.nombreEmpresa" style="font-size: 20px; font-weight: bold;" />
+                        <div class="gestion" style="margin-top: 20px; font-weight: bold; font-size: 19px">
+                            Gestiona
+                            <div class="row" style="margin-top: 40px; font-weight: bold; font-size: 19px;">
+                                Eventos <span t-field="o.nombreEmpresa" />
                             </div>
-                        </div>
-                        <div class="row" style="margin-top: 40px; font-weight: bold; font-size: 19px;">
-                            Eventos de <span t-field="o.nombreEmpresa" />
-                        </div>
-                        <div t-if="o.evento_ids" id="eventos" class="row" style="margin-top: 10px;">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Nombre del Evento</th>
-                                        <th>Fecha</th>
-                                        <th>Otra Información</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <t t-foreach="o.evento_ids" t-as="evento">
+                            <div t-if="o.evento_ids" id="eventos" class="row" style="margin-top: 10px;">
+                                <table class="table" style="border-collapse: collapse; width: 100%;">
+                                    <thead>
                                         <tr>
-                                            <td>
-                                                <p t-field="evento.nombre" />
-                                            </td>
-                                            <td>
-                                                <p t-field="evento.fecha" />
-                                            </td>
+                                            <th style="border: 1px solid #dddddd;">Nombre del Evento</th>
+                                            <th style="border: 1px solid #dddddd;">Fecha</th>
+                                            <th style="border: 1px solid #dddddd;">Tipo</th>
                                         </tr>
-                                    </t>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="row" style="margin-top: 40px; font-weight: bold; font-size: 19px;">
-                            Seguros de <span t-field="o.nombreEmpresa" />
-                        </div>
-                        <div t-if="o.seguro_ids" id="seguros" class="row" style="margin-top: 10px;">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Precio del seguro</th>
-                                        <th>Cobertura</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <t t-foreach="o.seguro_ids" t-as="seguro">
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="o.evento_ids" t-as="evento">
+                                            <tr>
+                                                <td style="border: 1px solid #dddddd;">
+                                                    <p t-field="evento.nombre" />
+                                                </td>
+                                                <td style="border: 1px solid #dddddd;">
+                                                    <p t-field="evento.fecha" />
+                                                </td>
+                                                <td style="border: 1px solid #dddddd;">
+                                                    <p t-field="evento.tipoevento_id.nombre" />
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row" style="margin-top: 40px; font-weight: bold; font-size: 19px;">
+                                Seguros <span t-field="o.nombreEmpresa" />
+                            </div>
+                            <div t-if="o.seguro_ids" id="seguros" class="row" style="margin-top: 10px;">
+                                <table class="table" style="border-collapse: collapse; width: 100%;">
+                                    <thead>
                                         <tr>
-                                            <td>
-                                                <p t-field="seguro.precio" />
-                                            </td>
-                                            <td>
-                                                <p t-field="seguro.cobertura" />
-                                            </td>
-                                        
+                                            <th style="border: 1px solid #dddddd;">Precio</th>
+                                            <th style="border: 1px solid #dddddd;">Cobertura</th>
+                                            <th style="border: 1px solid #dddddd;">Especie</th>
                                         </tr>
-                                    </t>
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="o.seguro_ids" t-as="seguro">
+                                            <tr>
+                                                <td style="border: 1px solid #dddddd;">
+                                                    <p t-field="seguro.precio" />
+                                                </td>
+                                                <td style="border: 1px solid #dddddd;">
+                                                    <p t-field="seguro.cobertura" />
+                                                </td>
+                                                <td style="border: 1px solid #dddddd;">
+                                                    <p t-field="seguro.especie_id" />
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </t>
