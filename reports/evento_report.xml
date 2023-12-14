@@ -5,15 +5,14 @@
                 <t t-call="web.external_layout">
                     <div class="page">
                         <div class="oe_structure" />
+
+                        <!-- Encabezado del Evento -->
                         <div class="row" style="font-size: 24px; margin-bottom: 20px;">
-                            <span style="font-weight: bold; text-decoration: underline; ">Evento:</span>
+                            <span style="font-weight: bold; text-decoration: underline;">Evento:</span>
                             <span style="color: #999999;" t-field="evento.nombre" />
                         </div>
-                        <div class="row">
-                            <div class="col-xs-12" style="text-align: center; margin: auto; padding-left: 15px; padding-right: 15px; border-bottom: 2px solid #cccccc;">
-                                <p t-field="evento.nombre" style="font-size: 20px; font-weight: bold;" />
-                            </div>
-                        </div>
+
+                        <!-- Detalles del Evento -->
                         <div class="row" style="margin-top: 40px; font-weight: bold; font-size: 19px;">
                             Detalles del Evento
                         </div>
@@ -33,13 +32,15 @@
                                 </tr>
                             </table>
                         </div>
+
+                        <!-- Adecuado para -->
                         <div class="row" style="margin-top: 40px; font-weight: bold; font-size: 19px;">
-                            Especies Asociadas
+                            Adecuado para:
                         </div>
                         <div t-if="evento.especie_ids" id="especies" class="row" style="margin-top: 10px;">
                             <ul>
                                 <t t-foreach="evento.especie_ids" t-as="especie">
-                                    <li><p t-field="especie.name" /></li>
+                                    <li><p t-field="evento.especie_ids.nombre" /></li>
                                 </t>
                             </ul>
                         </div>
@@ -49,4 +50,3 @@
         </t>
     </template>
 </odoo>
-

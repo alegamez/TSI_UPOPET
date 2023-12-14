@@ -1,5 +1,5 @@
 <odoo>
-    <template id="upopet_seguro_template">
+    <template id="report_seguro">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="seguro">
                 <t t-call="web.external_layout">
@@ -11,6 +11,8 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12" style="text-align: center; margin: auto; padding-left: 15px; padding-right: 15px; border-bottom: 2px solid #cccccc;">
+                                <p style="padding-top: 10px;">
+                                </p>
                                 <p t-field="seguro.name" style="font-size: 20px; font-weight: bold;" />
                             </div>
                         </div>
@@ -38,7 +40,7 @@
                             </table>
                         </div>
                         <div class="row" style="margin-top: 40px; font-weight: bold; font-size: 19px;">
-                            Relaciones
+                            Asociaciones
                         </div>
                         <div class="row" style="margin-top: 10px;">
                             <table class="table">
