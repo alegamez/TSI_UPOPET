@@ -4,6 +4,9 @@
         <field name="model">upopet.seguro</field>
         <field name="arch" type="xml">
             <form string="Seguro">
+                <header>
+                    <button name="button_validate_species" string="Validar Especie" class="oe_highlight" type="object"  />
+                </header>
                 <sheet>
                     <group>
                         <field name="name" />
@@ -40,8 +43,8 @@
         </field>
     </record>
 
-    <!--Filtrar por cobertura-->
-    <record id="upopet_seguro_filter_view" model="ir.ui.view">
+    <!--Filtrar por cobertura
+    <record id="upopet_seguro_search_filter_view" model="ir.ui.view">
         <field name="name">upopet.seguro.filter</field>
         <field name="model">upopet.seguro</field>
         <field name="arch" type="xml">
@@ -50,13 +53,15 @@
             </search>
         </field>
     </record>
-
-    <!--Agrupar por categoria-->
+-->
+    <!--Filtrar por cobertura y agrupar por categoria-->
     <record id="upopet_seguro_search_view" model="ir.ui.view">
         <field name="name">upopet.seguro.search</field>
         <field name="model">upopet.seguro</field>
         <field name="arch" type="xml">
             <search>
+                <filter name="filter_seguro_cobertura" string="Coberura" domain="[('cobertura', '=', context.get('search_default_filter_seguro_cobertura'))]" />
+                <separator orientation="vertical" />
                 <group expand="0" string="Agrupar por...">
                     <filter name="group_by_categoria" string="Seguros por categorias" context="{'group_by': 'categoria'}"/>
                 </group>
@@ -68,7 +73,7 @@
         <field name="name">Seguros</field>
         <field name="res_model">upopet.seguro</field>
         <field name="view_mode">tree,form</field>
-        <field name="search_view_id" ref="upopet_seguro_filter_view" />
+        <!--<field name="search_view_id" ref="upopet_seguro_search_filter_view" />-->
         <field name="search_view_id" ref="upopet_seguro_search_view" />
         <field name="context">{'search_default_filter_seguro_cobertura': 1}</field>
         <field name="help" type="html">

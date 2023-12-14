@@ -22,6 +22,9 @@
         <field name="model">upopet.cuestionario</field>
         <field name="arch" type="xml">
             <form string="Cuestionario">
+                <header>
+                    <button name="btn_generate_report" string="Generar informe" type="object" class="oe_highlight" />
+                </header>
                 <sheet>
                     <group>
                         <field name="name"/>

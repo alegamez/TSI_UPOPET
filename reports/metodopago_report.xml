@@ -1,13 +1,14 @@
 <odoo>
-    <template id="report_tipo">
+    <template id="report_metodopago">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.external_layout">
                     <div class="page">
                         <div class="oe_structure"/>
-                        
+
                         <div class="row" style="border: 1px solid #cccccc; margin: 15px; padding: 15px; border-radius: 5px;">
                             <div class="col-xs-2" style="margin: auto; text-align: center; padding-left: 15px; padding-right: 15px; border-right: 2px solid #cccccc;">
+                                <img t-if="o.imagentipo" t-att-src="'data:image/png;base64,%s' % o.imagentipo" style="max-width: 100%; max-height: 100px;"/>
                                 <p t-field="o.nombre" style="font-size: 20px; font-weight: bold; color: #000000;"/>
                             </div>
                             <div class="col-xs-8" style="text-align: left; margin: auto; padding-left: 15px; padding-top: 10px;">
@@ -21,41 +22,35 @@
                                                 <strong>Nombre: </strong>
                                             </p>
                                             <p>
-                                                <strong>Número de Especies: </strong>
+                                                <strong>Número de Pagos: </strong>
                                             </p>
                                         </td>
                                         <td style="padding-left: 10px;">
                                             <p t-field="o.name"/>
                                             <p t-field="o.nombre"/>
-                                            <p t-esc="len(o.especie_ids)"/>
+                                            <p t-esc="len(o.pago_ids)"/>
                                         </td>
                                     </tr>
                                 </table>
 
-                                <!-- especies asociadas -->
+                                <!-- pagos asociados -->
                                 <div class="row" style="border: 1px solid #cccccc; margin: 15px; padding: 15px; border-radius: 5px;">
                                     <div class="col-xs-12" style="text-align: left; margin: auto; padding-left: 15px; padding-top: 10px;">
-                                        <h2>Especies Asociadas</h2>
+                                        <h2>Pagos Asociados</h2>
                                         <table style="width: 100%; text-align: center;">
                                             <thead>
                                                 <tr>
-                                                    <th>ID Especie</th>
-                                                    <th>Nombre</th>
-                                                    <th>Tamaño (cm)</th>
-                                                    <th>Peso (kg)</th>
-                                                    <th>Estado</th>
-                                                    <th>Nombre Científico</th>
+                                                    <th>ID Pago</th>
+                                                    <th>Usuario</th>
+                                                    <th>Matrícula</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <t t-foreach="o.especie_ids" t-as="especie">
+                                                <t t-foreach="o.pago_ids" t-as="pago">
                                                     <tr>
-                                                        <td><span t-field="especie.name"/></td>
-                                                        <td><span t-field="especie.nombre"/></td>
-                                                        <td><span t-field="especie.tamanyo"/></td>
-                                                        <td><span t-field="especie.peso"/></td>
-                                                        <td><span t-field="especie.estado"/></td>
-                                                        <td><span t-field="especie.nombreCientifico"/></td>
+                                                        <td><span t-field="pago.name"/></td>
+                                                        <td><span t-field="pago.matricula_id.usuario_id"/></td>
+                                                        <td><span t-field="pago.matricula_id"/></td>
                                                     </tr>
                                                 </t>
                                             </tbody>

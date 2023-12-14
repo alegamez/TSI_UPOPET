@@ -38,5 +38,4 @@
   <menuitem name="Matricula" id="matricula_menu" parent="upopet_submenu2" groups="group_upopet_manager" action="matricula_list_action"/>
   
   <menuitem name="Cuestionario" id="cuestionario_menu" parent="main_upopet_menu" groups="group_upopet_manager" action="cuestionario_list_action"/>
-
 </odoo>
