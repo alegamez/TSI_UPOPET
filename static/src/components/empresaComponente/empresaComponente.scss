@@ -1,0 +1,74 @@
+.empresaComponente-container {
+    background-color: #f8f9fa;  
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #fff; 
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    background-color: #f6ff00;  
+    color: rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    margin-top: 10px;
+}
+
+.table {
+    background-color: #fff;  
+    border: 1px solid #dee2e6;  
+    border-radius: 5px;
+    overflow: hidden;
+
+    th, td {
+        padding: 15px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #f6ff00;  
+        color: #fff;
+    }
+
+    tbody tr {
+        &:hover {
+            background-color: #f2f2f2;  
+        }
+    }
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #fff; 
+
+    .modal-header {
+        background-color: #f6ff00;   
+        color: rgba(0, 0, 0, 0.1);
+        padding: 15px;
+    }
+
+    .modal-title {
+        font-size: 1.25rem;  
+    }
+
+    .modal-body, .modal-footer {
+        padding: 20px;
+    }
+
+    .form-control {
+        margin-bottom: 15px;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;  
+        color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+
+
