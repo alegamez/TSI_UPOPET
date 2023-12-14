@@ -4,25 +4,39 @@
   <menuitem name="UPOPET" id="main_upopet_menu" groups="group_upopet_manager"/>
 
  <!--   menu categories --> 
-  <menuitem name="UPOPET" id="upopet_menu" groups="group_upopet_manager" parent="main_upopet_menu"/>
+  <!--<menuitem name="UPOPET" id="upopet_menu" groups="group_upopet_manager" parent="main_upopet_menu"/>-->
 
-<!-- actions --> 
-  <menuitem name="Pregunta" id="pregunta_menu" parent="upopet_menu" groups="group_upopet_manager" action="pregunta_list_action"/> 
-  <menuitem name="Respuesta" id="respuesta_menu" parent="upopet_menu" groups="group_upopet_manager" action="respuesta_list_action"/>
-  <menuitem name="Categoria Pregunta" id="categoriapregunta_menu" parent="upopet_menu" groups="group_upopet_manager" action="categoriapregunta_list_action"/>
-  <menuitem name="Tipo Evento" id="tipoevento_menu" parent="upopet_menu" groups="group_upopet_manager" action="tipoevento_list_action"/>
-  <menuitem name="Evento" id="evento_menu" parent="upopet_menu" groups="group_upopet_manager" action="evento_list_action"/> 
-  <menuitem name="Empresa" id="empresa_menu" parent="upopet_menu" groups="group_upopet_manager" action="empresa_list_action"/>
-  <menuitem name="Seguro" id="seguro_menu" parent="upopet_menu" groups="group_upopet_manager" action="seguro_list_action"/>
-  <menuitem name="Especie" id="especie_menu" parent="upopet_menu" groups="group_upopet_manager" action="especie_list_action"/>
-  <menuitem name="Metodo Pago" id="metodopago_menu" parent="upopet_menu" groups="group_upopet_manager" action="metodopago_list_action"/>
-  <menuitem name="Pago" id="pago_menu" parent="upopet_menu" groups="group_upopet_manager" action="pago_list_action"/>
-  <menuitem name="Tipo Especie" id="tipo_menu" parent="upopet_menu" groups="group_upopet_manager" action="tipo_list_action"/>
-  <menuitem name="Usuario" id="usuario_menu" parent="upopet_menu" groups="group_upopet_manager" action="usuario_list_action"/>
-  <menuitem name="Valoracion" id="valoracion_menu" parent="upopet_menu" groups="group_upopet_manager" action="valoracion_list_action"/>
-  <menuitem name="Matricula" id="matricula_menu" parent="upopet_menu" groups="group_upopet_manager" action="matricula_list_action"/>
-  <menuitem name="Cuestionario" id="cuestionario_menu" parent="upopet_menu" groups="group_upopet_manager" action="cuestionario_list_action"/>
+  <!--  submenus  -->
+  <menuitem name="Comunidad en Linea" id="upopet_submenu1" parent="main_upopet_menu"  groups="group_upopet_manager"/>
+  <menuitem name="Gestión de Matriculas" id="upopet_submenu2" parent="main_upopet_menu"  groups="group_upopet_manager"/>
+  <menuitem name="Gestión de Especies" id="upopet_submenu3" parent="main_upopet_menu"  groups="group_upopet_manager"/>
+  <menuitem name="Gestión de Eventos" id="upopet_submenu4" parent="main_upopet_menu"  groups="group_upopet_manager"/>
+  <menuitem name="Gestión de Empresas" id="upopet_submenu5" parent="main_upopet_menu"  groups="group_upopet_manager"/>
 
+  <!-- actions --> 
+  <menuitem name="Pregunta" id="pregunta_menu" parent="upopet_submenu1" groups="group_upopet_manager" action="pregunta_list_action"/> 
+  <menuitem name="Respuesta" id="respuesta_menu" parent="upopet_submenu1" groups="group_upopet_manager" action="respuesta_list_action"/>
+  <menuitem name="Categoria Pregunta" id="categoriapregunta_menu" parent="upopet_submenu1" groups="group_upopet_manager" action="categoriapregunta_list_action"/>
+  <menuitem name="Categoria Pregunta Componente1" id="categoriapregunta_menu_owl_componente1" parent="upopet_submenu1" groups="group_upopet_manager" action="action_owl_componente1_js"/>
 
-  <menuitem name="Categoria Pregunta Componente1" id="categoriapregunta_menu_owl_componente1" parent="upopet_menu" groups="group_upopet_manager" action="action_owl_componente1_js"/>
+  <menuitem name="Tipo Evento" id="tipoevento_menu" parent="upopet_submenu4" groups="group_upopet_manager" action="tipoevento_list_action"/>
+  <menuitem name="Evento" id="evento_menu" parent="upopet_submenu4" groups="group_upopet_manager" action="evento_list_action"/> 
+  
+  <menuitem name="Empresa" id="empresa_menu" parent="upopet_submenu5" groups="group_upopet_manager" action="empresa_list_action"/>
+  <menuitem name="Componente Empresa" id="especie_menu_owl_empresaComponente" parent="upopet_submenu5" groups="group_upopet_manager" action="action_owl_empresaComponente_js"/>
+  
+  <menuitem name="Gestión de Seguro" id="seguro_menu" parent="main_upopet_menu" groups="group_upopet_manager" action="seguro_list_action"/>
+  
+  <menuitem name="Especie" id="especie_menu" parent="upopet_submenu3" groups="group_upopet_manager" action="especie_list_action"/>
+  <menuitem name="Tipo Especie" id="tipo_menu" parent="upopet_submenu3" groups="group_upopet_manager" action="tipo_list_action"/>
+  <menuitem name="EspecieComponent" id="especie_menu_owl_especieComponent" parent="upopet_submenu3" groups="group_upopet_manager" action="action_owl_EspecieComponent_js"/>
+
+  <menuitem name="Metodo Pago" id="metodopago_menu" parent="upopet_submenu2" groups="group_upopet_manager" action="metodopago_list_action"/>
+  <menuitem name="Pago" id="pago_menu" parent="upopet_submenu2" groups="group_upopet_manager" action="pago_list_action"/>
+  <menuitem name="Usuario" id="usuario_menu" parent="upopet_submenu2" groups="group_upopet_manager" action="usuario_list_action"/>
+  <menuitem name="Valoracion" id="valoracion_menu" parent="upopet_submenu2" groups="group_upopet_manager" action="valoracion_list_action"/>
+  <menuitem name="Matricula" id="matricula_menu" parent="upopet_submenu2" groups="group_upopet_manager" action="matricula_list_action"/>
+  
+  <menuitem name="Cuestionario" id="cuestionario_menu" parent="main_upopet_menu" groups="group_upopet_manager" action="cuestionario_list_action"/>
+
 </odoo>
