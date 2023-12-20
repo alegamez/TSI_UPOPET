@@ -40,6 +40,7 @@
         'reports/categoriapregunta_report.xml',
         'reports/tipoevento_report.xml',
         'reports/cuestionario_report.xml',
+        'reports/valoracion_report.xml',
         'views/respuesta_view.xml',
         'views/pregunta_view.xml',
         'views/categoriapregunta_view.xml',
