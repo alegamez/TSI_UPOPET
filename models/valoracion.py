@@ -14,3 +14,9 @@ class valoracion(models.Model):
          'UNIQUE(matricula_id)',
          "La matricula ya tiene una valoracion."),
     ]
+
+    @api.constrains('calificacion')
+    def _check_calificacion(self):
+        for record in self:
+            if record.calificacion < 0 or record.calificacion > 10:
+                raise ValidationError("La calificacion tiene que ser entre 0 y 10")
