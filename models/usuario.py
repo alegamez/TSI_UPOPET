@@ -22,5 +22,7 @@ class usuario(models.Model):
     matricula_ids = fields.One2many('upopet.matricula',"usuario_id", 'Matrículado')
     respuesta_ids = fields.One2many("upopet.respuesta", "usuario_id", 'Usuario que realiza la respuesta')
     pregunta_ids = fields.One2many("upopet.pregunta", "usuario_id", 'Usuario que realiza la pregunta')
+
+    _sql_constraints = [('usuario_nombreUsuario_unique','UNIQUE (nombreUsuario)','El nombre de el usuario debe ser único')]
     
      
