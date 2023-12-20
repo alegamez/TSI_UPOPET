@@ -15,6 +15,20 @@
         </field>
     </record>
 
+    <!-- Agrupar valoraciones por calificacion y matricula -->
+    <record id="upopet_valoracion_search_view" model="ir.ui.view">
+        <field name="name">upopet.valoracion.filter</field>
+        <field name="model">upopet.valoracion</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="0" string="Agrupar por...">
+                    <filter name="group_by_calificacion" string="Valoracion por calificacion" context="{'group_by': 'calificacion'}" />
+                    <filter name="group_by_matriculas" string="Valoracion por matriculas" context="{'group_by': 'matricula_id'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
     <record id="upopet_valoracion_view_form" model="ir.ui.view">
         <field name="name">upopet.valoracion.view.form</field>
         <field name="model">upopet.valoracion</field>
