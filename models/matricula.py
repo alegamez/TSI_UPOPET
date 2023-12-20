@@ -13,3 +13,18 @@ class matricula(models.Model):
     usuario_id = fields.Many2one("upopet.usuario", string='Usuario Matriculado')
     evento_id = fields.Many2one("upopet.evento", 'Matriculado en Evento',required=True)
     valoracion_id = fields.One2many("upopet.valoracion", "matricula_id", 'Valoracion de la matricula')
+
+
+    #Validar que la fecha de la matricula sea posterior a la actual
+    @api.constrains('fecha')
+    def _check_fecha_futura(self):
+       for matricula in self:
+            if matricula.fecha and matricula.fecha < fields.Datetime.now():
+                raise ValidationError("La fecha de la matricula debe ser en el futuro.")
+
+    #Validar que el nombre es unico para cada matricula
+    @api.constrains('nombre')
+    def _check_nombre_unico(self):
+        for matricula in self:
+            if self.env['upopet.matricula'].search([('nombre', '=', matricula.nombre), ('id', '!=', matricula.id)]):
+                raise ValidationError("El nombre de la matricula debe ser único.")
