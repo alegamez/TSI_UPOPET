@@ -31,14 +31,14 @@ class Especie(models.Model):
     @api.constrains('peso')
     def _check_peso(self):
         for record in self:
-            if record.peso <= 0 or record.peso < 0.1:
-                raise ValidationError("El peso no puede ser inferior a 0.1 ni mayor a 0")
+            if record.peso <= 0 or record.peso > 10000:
+                raise ValidationError("El peso no puede ser inferior a 0.1 ni mayor a 10000")
 
     @api.constrains('tamanyo')
     def _check_tamanyo(self):
         for record in self:
-            if record.tamanyo <= 0 or record.tamanyo < 0.1:
-                raise ValidationError("El tamaño no puede ser inferior a 0.1 ni mayor a 0")
+            if record.tamanyo <= 0 or record.tamanyo > 10000:
+                raise ValidationError("El tamaño no puede ser inferior a 0.1 ni mayor a 10000")
 
     @api.onchange('tamanyo')
     def _onchange_tamanyo(self):

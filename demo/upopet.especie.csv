@@ -1,6 +1,6 @@
 id,name,nombre,tamanyo,peso,estado,nombreCientifico,tipoespecie_id/id
 especie1,1,Iguana,30,2,permitido,Iguana vulgaris,tiporeptil
-especie2,2,Elefante,300,5000,permitido,Loxodonta africana,tipomamifero
+especie2,2,Elefante,300,5000,prohibido,Loxodonta africana,tipomamifero
 especie3,3,Águila,70,5,permitido,Aquila chrysaetos,tipoave
 especie4,4,Leopardo,120,80,permitido,Panthera pardus,tipomamifero
 especie5,5,Tucán,50,1,permitido,Ramphastos toco,tipoave
